@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class Mag : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int LifeCount=3;
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.tag == "Enemy")
+        {
+            if (LifeCount == 0)
+                Time.timeScale = 0;
+            LifeCount--;
+            Debug.Log("Жизней осталось " + LifeCount);
+            Destroy(other.gameObject);
+        }
     }
 }
