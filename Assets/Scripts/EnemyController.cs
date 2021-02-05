@@ -20,7 +20,7 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.velocity = new Vector3(,rb.velocity.z);
+        //rb.velocity = new Vector3(,rb.velocity.z);
     }
 
     private void OnTriggerEnter(Collider other)
