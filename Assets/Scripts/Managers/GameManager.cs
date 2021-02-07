@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class GameController : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
-    private static GameController instance;
-    public static GameController Instance
+    private static GameManager instance;
+    public static GameManager Instance
 	{
 		get
 		{
             if(instance == null)
             {
-                instance = FindObjectOfType<GameController>();
+                instance = FindObjectOfType<GameManager>();
+                DontDestroyOnLoad(instance);
             }
             return instance;
         }
@@ -25,7 +26,7 @@ public class GameController : MonoBehaviour
 		{
             if(playerTarget == null)
 			{
-                playerTarget = FindObjectOfType<Mag>().transform;
+                playerTarget = FindObjectOfType<Wizard>().transform;
             }
             return playerTarget;
 		}
@@ -41,25 +42,25 @@ public class GameController : MonoBehaviour
     public void moneyIncrease(int count)
     {
         moneyCount += count;
-        UIController.Instance.moneyChange(moneyCount);
+        UIManager.Instance.moneyChange(moneyCount);
     }
 
     public void moneyDepleated(int count)
     {
         moneyCount -= count;
-        UIController.Instance.moneyChange(moneyCount);
+        UIManager.Instance.moneyChange(moneyCount);
     }
 
     public void hpIncrese(int count)
     {
         hpCount += count;
-        UIController.Instance.hpChange(hpCount);
+        UIManager.Instance.hpChange(hpCount);
     }
 
     public void hpDecrease(int count)
     {
         hpCount -= count;
-        UIController.Instance.hpChange(hpCount);
+        UIManager.Instance.hpChange(hpCount);
     }
 
     void passiveMoneyIncrease()
@@ -71,8 +72,8 @@ public class GameController : MonoBehaviour
     void Start()
     {
         spawns = GameObject.FindGameObjectsWithTag("Spawn");
-        UIController.Instance.moneyChange(moneyCount);
-        UIController.Instance.hpChange(hpCount);
+        UIManager.Instance.moneyChange(moneyCount);
+        UIManager.Instance.hpChange(hpCount);
         //InvokeRepeating("SpawnEnemy", 0, 1);
         InvokeRepeating("passiveMoneyIncrease", 0, 3);
     }

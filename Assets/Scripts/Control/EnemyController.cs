@@ -58,6 +58,20 @@ public class EnemyController : MonoBehaviour
             return ragdoll;
         }
     }
+
+    private Collider coll;
+    public Collider Coll
+	{
+		get
+		{
+            if(coll == null)
+			{
+                coll = GetComponent<Collider>();
+			}
+            return coll;
+		}
+	}
+
 	#endregion
 
 	private Coroutine lifeCoroutine = null;
@@ -73,7 +87,7 @@ public class EnemyController : MonoBehaviour
 
     void Awake()
     {
-        target = GameController.Instance.PlayerTarget;
+        target = GameManager.Instance.PlayerTarget;
 
         StartLife();
     }
@@ -127,7 +141,7 @@ public class EnemyController : MonoBehaviour
     #region Attack
     private void AttackMag()
     {
-        target.GetComponent<Mag>().TakeDamage();
+        target.GetComponent<Wizard>().TakeDamage();
     }
 
 
@@ -195,6 +209,8 @@ public class EnemyController : MonoBehaviour
     private void Death()
     {
         Animator.enabled = false;
+        Coll.enabled = false;
+
         Ragdoll.EnableRagdoll(true);
     }
 

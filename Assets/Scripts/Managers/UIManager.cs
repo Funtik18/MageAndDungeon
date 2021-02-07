@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIController : MonoBehaviour
+public class UIManager : MonoBehaviour
 {
-    private static UIController instance;
-    public static UIController Instance
+    private static UIManager instance;
+    public static UIManager Instance
 	{
 		get
 		{
             if(instance == null)
 			{
-                instance = FindObjectOfType<UIController>();
+                instance = FindObjectOfType<UIManager>();
             }
             return instance;
         }
