@@ -45,3 +45,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPref: {fileID: 1799553355866579056, guid: bc206de0dcecd03489228d621b423dcf,
     type: 3}
+  moneyCount: 0
+  hpCount: 3
+  passiveErning: 5

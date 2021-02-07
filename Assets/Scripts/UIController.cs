@@ -5,22 +5,22 @@ using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
-    [HideInInspector] public static UIController instance;
+    private static UIController instance;
+    public static UIController Instance
+	{
+		get
+		{
+            if(instance == null)
+			{
+                instance = FindObjectOfType<UIController>();
+            }
+            return instance;
+        }
+	}
 
     public Text hpCount;
     public Text moneyCount;
 
-    void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else if (instance != null)
-        {
-            DestroyImmediate(this.gameObject);
-        }
-    }
 
     public void moneyChange(int count)
     {
@@ -30,20 +30,5 @@ public class UIController : MonoBehaviour
     public void hpChange(int count)
     {
         hpCount.text= count.ToString();
-    }
-
-
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

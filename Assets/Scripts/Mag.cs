@@ -4,18 +4,14 @@ using UnityEngine;
 
 public class Mag : MonoBehaviour
 {
-    public int LifeCount=3;
+    public int lifeCount=3;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Enemy")
-        {
-            if (LifeCount == 0)
-                Time.timeScale = 0;
-            LifeCount--;
-            GameController.instance.hpDecrease(1);
-            Debug.Log("Жизней осталось " + LifeCount);
-            Destroy(other.gameObject);
-        }
+    public void TakeDamage()
+	{
+        if(lifeCount == 0)
+            Time.timeScale = 0;
+        lifeCount--;
+        GameController.Instance.hpDecrease(1);
+        Debug.Log("Жизней осталось " + lifeCount);
     }
 }

@@ -5,51 +5,61 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    [HideInInspector] public static GameController instance;
+    private static GameController instance;
+    public static GameController Instance
+	{
+		get
+		{
+            if(instance == null)
+            {
+                instance = FindObjectOfType<GameController>();
+            }
+            return instance;
+        }
+	}
+
+    private Transform playerTarget;
+    public Transform PlayerTarget
+	{
+		get
+		{
+            if(playerTarget == null)
+			{
+                playerTarget = FindObjectOfType<Mag>().transform;
+            }
+            return playerTarget;
+		}
+	}
 
     public GameObject enemyPref;
-    GameObject[] spawns;
+    private GameObject[] spawns;
 
-    [SerializeField] int moneyCount;
-    [SerializeField] int hpCount;
-    [SerializeField] int passiveErning;
-
-
-
-    void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else if (instance != null)
-        {
-            DestroyImmediate(this.gameObject);
-        }
-    }
+    [SerializeField] private int moneyCount;
+    [SerializeField] private int hpCount;
+    [SerializeField] private int passiveErning;
 
     public void moneyIncrease(int count)
     {
         moneyCount += count;
-        UIController.instance.moneyChange(moneyCount);
+        UIController.Instance.moneyChange(moneyCount);
     }
 
     public void moneyDepleated(int count)
     {
         moneyCount -= count;
-        UIController.instance.moneyChange(moneyCount);
+        UIController.Instance.moneyChange(moneyCount);
     }
 
     public void hpIncrese(int count)
     {
         hpCount += count;
-        UIController.instance.hpChange(hpCount);
+        UIController.Instance.hpChange(hpCount);
     }
 
     public void hpDecrease(int count)
     {
         hpCount -= count;
-        UIController.instance.hpChange(hpCount);
+        UIController.Instance.hpChange(hpCount);
     }
 
     void passiveMoneyIncrease()
@@ -61,8 +71,8 @@ public class GameController : MonoBehaviour
     void Start()
     {
         spawns = GameObject.FindGameObjectsWithTag("Spawn");
-        UIController.instance.moneyChange(moneyCount);
-        UIController.instance.hpChange(hpCount);
+        UIController.Instance.moneyChange(moneyCount);
+        UIController.Instance.hpChange(hpCount);
         //InvokeRepeating("SpawnEnemy", 0, 1);
         InvokeRepeating("passiveMoneyIncrease", 0, 3);
     }

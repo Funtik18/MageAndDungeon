@@ -20,16 +20,16 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    private Rigidbody rigidbody;
+    private Rigidbody rb;
     public Rigidbody Rigidbody
     {
         get
         {
-            if(rigidbody == null)
+            if(rb == null)
             {
-                rigidbody = GetComponent<Rigidbody>();
+                rb = GetComponent<Rigidbody>();
             }
-            return rigidbody;
+            return rb;
         }
     }
 
@@ -63,17 +63,23 @@ public class EnemyController : MonoBehaviour
 	private Coroutine lifeCoroutine = null;
     public bool IsLifeCycle => lifeCoroutine != null;
 
+    private Coroutine attackCoroutine = null;
+    public bool IsAttackProcess => attackCoroutine != null;
+
     private bool isAlive = true;
+    private bool isTargetNear = false;
 
+    private Transform target;
 
-    private Transform target; 
-    
     void Awake()
     {
+        target = GameController.Instance.PlayerTarget;
+
         StartLife();
     }
 
-    private void StartLife()
+	#region Life
+	private void StartLife()
 	{
 		if(!IsLifeCycle)
 		{
@@ -86,15 +92,24 @@ public class EnemyController : MonoBehaviour
 
         while(isAlive)
 		{
-            Vector3 destination = target.position - transform.position;
+			if(!isTargetNear)
+			{
+                Vector3 destination = target.position - transform.position;
 
-            //Rigidbody.AddForce(destination * speed * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
-            Rigidbody.velocity = new Vector3(destination.x * speed * Time.deltaTime, Rigidbody.velocity.y, destination.z * speed * Time.deltaTime);
+                Movement(destination);
 
-
-
+                isTargetNear = destination.magnitude <= 1f ? true : false;
+				if(isTargetNear)
+				{
+                    Rigidbody.velocity = Vector3.zero;
+                }
+			}
+			else
+			{
+                Animator.SetTrigger("Attack");
+                StartAttack();
+            }
             yield return null;
-
         }
         StopLife();
     }
@@ -108,6 +123,66 @@ public class EnemyController : MonoBehaviour
 
         Death();
     }
+
+    #region Attack
+    private void AttackMag()
+    {
+        target.GetComponent<Mag>().TakeDamage();
+    }
+
+
+    private bool canAttack = true;
+    private void StartAttack()
+	{
+		if(!IsAttackProcess)
+		{
+            attackCoroutine = StartCoroutine(Attack());
+		}
+	}
+    private IEnumerator Attack()
+	{
+        yield return null;
+
+        canAttack = true;
+
+        AnimatorStateInfo animatorStateInfo = Animator.GetCurrentAnimatorStateInfo(0);
+
+        float startTime = Time.time;
+        float currentTime = Time.time - startTime;
+        while(currentTime < animatorStateInfo.length)
+		{
+            currentTime = Time.time - startTime;
+
+            if(currentTime >= AttackAnimationLength())
+			{
+				if(canAttack)
+				{
+                    AttackMag();
+                    canAttack = false;
+                }
+            }
+            yield return null;
+        }
+
+		if(IsAttackProcess)
+		{
+            StopCoroutine(attackCoroutine);
+           attackCoroutine = null;
+        }
+    }
+	#endregion
+	#endregion
+
+	private void Movement(Vector3 destination)
+	{
+        Rigidbody.velocity = new Vector3(destination.x * speed * Time.deltaTime, Rigidbody.velocity.y, destination.z * speed * Time.deltaTime);
+    }
+
+    protected virtual float AttackAnimationLength()
+	{
+        return 1.17f;
+	}
+
 
     [ContextMenu("Reborn")]
     private void ReBorn()
