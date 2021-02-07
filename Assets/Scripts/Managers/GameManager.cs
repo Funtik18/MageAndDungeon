@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
@@ -32,12 +29,16 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
-    public GameObject enemyPref;
-    private GameObject[] spawns;
-
     [SerializeField] private int moneyCount;
     [SerializeField] private int hpCount;
     [SerializeField] private int passiveErning;
+
+	private void Awake()
+	{
+        UIManager.Instance.moneyChange(moneyCount);
+        UIManager.Instance.hpChange(hpCount);
+        InvokeRepeating("passiveMoneyIncrease", 0, 3);
+    }
 
     public void moneyIncrease(int count)
     {
@@ -66,21 +67,5 @@ public class GameManager : MonoBehaviour
     void passiveMoneyIncrease()
     {
         moneyIncrease(passiveErning);
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        spawns = GameObject.FindGameObjectsWithTag("Spawn");
-        UIManager.Instance.moneyChange(moneyCount);
-        UIManager.Instance.hpChange(hpCount);
-        //InvokeRepeating("SpawnEnemy", 0, 1);
-        InvokeRepeating("passiveMoneyIncrease", 0, 3);
-    }
-
-
-    void SpawnEnemy()
-    {
-        Instantiate(enemyPref, spawns[Random.Range(0, spawns.Length - 1)].transform);
     }
 }

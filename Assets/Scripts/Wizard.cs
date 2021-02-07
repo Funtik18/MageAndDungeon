@@ -18,6 +18,9 @@ public class Wizard : MonoBehaviour
     private float ThetaDelta { get { return (2f * Mathf.PI) / vertexCount; } }
     private float theta = 0f;
 
+    [Header("Debug")]
+    public bool isDebug = false;
+
     private List<Vector3> linePoints = new List<Vector3>();
 
     private Coroutine lineCircleCoroutine = null;
@@ -90,8 +93,9 @@ public class Wizard : MonoBehaviour
 
 	private void OnDrawGizmos()
     {
-        Gizmos.color = Color.green;
+        if(!isDebug) return;
 
+        Gizmos.color = Color.green;
         UpdateLinePoints();
 
 		for(int i = 0; i < linePoints.Count-1; i++)

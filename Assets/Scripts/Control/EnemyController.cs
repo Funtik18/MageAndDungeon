@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+public class EnemyController : Entity
 {
     public float speed;
 
@@ -110,6 +110,8 @@ public class EnemyController : MonoBehaviour
 			{
                 Vector3 destination = target.position - transform.position;
 
+                transform.LookAt(target);
+
                 Movement(destination);
 
                 isTargetNear = destination.magnitude <= 1f ? true : false;
@@ -123,7 +125,7 @@ public class EnemyController : MonoBehaviour
                 Animator.SetTrigger("Attack");
                 StartAttack();
             }
-            yield return null;
+            yield return new WaitForFixedUpdate();
         }
         StopLife();
     }
@@ -189,7 +191,9 @@ public class EnemyController : MonoBehaviour
 
 	private void Movement(Vector3 destination)
 	{
-        Rigidbody.velocity = new Vector3(destination.x * speed * Time.deltaTime, Rigidbody.velocity.y, destination.z * speed * Time.deltaTime);
+        //Rigidbody.velocity = new Vector3(destination.x * speed * Time.deltaTime, Rigidbody.velocity.y, destination.z * speed * Time.deltaTime);
+
+        Rigidbody.velocity = CurrentTransform.forward * speed * Time.deltaTime;
     }
 
     protected virtual float AttackAnimationLength()

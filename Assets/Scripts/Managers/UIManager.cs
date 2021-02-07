@@ -18,8 +18,8 @@ public class UIManager : MonoBehaviour
         }
 	}
 
-    public Text hpCount;
-    public Text moneyCount;
+    public TMPro.TextMeshProUGUI hpCount;
+    public TMPro.TextMeshProUGUI moneyCount;
 
 
     public void moneyChange(int count)
