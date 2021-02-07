@@ -22,6 +22,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        rb.velocity = new Vector3(joyStick.Horizontal * speed * Time.deltaTime, joyStick.Vertical * speed * Time.deltaTime, rb.velocity.z);
+        rb.velocity = new Vector3(joyStick.Horizontal * speed * Time.deltaTime, rb.velocity.y, joyStick.Vertical * speed * Time.deltaTime);
     }
 }

@@ -5,7 +5,8 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     public float speed;
-    public List<Sprite> sprites;
+    public Entity ent;
+
 
     Rigidbody rb;
     Transform target; 
@@ -13,7 +14,7 @@ public class EnemyController : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        GetComponent<SpriteRenderer>().sprite = sprites[Random.Range(0, sprites.Count)];
+
         target = FindObjectOfType<Mag>().transform;
     }
 
@@ -23,7 +24,7 @@ public class EnemyController : MonoBehaviour
         Vector3 destination = target.position - transform.position;
 
         //Rigidbody.AddForce(destination * speed * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
-        rb.velocity = new Vector3(destination.x * speed * Time.deltaTime, destination.y * speed * Time.deltaTime, rb.velocity.z);
+        rb.velocity = new Vector3(destination.x * speed * Time.deltaTime, rb.velocity.y, destination.z * speed * Time.deltaTime);
 
     }
 
@@ -32,7 +33,8 @@ public class EnemyController : MonoBehaviour
         Debug.Log(other.name);
         if (other.tag == "Player")
         {
-            Destroy(gameObject);
+            ent.Death();
+            //Destroy(gameObject);
         }
     }
 }
