@@ -13,6 +13,7 @@ public class Mag : MonoBehaviour
             if (LifeCount == 0)
                 Time.timeScale = 0;
             LifeCount--;
+            GameController.instance.hpDecrease(1);
             Debug.Log("Жизней осталось " + LifeCount);
             Destroy(other.gameObject);
         }
