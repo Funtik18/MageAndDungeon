@@ -14,8 +14,8 @@ public class Wizard : MonoBehaviour
     public float lineUpdateTime = 0.1f;
     
     [Header("Circle")]
-    public float radius;
     public float posY = 1f;
+    public float radius;
 
     private int vertexCount = 40;
     private float ThetaDelta { get { return (2f * Mathf.PI) / vertexCount; } }
@@ -29,8 +29,11 @@ public class Wizard : MonoBehaviour
     private Coroutine lineCircleCoroutine = null;
     public bool IsLineCircleProcess => lineCircleCoroutine != null;
 
-	private void Awake()
+    
+
+    private void Awake()
 	{
+        radius = GameManager.Instance.playerSetup.radius;
         StartLine();
     }
 

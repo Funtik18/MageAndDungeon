@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cfa084b300dc4f45ae7e194ca8b51ba, type: 3}
+  m_Name: Player
+  m_EditorClassIdentifier: 
+  playerName: Gandalf
+  hpAmount: 3
+  speed: 500
+  radius: 8
+  incomeAmount: 3
+  damage: 1
+  startMoney: 0

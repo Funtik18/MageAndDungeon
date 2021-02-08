@@ -2,7 +2,7 @@
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed;
+    float speed;
 
     private Wizard wizard;
 
@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
 	private void Awake()
 	{
         wizard = GameManager.Instance.WizardTarget;
-
+        speed = GameManager.Instance.playerSetup.speed;
     }
 
 	private void Start()
