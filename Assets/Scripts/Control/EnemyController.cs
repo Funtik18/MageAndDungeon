@@ -80,7 +80,7 @@ public class EnemyController : Entity
     private Coroutine attackCoroutine = null;
     public bool IsAttackProcess => attackCoroutine != null;
 
-    private bool isAlive = true;
+    public bool isAlive = true;
     private bool isTargetNear = false;
 
     private Wizard target;

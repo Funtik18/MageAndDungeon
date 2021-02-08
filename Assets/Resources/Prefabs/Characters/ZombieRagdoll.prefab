@@ -1499,7 +1499,7 @@ GameObject:
   - component: {fileID: 8039887868561387243}
   - component: {fileID: 8039887868561387242}
   - component: {fileID: 602016729827136710}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ZombieRagdoll
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1583,6 +1583,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSetup: {fileID: 11400000, guid: 82487fed2f79cc64e851e4b50fb3f249, type: 2}
+  isAlive: 1
 --- !u!114 &602016729827136710
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         rb.velocity = Vector3.zero;
+
         oldPos = transform.position;
 
         Vector3 movement = new Vector3(joyStick.Horizontal, 0, joyStick.Vertical);

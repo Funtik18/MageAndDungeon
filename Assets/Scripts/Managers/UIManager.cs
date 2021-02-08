@@ -25,7 +25,10 @@ public class UIManager : MonoBehaviour
     [Header("Joystick")]
     public FixedJoystick joystick;
 
-	private void Awake()
+    [Header("JoyButton")]
+    public JoyButton joybutton;
+
+    private void Awake()
 	{
         windowStart.onClosed = StartPrepare;
 
