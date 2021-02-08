@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerName: Gandalf
   hpAmount: 3
-  speed: 500
+  speed: 10
   radius: 8
-  incomeAmount: 3
+  incomeAmount: 1
   damage: 1
   startMoney: 0
