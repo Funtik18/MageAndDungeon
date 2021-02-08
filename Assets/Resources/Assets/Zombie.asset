@@ -16,5 +16,5 @@ MonoBehaviour:
   hpAmount: 1
   speed: 25
   damage: 1
-  price: 1
+  price: 2
   animationLength: 1.17

@@ -38,7 +38,7 @@ public class Wizard : MonoBehaviour
 
 	public void TakeDamage()
 	{
-        if(player.Stats.HealthPoints == 0)
+        if(player.Stats.HealthPoints < 1)
 		{
             onDeath?.Invoke();
 		}
@@ -61,8 +61,6 @@ public class Wizard : MonoBehaviour
 
         player.Stats.Money += player.Stats.IncomeAmount;
     }
-
-
 
     #region Line Circle
     private void StartLine()

@@ -28,7 +28,6 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         wizard = GameManager.Instance.WizardTarget;
-        speed = GameManager.Instance.playerSetup.speed;
     }
 
     private void Start()
@@ -50,11 +49,11 @@ public class PlayerController : MonoBehaviour
 
         Vector3 offset = newPos - wizard.transform.position;
 
-        mov = wizard.transform.position + Vector3.ClampMagnitude(offset, wizard.radius);
+        mov = wizard.transform.position + Vector3.ClampMagnitude(offset, Stats.Radius);
 
         oldPos.y = 0;
         mov.y = 0;
 
-        transform.Translate((mov - oldPos) * speed * Time.deltaTime);
+        transform.Translate((mov - oldPos) * Stats.Speed * Time.deltaTime);
     }
 }
