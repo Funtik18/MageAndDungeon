@@ -431,7 +431,7 @@ GameObject:
   - component: {fileID: 1507271411}
   - component: {fileID: 1698788880267374447}
   - component: {fileID: 7478685049399122142}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: UndeadSkeletonRagdoll
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -514,6 +514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e770458fc690dc4dafac22d9470ba9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAlive: 1
   currentSetup: {fileID: 11400000, guid: efbba37bac7f281428cbb85bb5411476, type: 2}
 --- !u!114 &7478685049399122142
 MonoBehaviour:

@@ -7,25 +7,15 @@ public class FireWall : MonoBehaviour
     public Collider[] hitColliders;
     public float radius;
     // Start is called before the first frame update
-    void FixedUpdate()
+    void Update()
     {
-        hitColliders = Physics.OverlapSphere(transform.position, radius,1<<9);
-        Debug.DrawLine(transform.position, transform.forward * radius);
+        hitColliders = Physics.OverlapSphere(transform.position, radius, 1 << 9);
         foreach (var item in hitColliders)
         {
-            if (item.tag=="Enemy")
-            {
-                item.GetComponent<EnemyController>().isAlive=false;
-            }
+            item.GetComponent<EnemyController>().isAlive = false;
 
         }
 
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawSphere(transform.position, radius);
     }
 
 }

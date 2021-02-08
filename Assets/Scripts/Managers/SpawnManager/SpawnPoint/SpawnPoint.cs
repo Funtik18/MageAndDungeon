@@ -24,8 +24,7 @@ public class SpawnPoint : MonoBehaviour
 		{
 			for(int i = 0; i < entities.Count; i++)
 			{
-				Transform entity = Instantiate(entities[i]).transform;
-				entity.position = transform.position;
+				Instantiate(entities[i],transform);
 				yield return new WaitForSeconds(3f);
 			}
 		}

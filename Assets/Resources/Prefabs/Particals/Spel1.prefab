@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitColliders: []
-  radius: 5
+  radius: 8
 --- !u!1001 &6505037278774273579
 PrefabInstance:
   m_ObjectHideFlags: 0

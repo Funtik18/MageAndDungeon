@@ -36,8 +36,8 @@ public class JoyButton : MonoBehaviour,IPointerUpHandler,IPointerDownHandler
         {
             item.Stop();
         }
-        
-        //Destroy(currentSpell);
+        yield return new WaitForSecondsRealtime(sec);
+        Destroy(currentSpell);
     }
 
 
