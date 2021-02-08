@@ -2,19 +2,26 @@
 
 public class PlayerController : MonoBehaviour
 {
-    float speed;
-
-    private Wizard wizard;
-
-    Joystick joyStick;
-    JoyButton joyButton;
-    Rigidbody rb;
-
-	private void Awake()
+    [SerializeField] private PlayerSetup playerSetup;
+    private PlayerStats stats;
+    public PlayerStats Stats
 	{
-        wizard = GameManager.Instance.WizardTarget;
-        speed = GameManager.Instance.playerSetup.speed;
-    }
+		get
+		{
+            if(stats == null)
+			{
+                stats = new PlayerStats(playerSetup);
+			}
+            return stats;
+		}
+	}
+
+    [SerializeField] private Wizard wizard;
+
+    private Joystick joyStick;
+    private JoyButton joyButton;
+    private Rigidbody rb;
+
 
 	private void Start()
     {
@@ -33,11 +40,11 @@ public class PlayerController : MonoBehaviour
         Vector3 newPos = transform.position + movement;
 
         Vector3 offset = newPos - wizard.transform.position;
-        Vector3 mov= wizard.transform.position + Vector3.ClampMagnitude(offset, wizard.radius);
+        Vector3 mov= wizard.transform.position + Vector3.ClampMagnitude(offset, Stats.Radius);
 
         oldPos.y = 0;
         mov.y = 0;
 
-        rb.velocity = (mov-oldPos)*speed*Time.fixedDeltaTime;
+        rb.velocity = (mov - oldPos) * Stats.Speed * Time.fixedDeltaTime;
     }
 }

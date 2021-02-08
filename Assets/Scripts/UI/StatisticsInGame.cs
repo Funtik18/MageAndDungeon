@@ -29,18 +29,6 @@ public class StatisticsInGame : MonoBehaviour
 		Fader.CanvasGroup.blocksRaycasts = true;
 	}
 
-	public void moneyChange(int count)
-    {
-        moneyCount.text = count.ToString();
-    }
-
-    public void hpChange(int count)
-    {
-        hpCount.text = count.ToString();
-    }
-
-
-
 	[ContextMenu("OpenStatistics")]
 	private void OpenStatistics()
 	{

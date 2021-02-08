@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class Wizard : MonoBehaviour
 {
-    public int lifeCount=3;
+    public PlayerController player;
 
     public UnityAction onDeath;
 
@@ -15,7 +15,6 @@ public class Wizard : MonoBehaviour
     
     [Header("Circle")]
     public float posY = 1f;
-    public float radius;
 
     private int vertexCount = 40;
     private float ThetaDelta { get { return (2f * Mathf.PI) / vertexCount; } }
@@ -30,28 +29,43 @@ public class Wizard : MonoBehaviour
     public bool IsLineCircleProcess => lineCircleCoroutine != null;
 
     
-
     private void Awake()
 	{
-        radius = GameManager.Instance.playerSetup.radius;
+        UIManager.Instance.UpdateStatistics();
+
         StartLine();
     }
 
 	public void TakeDamage()
 	{
-        if(lifeCount == 0)
+        if(player.Stats.HealthPoints == 0)
 		{
             onDeath?.Invoke();
 		}
 		else
 		{
-            lifeCount--;
-            GameManager.Instance.hpDecrease(1);
+            player.Stats.HealthPoints--;
+
+            UIManager.Instance.UpdateStatistics();
         }
     }
 
-	#region Line Circle
-	private void StartLine()
+    public void StartIncome()
+    {
+        InvokeRepeating("passiveMoneyIncrease", 0, 3);
+    }
+
+    private void passiveMoneyIncrease()
+    {
+        UIManager.Instance.UpdateStatistics();
+
+        player.Stats.Money += player.Stats.IncomeAmount;
+    }
+
+
+
+    #region Line Circle
+    private void StartLine()
     {
         if(!IsLineCircleProcess)
         {
@@ -76,10 +90,10 @@ public class Wizard : MonoBehaviour
     private void UpdateLinePoints()
 	{
         linePoints.Clear();
-        Vector3 oldPos = transform.position + (Vector3.right * radius);
+        Vector3 oldPos = transform.position + (Vector3.right * player.Stats.Radius);
         for(int i = 0; i <= vertexCount; i++)
         {
-            Vector3 pos = new Vector3(radius * Mathf.Cos(theta), posY, radius * Mathf.Sin(theta));
+            Vector3 pos = new Vector3(player.Stats.Radius * Mathf.Cos(theta), posY, player.Stats.Radius * Mathf.Sin(theta));
             Vector3 newPos = transform.position + pos;
 
 
