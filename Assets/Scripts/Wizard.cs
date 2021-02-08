@@ -38,15 +38,17 @@ public class Wizard : MonoBehaviour
 
 	public void TakeDamage()
 	{
-        if(player.Stats.HealthPoints < 1)
-		{
-            onDeath?.Invoke();
-		}
-		else
-		{
-            player.Stats.HealthPoints--;
+        player.Stats.HealthPoints--;
 
-            UIManager.Instance.UpdateStatistics();
+        UIManager.Instance.UpdateStatistics();
+        CheckDeath();
+    }
+
+    private void CheckDeath()
+	{
+        if(player.Stats.HealthPoints < 1)
+        {
+            onDeath?.Invoke();
         }
     }
 

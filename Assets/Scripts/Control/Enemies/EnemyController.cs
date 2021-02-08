@@ -136,7 +136,6 @@ public class EnemyController : Entity
 			}
 			else
 			{
-                Animator.SetTrigger("Attack");
                 StartAttack();
             }
             yield return new WaitForFixedUpdate();
@@ -172,6 +171,8 @@ public class EnemyController : Entity
 	}
     private IEnumerator Attack()
 	{
+        Animator.SetTrigger("Attack");
+
         yield return null;
 
         canAttack = true;
@@ -189,14 +190,17 @@ public class EnemyController : Entity
 				if(canAttack)
 				{
                     AttackMag();
+
                     canAttack = false;
                 }
             }
             yield return null;
         }
+
+        yield return null;
         StopAttack();
     }
-    private void StopAttack()
+    protected void StopAttack()
 	{
         if(IsAttackProcess)
         {
