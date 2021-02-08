@@ -15,8 +15,7 @@ public class UndeadZombieEntity : EnemyController
 			}
 			return stats as ZombieStats;
 		}
-	}
-
+	}  
 
 	protected override void Movement()
 	{

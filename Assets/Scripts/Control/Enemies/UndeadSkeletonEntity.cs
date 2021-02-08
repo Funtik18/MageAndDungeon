@@ -15,8 +15,7 @@ public class UndeadSkeletonEntity : EnemyController
         }
 	}
 
-
-	protected override void Movement()
+    protected override void Movement()
 	{
 		Rigidbody.velocity = CurrentTransform.forward * Stats.Speed * Time.deltaTime;
 	}
