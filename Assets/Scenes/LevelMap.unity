@@ -10610,7 +10610,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a57b572f14eb654f87f646cd856fbe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 500
 --- !u!54 &586469884
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -20836,14 +20835,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoints:
-  - {fileID: 1721362207}
-  - {fileID: 2024131859}
-  - {fileID: 1045153738}
-  - {fileID: 980733397}
-  - {fileID: 2024213763}
-  - {fileID: 1926055086}
-  - {fileID: 202858051}
-  - {fileID: 1818664335}
+  - {fileID: 1721362208}
+  - {fileID: 2024131860}
+  - {fileID: 1045153739}
+  - {fileID: 980733398}
+  - {fileID: 2024213764}
+  - {fileID: 1926055087}
+  - {fileID: 202858052}
+  - {fileID: 1818664336}
   isDebug: 1
 --- !u!1 &1134441610
 GameObject:
@@ -21320,8 +21319,8 @@ MonoBehaviour:
   lifeCount: 3
   line: {fileID: 919132148726236746}
   lineUpdateTime: 0.04
-  radius: 8
   posY: 1
+  radius: 8
   isDebug: 0
 --- !u!1 &1176900713
 GameObject:
@@ -40666,5 +40665,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8464071103631056696, guid: d8bc9d5b09d836642aec0d843153df49,
+        type: 3}
+      propertyPath: playerSetup
+      value: 
+      objectReference: {fileID: 11400000, guid: 4bd728206bb154c40b331295910ba642,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8bc9d5b09d836642aec0d843153df49, type: 3}

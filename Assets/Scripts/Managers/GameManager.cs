@@ -2,6 +2,8 @@
 
 public class GameManager : MonoBehaviour
 {
+    public PlayerSetup playerSetup;
+
     private static GameManager instance;
     public static GameManager Instance
 	{
@@ -29,14 +31,22 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
-    [SerializeField] private int moneyCount;
-    [SerializeField] private int hpCount;
-    [SerializeField] private int passiveErning;
+    private int moneyCount;
+    private int hpCount;
+    private int passiveErning;
 
 	private void Awake()
 	{
+        SetMyStats();
         UIManager.Instance.statistics.moneyChange(moneyCount);
         UIManager.Instance.statistics.hpChange(hpCount);
+    }
+
+    void SetMyStats()
+    {
+        moneyCount = playerSetup.startMoney;
+        hpCount = playerSetup.hpAmount;
+        passiveErning = playerSetup.incomeAmount;
     }
 
     public void StartProcess()

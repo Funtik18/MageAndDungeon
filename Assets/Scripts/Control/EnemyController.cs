@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class EnemyController : Entity
 {
-    public float speed;
+    #region Properties
+    public EnemySetup currentSetup;
 
-	#region Properties
-	private Transform currentTransform;
+    private Transform currentTransform;
     public Transform CurrentTransform
     {
         get
@@ -104,11 +104,24 @@ public class EnemyController : Entity
 
     void Awake()
     {
+        SetMyStats();
         StartLife();
     }
 
-	#region Life
-	private void StartLife()
+    #region Stats
+    void SetMyStats()
+    {
+        enemyName = currentSetup.enemyName;
+        hpAmount = currentSetup.hpAmount;
+        speed = currentSetup.speed;
+        damage = currentSetup.damage;
+        price = currentSetup.price;
+        animationLength = currentSetup.animationLength;
+    }
+    #endregion
+
+    #region Life
+    private void StartLife()
 	{
 		if(!IsLifeCycle)
 		{
@@ -217,7 +230,7 @@ public class EnemyController : Entity
 
     protected virtual float AttackAnimationLength()
 	{
-        return 1.17f;
+        return animationLength;
 	}
 
 
