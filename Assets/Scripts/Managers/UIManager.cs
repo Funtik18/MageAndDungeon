@@ -47,6 +47,7 @@ public class UIManager : MonoBehaviour
 
     public void EndPrepare()
 	{
+        SpawnManager.Instance.StopSpawn();
         windowFail.StartOpenWindow();
         joystick.isBlock = true;
     }

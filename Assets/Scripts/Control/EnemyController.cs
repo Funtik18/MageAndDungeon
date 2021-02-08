@@ -193,7 +193,7 @@ public class EnemyController : Entity
                     canAttack = false;
                 }
             }
-            yield return null;
+            yield return new WaitForFixedUpdate();
         }
         StopAttack();
     }
@@ -235,7 +235,18 @@ public class EnemyController : Entity
         Coll.enabled = false;
 
         Ragdoll.EnableRagdoll(true);
+
+        StartCoroutine(DeathWaiter());
     }
+
+    private IEnumerator DeathWaiter()
+	{
+        yield return new WaitForSeconds(1f);
+        Ragdoll.EnableRagdoll(false);
+        Rigidbody.isKinematic = true;
+        Ragdoll.EnableColliders(false);
+
+    } 
 
     private void OnTriggerEnter(Collider other)
     {

@@ -2,6 +2,10 @@
 using System.Linq;
 using UnityEngine;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 public class RagdollController : MonoBehaviour
 {
 	[SerializeField] private List<Transform> children = new List<Transform>();
@@ -9,7 +13,10 @@ public class RagdollController : MonoBehaviour
 	[SerializeField] private List<Rigidbody> rigidbodies = new List<Rigidbody>();
 
 	[SerializeField] private List<Vector3> childrenPositions = new List<Vector3>();
-    [SerializeField] private List<Quaternion> childrenRotations = new List<Quaternion>();
+	[SerializeField] private List<Quaternion> childrenRotations = new List<Quaternion>();
+
+	[SerializeField] private List<Collider> colliders = new List<Collider>();
+
 
 
 	public void EnableRagdoll(bool trigger)
@@ -29,6 +36,14 @@ public class RagdollController : MonoBehaviour
 		}
 	}
 
+	public void EnableColliders(bool trigger)
+	{
+		for(int i = 0; i < colliders.Count; i++)
+		{
+			colliders[i].enabled = trigger;
+		}
+	}
+
 
 	private void GetTPose()
 	{
@@ -41,16 +56,21 @@ public class RagdollController : MonoBehaviour
 		}
 	}
 
-
 	[ContextMenu("1) UpdateListTransforms")]
 	private void UpdateListTransforms()
 	{
 		children = GetComponentsInChildren<Transform>().ToList();
+#if UNITY_EDITOR
+		EditorUtility.SetDirty(gameObject);
+#endif
 	}
 	[ContextMenu("2) UpdateLists pos and rot")]
 	private void UpdateListsPositionAndRotation()
 	{
 		GetTPose();
+#if UNITY_EDITOR
+		EditorUtility.SetDirty(gameObject);
+#endif
 	}
 	[ContextMenu("3) UpdateListRigidbodies")]
 	private void UpdateListRigidbodies()
@@ -63,5 +83,18 @@ public class RagdollController : MonoBehaviour
 			if(rbody != null)
 				rigidbodies.Add(rbody);
 		}
+#if UNITY_EDITOR
+		EditorUtility.SetDirty(gameObject);
+#endif
+	}
+
+	[ContextMenu("UpdateListColliders")]
+	private void UpdateListColliders()
+	{
+		colliders = GetComponentsInChildren<Collider>().ToList();
+		colliders.RemoveAt(0);
+#if UNITY_EDITOR
+		EditorUtility.SetDirty(gameObject);
+#endif
 	}
 }
