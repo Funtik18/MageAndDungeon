@@ -16,16 +16,16 @@ public class GameManager : MonoBehaviour
         }
 	}
 
-    private Transform playerTarget;
-    public Transform PlayerTarget
+    private Wizard wizardTarget;
+    public Wizard WizardTarget
 	{
 		get
 		{
-            if(playerTarget == null)
+            if(wizardTarget == null)
 			{
-                playerTarget = FindObjectOfType<Wizard>().transform;
+                wizardTarget = FindObjectOfType<Wizard>();
             }
-            return playerTarget;
+            return wizardTarget;
 		}
 	}
 
@@ -35,36 +35,41 @@ public class GameManager : MonoBehaviour
 
 	private void Awake()
 	{
-        UIManager.Instance.moneyChange(moneyCount);
-        UIManager.Instance.hpChange(hpCount);
+        UIManager.Instance.statistics.moneyChange(moneyCount);
+        UIManager.Instance.statistics.hpChange(hpCount);
+    }
+
+    public void StartProcess()
+	{
         InvokeRepeating("passiveMoneyIncrease", 0, 3);
     }
+
 
     public void moneyIncrease(int count)
     {
         moneyCount += count;
-        UIManager.Instance.moneyChange(moneyCount);
+        UIManager.Instance.statistics.moneyChange(moneyCount);
     }
 
     public void moneyDepleated(int count)
     {
         moneyCount -= count;
-        UIManager.Instance.moneyChange(moneyCount);
+        UIManager.Instance.statistics.moneyChange(moneyCount);
     }
 
     public void hpIncrese(int count)
     {
         hpCount += count;
-        UIManager.Instance.hpChange(hpCount);
+        UIManager.Instance.statistics.hpChange(hpCount);
     }
 
     public void hpDecrease(int count)
     {
         hpCount -= count;
-        UIManager.Instance.hpChange(hpCount);
+        UIManager.Instance.statistics.hpChange(hpCount);
     }
 
-    void passiveMoneyIncrease()
+    private void passiveMoneyIncrease()
     {
         moneyIncrease(passiveErning);
     }

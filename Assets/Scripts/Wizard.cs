@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Wizard : MonoBehaviour
 {
     public int lifeCount=3;
+
+    public UnityAction onDeath;
 
     [Header("Line")]
     public LineRenderer line;
@@ -34,10 +37,14 @@ public class Wizard : MonoBehaviour
 	public void TakeDamage()
 	{
         if(lifeCount == 0)
-            Time.timeScale = 0;
-        lifeCount--;
-        GameManager.Instance.hpDecrease(1);
-        Debug.Log("Жизней осталось " + lifeCount);
+		{
+            onDeath?.Invoke();
+		}
+		else
+		{
+            lifeCount--;
+            GameManager.Instance.hpDecrease(1);
+        }
     }
 
 	#region Line Circle

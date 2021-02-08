@@ -10,10 +10,9 @@ public class PlayerController : MonoBehaviour
     JoyButton joyButton;
     Rigidbody rb;
 
-
 	private void Awake()
 	{
-        wizard = GameManager.Instance.PlayerTarget.GetComponent<Wizard>();
+        wizard = GameManager.Instance.WizardTarget;
 
     }
 

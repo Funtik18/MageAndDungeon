@@ -9,12 +9,6 @@ public class SpawnPoint : MonoBehaviour
     private Coroutine spawnCoroutine = null;
     public bool IsSpawnProcess => spawnCoroutine != null;
 
-	private void Awake()
-	{
-	
-		StartSpawn();
-	}
-
 	public void StartSpawn()
 	{
 		if(!IsSpawnProcess && entities.Count > 0)

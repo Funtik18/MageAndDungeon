@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
@@ -18,17 +15,39 @@ public class UIManager : MonoBehaviour
         }
 	}
 
-    public TMPro.TextMeshProUGUI hpCount;
-    public TMPro.TextMeshProUGUI moneyCount;
+    public StatisticsInGame statistics;
 
+    [Header("Windows")]
+    public WindowStartGame windowStart;
+    public WindowFailGame windowFail;
+    public WindowWinGame windowWin;
 
-    public void moneyChange(int count)
-    {
-        moneyCount.text= count.ToString();
+    [Header("Joystick")]
+    public FixedJoystick joystick;
+
+	private void Awake()
+	{
+        windowStart.onClosed = StartPrepare;
+
+        GameManager.Instance.WizardTarget.onDeath = EndPrepare;
+    }
+	private void Start()
+	{
+        windowStart.OpenWindow();
     }
 
-    public void hpChange(int count)
-    {
-        hpCount.text= count.ToString();
+    public void StartPrepare()
+	{
+        joystick.StartOpenJoystick();
+        statistics.StartOpenStatistics();
+
+        SpawnManager.Instance.StartSpawn();
+        GameManager.Instance.StartProcess();
+    }
+
+    public void EndPrepare()
+	{
+        windowFail.StartOpenWindow();
+        joystick.isBlock = true;
     }
 }

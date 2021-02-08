@@ -4,7 +4,7 @@
 using UnityEditor;
 #endif
 
-public class FixedJoystick : Joystick
+public class WindowWinGame : MonoBehaviour
 {
 	private Fader fader;
 	public Fader Fader
@@ -19,16 +19,8 @@ public class FixedJoystick : Joystick
 		}
 	}
 
-	public void StartOpenJoystick()
-	{
-		Fader.FadeIn();
-		Fader.CanvasGroup.interactable = true;
-		Fader.CanvasGroup.blocksRaycasts = true;
-	}
-
-
-	[ContextMenu("OpenJoystick")]
-	private void OpenJoystick()
+	[ContextMenu("OpenWindow")]
+	private void OpenWindow()
 	{
 		Fader.CanvasGroup.alpha = 1;
 		Fader.CanvasGroup.interactable = true;
@@ -37,8 +29,8 @@ public class FixedJoystick : Joystick
 		EditorUtility.SetDirty(gameObject);
 #endif
 	}
-	[ContextMenu("CloseJoystick")]
-	private void CloseJoystick()
+	[ContextMenu("CloseWindow")]
+	private void CloseWindow()
 	{
 		Fader.CanvasGroup.alpha = 0;
 		Fader.CanvasGroup.interactable = false;

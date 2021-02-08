@@ -4,8 +4,11 @@
 using UnityEditor;
 #endif
 
-public class FixedJoystick : Joystick
+public class StatisticsInGame : MonoBehaviour
 {
+	public TMPro.TextMeshProUGUI hpCount;
+	public TMPro.TextMeshProUGUI moneyCount;
+
 	private Fader fader;
 	public Fader Fader
 	{
@@ -19,16 +22,27 @@ public class FixedJoystick : Joystick
 		}
 	}
 
-	public void StartOpenJoystick()
+	public void StartOpenStatistics()
 	{
 		Fader.FadeIn();
 		Fader.CanvasGroup.interactable = true;
 		Fader.CanvasGroup.blocksRaycasts = true;
 	}
 
+	public void moneyChange(int count)
+    {
+        moneyCount.text = count.ToString();
+    }
 
-	[ContextMenu("OpenJoystick")]
-	private void OpenJoystick()
+    public void hpChange(int count)
+    {
+        hpCount.text = count.ToString();
+    }
+
+
+
+	[ContextMenu("OpenStatistics")]
+	private void OpenStatistics()
 	{
 		Fader.CanvasGroup.alpha = 1;
 		Fader.CanvasGroup.interactable = true;
@@ -37,8 +51,8 @@ public class FixedJoystick : Joystick
 		EditorUtility.SetDirty(gameObject);
 #endif
 	}
-	[ContextMenu("CloseJoystick")]
-	private void CloseJoystick()
+	[ContextMenu("CloseStatistics")]
+	private void CloseStatistics()
 	{
 		Fader.CanvasGroup.alpha = 0;
 		Fader.CanvasGroup.interactable = false;

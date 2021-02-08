@@ -83,12 +83,27 @@ public class EnemyController : Entity
     private bool isAlive = true;
     private bool isTargetNear = false;
 
-    private Transform target;
+    private Wizard target;
+    private Transform targetTransform;
+    public Transform TargetTransform
+	{
+		get
+		{
+            if(targetTransform == null)
+			{
+                if(target == null)
+				{
+                    target = GameManager.Instance.WizardTarget;
+                }
+                targetTransform = target.transform;
+			}
+            return targetTransform;
+		}
+	}
+
 
     void Awake()
     {
-        target = GameManager.Instance.PlayerTarget;
-
         StartLife();
     }
 
@@ -108,9 +123,9 @@ public class EnemyController : Entity
 		{
 			if(!isTargetNear)
 			{
-                Vector3 destination = target.position - transform.position;
+                Vector3 destination = TargetTransform.position - transform.position;
 
-                transform.LookAt(target);
+                transform.LookAt(TargetTransform);
 
                 Movement(destination);
 
@@ -127,6 +142,7 @@ public class EnemyController : Entity
             }
             yield return new WaitForFixedUpdate();
         }
+        StopAttack();
         StopLife();
     }
     public void StopLife()
@@ -143,7 +159,7 @@ public class EnemyController : Entity
     #region Attack
     private void AttackMag()
     {
-        target.GetComponent<Wizard>().TakeDamage();
+        target.TakeDamage();
     }
 
 
@@ -179,11 +195,14 @@ public class EnemyController : Entity
             }
             yield return null;
         }
-
-		if(IsAttackProcess)
-		{
+        StopAttack();
+    }
+    private void StopAttack()
+	{
+        if(IsAttackProcess)
+        {
             StopCoroutine(attackCoroutine);
-           attackCoroutine = null;
+            attackCoroutine = null;
         }
     }
 	#endregion

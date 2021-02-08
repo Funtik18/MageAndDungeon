@@ -18,30 +18,39 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
-    public List<Transform> spawnPoints = new List<Transform>();
+    public List<SpawnPoint> spawnPoints = new List<SpawnPoint>();
 
     [Header("Debug")]
     public bool isDebug = false;
 
+
+    public void StartSpawn()
+	{
+		for(int i = 0; i < spawnPoints.Count; i++)
+		{
+            spawnPoints[i].StartSpawn();
+        }
+	}
+
+
+
     [ContextMenu("GetAllSpawnPoints")]
     private void GetAllSpawnPoints()
 	{
-        spawnPoints = GetComponentsInChildren<Transform>().ToList();
-        spawnPoints.RemoveAt(0);
+        spawnPoints = GetComponentsInChildren<SpawnPoint>().ToList();
 	}
 
 
 	private void OnDrawGizmos()
 	{
         if(!isDebug) return;
-
         
 		for(int i = 0; i < spawnPoints.Count; i++)
 		{
-            if(spawnPoints[i].GetComponent<SpawnPoint>().entities.Count > 0) Gizmos.color = Color.green;
+            if(spawnPoints[i].entities.Count > 0) Gizmos.color = Color.green;
             else Gizmos.color = Color.red;
 
-            Gizmos.DrawSphere(spawnPoints[i].position, 0.2f);
+            Gizmos.DrawSphere(spawnPoints[i].transform.position, 0.2f);
 		}
 	}
 }
