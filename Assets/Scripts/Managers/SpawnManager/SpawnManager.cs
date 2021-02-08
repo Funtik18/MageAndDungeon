@@ -31,6 +31,13 @@ public class SpawnManager : MonoBehaviour
             spawnPoints[i].StartSpawn();
         }
 	}
+    public void StopSpawn()
+	{
+		for(int i = 0; i < spawnPoints.Count; i++)
+		{
+            spawnPoints[i].StopSpawn();
+		}
+	}
 
 
 
