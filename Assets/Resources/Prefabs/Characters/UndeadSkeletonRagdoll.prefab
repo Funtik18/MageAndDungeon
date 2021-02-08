@@ -429,9 +429,9 @@ GameObject:
   - component: {fileID: 4995248752425410736}
   - component: {fileID: 1507271409}
   - component: {fileID: 1507271411}
-  - component: {fileID: 1507271410}
+  - component: {fileID: 1698788880267374447}
   - component: {fileID: 7478685049399122142}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: UndeadSkeletonRagdoll
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -502,7 +502,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.12, y: 1.76, z: 1}
   m_Center: {x: 0, y: 1.84, z: 0}
---- !u!114 &1507271410
+--- !u!114 &1698788880267374447
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -511,11 +511,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1799553355866579056}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3db518bf4f1be84ab5f207aa534ecc2, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e770458fc690dc4dafac22d9470ba9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentSetup: {fileID: 11400000, guid: c8d0a49de94ebd940b931fd0f2b8e07c, type: 2}
-  isAlive: 1
+  currentSetup: {fileID: 11400000, guid: efbba37bac7f281428cbb85bb5411476, type: 2}
 --- !u!114 &7478685049399122142
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class EnemyController : Entity
 {
-    #region Properties
-    public EnemySetup currentSetup;
+    protected EntityStats stats;
 
+    #region Properties
     private Transform currentTransform;
     public Transform CurrentTransform
     {
@@ -80,7 +80,7 @@ public class EnemyController : Entity
     private Coroutine attackCoroutine = null;
     public bool IsAttackProcess => attackCoroutine != null;
 
-    public bool isAlive = true;
+    protected bool isAlive = true;
     private bool isTargetNear = false;
 
     private Wizard target;
@@ -101,24 +101,10 @@ public class EnemyController : Entity
 		}
 	}
 
-
-    void Awake()
+    protected override void Awake()
     {
-        SetMyStats();
         StartLife();
     }
-
-    #region Stats
-    void SetMyStats()
-    {
-        enemyName = currentSetup.enemyName;
-        hpAmount = currentSetup.hpAmount;
-        speed = currentSetup.speed;
-        damage = currentSetup.damage;
-        price = currentSetup.price;
-        animationLength = currentSetup.animationLength;
-    }
-    #endregion
 
     #region Life
     private void StartLife()
@@ -140,7 +126,7 @@ public class EnemyController : Entity
 
                 transform.LookAt(TargetTransform);
 
-                Movement(destination);
+                Movement();
 
                 isTargetNear = destination.magnitude <= 1f ? true : false;
 				if(isTargetNear)
@@ -206,7 +192,7 @@ public class EnemyController : Entity
                     canAttack = false;
                 }
             }
-            yield return new WaitForFixedUpdate();
+            yield return null;
         }
         StopAttack();
     }
@@ -218,30 +204,21 @@ public class EnemyController : Entity
             attackCoroutine = null;
         }
     }
-	#endregion
-	#endregion
+    #endregion
+    #endregion
 
-	private void Movement(Vector3 destination)
-	{
-        //Rigidbody.velocity = new Vector3(destination.x * speed * Time.deltaTime, Rigidbody.velocity.y, destination.z * speed * Time.deltaTime);
-
-        Rigidbody.velocity = CurrentTransform.forward * speed * Time.deltaTime;
-    }
-
+    protected virtual void Movement() { }
     protected virtual float AttackAnimationLength()
 	{
-        return animationLength;
+        return 0;
 	}
 
 
-    [ContextMenu("Reborn")]
     private void ReBorn()
     {
         Ragdoll.EnableRagdoll(false);
         Animator.enabled = true;
     }
-
-    [ContextMenu("Death")]
     private void Death()
     {
         Animator.enabled = false;
@@ -251,17 +228,17 @@ public class EnemyController : Entity
 
         StartCoroutine(DeathWaiter());
     }
-
     private IEnumerator DeathWaiter()
 	{
         yield return new WaitForSeconds(1f);
+        //отключение физики
         Ragdoll.EnableRagdoll(false);
         Rigidbody.isKinematic = true;
         Ragdoll.EnableColliders(false);
 
     } 
 
-    private void OnTriggerEnter(Collider other)
+    protected virtual void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {

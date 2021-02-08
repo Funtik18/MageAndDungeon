@@ -1497,9 +1497,9 @@ GameObject:
   - component: {fileID: 3080984607278132392}
   - component: {fileID: 8039887868561387241}
   - component: {fileID: 8039887868561387243}
-  - component: {fileID: 8039887868561387242}
+  - component: {fileID: 3971452944761235749}
   - component: {fileID: 602016729827136710}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: ZombieRagdoll
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1570,7 +1570,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.12, y: 1.76, z: 1}
   m_Center: {x: 0, y: 1.84, z: 0}
---- !u!114 &8039887868561387242
+--- !u!114 &3971452944761235749
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1579,11 +1579,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8604733284818087016}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3db518bf4f1be84ab5f207aa534ecc2, type: 3}
+  m_Script: {fileID: 11500000, guid: 5a9a823c1be62c64f9bb6336604b5fa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentSetup: {fileID: 11400000, guid: 82487fed2f79cc64e851e4b50fb3f249, type: 2}
-  isAlive: 1
+  currentSetup: {fileID: 11400000, guid: b9c78c7f8906358449bf2dd5cdf91a12, type: 2}
 --- !u!114 &602016729827136710
 MonoBehaviour:
   m_ObjectHideFlags: 0

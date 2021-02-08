@@ -15,6 +15,19 @@ public class UIManager : MonoBehaviour
         }
 	}
 
+    private PlayerStats stats;
+    private PlayerStats Stats
+	{
+		get
+		{
+            if(stats == null)
+			{
+                stats = GameManager.Instance.WizardTarget.player.Stats;
+			}
+            return stats;
+		}
+	}
+
     public StatisticsInGame statistics;
 
     [Header("Windows")]
@@ -45,7 +58,7 @@ public class UIManager : MonoBehaviour
         statistics.StartOpenStatistics();
 
         SpawnManager.Instance.StartSpawn();
-        GameManager.Instance.StartProcess();
+        GameManager.Instance.WizardTarget.StartIncome();
     }
 
     public void EndPrepare()
@@ -53,5 +66,12 @@ public class UIManager : MonoBehaviour
         SpawnManager.Instance.StopSpawn();
         windowFail.StartOpenWindow();
         joystick.isBlock = true;
+    }
+
+
+	public void UpdateStatistics()
+	{
+        statistics.hpCount.text = Stats.HealthPoints.ToString();
+        statistics.moneyCount.text = Stats.Money.ToString();
     }
 }
