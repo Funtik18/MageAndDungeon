@@ -22,6 +22,6 @@ public class AdMobManager : MonoBehaviour
 
 	private void Awake()
 	{
-		//if(Instance) { }
+		if(Instance) { }
 	}
 }
