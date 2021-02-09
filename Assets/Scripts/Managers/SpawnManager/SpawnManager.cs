@@ -21,6 +21,7 @@ public class SpawnManager : MonoBehaviour
     public List<SpawnPoint> spawnPoints = new List<SpawnPoint>();
 
     public List<Entity> spawnedEntities = new List<Entity>();
+    //need alive spawned entities!
 
     [Header("Debug")]
     public bool isDebug = false;

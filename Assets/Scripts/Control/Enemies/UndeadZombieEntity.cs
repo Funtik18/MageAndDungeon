@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class UndeadZombieEntity : EnemyController
 {
@@ -19,21 +17,30 @@ public class UndeadZombieEntity : EnemyController
 
 	protected override void Movement()
 	{
-		Rigidbody.velocity = CurrentTransform.forward * Stats.Speed * Time.deltaTime;
+		Vector3 velocity = CurrentTransform.forward * Stats.Speed * Time.deltaTime;
+		rb.velocity = velocity;
+	}
+	public override void TakeDamage(int damage)
+	{
+		Stats.HealthPoints -= damage;
+		if(Stats.HealthPoints == 0)
+		{
+			isAlive = false;
+		}
 	}
 	protected override float AttackAnimationLength()
 	{
 		return Stats.AnimationLength;
 	}
 
-	protected override void OnTriggerEnter(Collider other)
-	{
-		if(other.tag == "Player")
-		{
-			isAlive = false;
-			PlayerStats stats = other.GetComponent<PlayerController>().Stats;
-			stats.Money += Stats.Price;
-			UIManager.Instance.UpdateStatistics();
-		}
-	}
+	//protected override void OnTriggerEnter(Collider other)
+	//{
+	//	if(other.tag == "Player")
+	//	{
+	//		isAlive = false;
+	//		PlayerStats stats = other.GetComponent<PlayerController>().Stats;
+	//		stats.Money += Stats.Price;
+	//		UIManager.Instance.UpdateStatistics();
+	//	}
+	//}
 }

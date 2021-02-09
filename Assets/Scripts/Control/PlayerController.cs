@@ -24,7 +24,6 @@ public class PlayerController : MonoBehaviour
 
     Vector3 mov;
     Vector3 oldPos;
-
     private void Awake()
     {
         wizard = GameManager.Instance.WizardTarget;
@@ -57,4 +56,13 @@ public class PlayerController : MonoBehaviour
 
         transform.Translate((mov - oldPos) * Stats.Speed * Time.deltaTime);
     }
+
+	private void OnCollisionEnter(Collision collision)
+	{
+        GameObject refCol = collision.gameObject;
+        if(refCol.layer == 9)//layer enemy
+		{
+            refCol.transform.root.GetComponent<EnemyController>().TakeDamage(Stats.Damage);
+        }
+	}
 }

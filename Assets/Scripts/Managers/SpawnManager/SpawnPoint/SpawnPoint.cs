@@ -26,9 +26,12 @@ public class SpawnPoint : MonoBehaviour
 		{
 			for(int i = 0; i < entities.Count; i++)
 			{
-				spawnedEntities.Add(Instantiate(entities[i],transform).GetComponent<Entity>());
+				Entity entity = Instantiate(entities[i], transform).GetComponent<Entity>();
 
-				SpawnManager.Instance.AddEntity(spawnedEntities[spawnedEntities.Count - 1]);
+				entity.transform.SetParent(null);
+
+				spawnedEntities.Add(entity);
+				SpawnManager.Instance.AddEntity(entity);
 				yield return new WaitForSeconds(3f);
 			}
 		}
