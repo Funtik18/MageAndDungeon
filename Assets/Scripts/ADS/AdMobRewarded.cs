@@ -9,7 +9,7 @@ public class AdMobRewarded : MonoBehaviour
 #if UNITY_ANDROID
 	//test ca-app-pub-3940256099942544/5224354917
 	//real ca-app-pub-7697745999229541/5889710607
-	private const string rewardedId = "ca-app-pub-3940256099942544/5224354917";
+	private const string rewardedId = "ca-app-pub-7697745999229541/5889710607";
 #elif UNITY_IPHONE
 	private const string bannerId = "";
 #else

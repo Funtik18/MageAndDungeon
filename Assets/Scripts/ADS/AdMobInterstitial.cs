@@ -9,7 +9,7 @@ public class AdMobInterstitial : MonoBehaviour
 #if UNITY_ANDROID
 	//test ca-app-pub-3940256099942544/1033173712
 	//real ca-app-pub-7697745999229541/6081282293
-	private const string interstitialId = "ca-app-pub-3940256099942544/1033173712";
+	private const string interstitialId = "ca-app-pub-7697745999229541/6081282293";
 #elif UNITY_IPHONE
 	private const string bannerId = "";
 #else
