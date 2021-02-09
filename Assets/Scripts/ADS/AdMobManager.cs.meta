@@ -3,7 +3,9 @@ guid: b1f478b24bce9c54fb47ad35a8602fce
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - adMobPrefab: {fileID: 8736739110816627840, guid: 953bba6ea1695af488b33144136bde3c,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

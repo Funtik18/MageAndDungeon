@@ -6,6 +6,8 @@ public class SpawnPoint : MonoBehaviour
 {
     public List<Entity> entities = new List<Entity>();
 
+	public List<Entity> spawnedEntities = new List<Entity>();
+
     private Coroutine spawnCoroutine = null;
     public bool IsSpawnProcess => spawnCoroutine != null;
 
@@ -24,7 +26,9 @@ public class SpawnPoint : MonoBehaviour
 		{
 			for(int i = 0; i < entities.Count; i++)
 			{
-				Instantiate(entities[i],transform);
+				spawnedEntities.Add(Instantiate(entities[i],transform).GetComponent<Entity>());
+
+				SpawnManager.Instance.AddEntity(spawnedEntities[spawnedEntities.Count - 1]);
 				yield return new WaitForSeconds(3f);
 			}
 		}
