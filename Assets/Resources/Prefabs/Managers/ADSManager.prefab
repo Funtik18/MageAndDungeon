@@ -46,7 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1f478b24bce9c54fb47ad35a8602fce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  adMobPrefab: {fileID: 0}
+  adMobBanner: {fileID: 8736739112153746409}
+  adMobInterstitial: {fileID: 8736739111997452435}
+  adMobRewarded: {fileID: 8736739112371669292}
 --- !u!1 &8736739111997452433
 GameObject:
   m_ObjectHideFlags: 0

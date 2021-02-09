@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -9,6 +10,7 @@ using UnityEditor;
 public class WindowFailGame : MonoBehaviour
 {
 	public PanelInteraction interaction;
+	public Button btnReward;
 
 	private Fader fader;
 	public Fader Fader
@@ -31,8 +33,14 @@ public class WindowFailGame : MonoBehaviour
 		interaction.onTap = delegate
 			{
 				StopOpenWindow();
-				SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+				SceneLoaderManager.Instance.LoadLevelsMap();
+				SceneLoaderManager.Instance.AllowLoadScene();
+
 			};
+		btnReward.onClick.AddListener(delegate {
+			StopOpenWindow();
+			AdMobManager.Instance.adMobInterstitial.ShowInterstitial();
+		});
 	}
 
 	public void StartOpenWindow()

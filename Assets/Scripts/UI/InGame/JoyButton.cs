@@ -6,7 +6,6 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
-
 public class JoyButton : MonoBehaviour,IPointerUpHandler,IPointerDownHandler
 {
     private bool isBlock = false;
