@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using GoogleMobileAds.Api;
 using UnityEngine;
 
@@ -17,10 +18,20 @@ public class AdMobBanner : MonoBehaviour
 #endif
 	private void OnEnable()
 	{
-		//AdSize size = new AdSize(AdSize.FullWidth, AdSize.Banner.Height);
-		banner = new BannerView(bannerId, AdSize.Banner, AdPosition.Top);
+        /*
+        List<string> deviceIds = new List<string>();
+        deviceIds.Add(SystemInfo.deviceUniqueIdentifier);
+        RequestConfiguration requestConfiguration = new RequestConfiguration
+            .Builder()
+            .SetTestDeviceIds(deviceIds)
+            .build();
+        MobileAds.SetRequestConfiguration(requestConfiguration);
+        */
+        //AdSize size = new AdSize(AdSize.FullWidth, AdSize.Banner.Height);
+        banner = new BannerView(bannerId, AdSize.Banner, AdPosition.Top);
 		AdRequest adRequest = new AdRequest.Builder().Build();
 		banner.LoadAd(adRequest);
+        //Debug.Log(SystemInfo.deviceUniqueIdentifier);
 		StartCoroutine(ShowBanner());
 	}
 
