@@ -13,15 +13,17 @@ public class AdMobManager : MonoBehaviour
 			if(instance == null)
 			{
 				instance = FindObjectOfType<AdMobManager>();
-				DontDestroyOnLoad(instance);
-				MobileAds.Initialize(init => { });
 			}
 			return instance;
 		}
 	}
 
+	public AdMobBanner adMobBanner;
+	public AdMobInterstitial adMobInterstitial;
+	public AdMobRewarded adMobRewarded;
+
 	private void Awake()
 	{
-		if(Instance) { }
+		MobileAds.Initialize(init => { });
 	}
 }

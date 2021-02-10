@@ -35,10 +35,8 @@ public class UIManager : MonoBehaviour
     public WindowFailGame windowFail;
     public WindowWinGame windowWin;
 
-    [Header("Joystick")]
+    [Header("Control")]
     public FixedJoystick joystick;
-
-    [Header("JoyButton")]
     public JoyButton joybutton;
 
     private void Awake()
@@ -55,6 +53,8 @@ public class UIManager : MonoBehaviour
     public void StartPrepare()
 	{
         joystick.StartOpenJoystick();
+        joybutton.StartOpenButton();
+
         statistics.StartOpenStatistics();
 
         SpawnManager.Instance.StartSpawn();
@@ -65,7 +65,9 @@ public class UIManager : MonoBehaviour
 	{
         SpawnManager.Instance.StopSpawn();
         windowFail.StartOpenWindow();
+
         joystick.isBlock = true;
+        joybutton.IsBlock = true;
     }
 
 

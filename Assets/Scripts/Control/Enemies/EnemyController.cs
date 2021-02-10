@@ -6,6 +6,8 @@ public class EnemyController : Entity
 {
     protected EntityStats stats;
 
+    public Rigidbody rb;
+
     #region Properties
     private Transform currentTransform;
     public Transform CurrentTransform
@@ -17,19 +19,6 @@ public class EnemyController : Entity
                 currentTransform = transform;
             }
             return currentTransform;
-        }
-    }
-
-    private Rigidbody rb;
-    public Rigidbody Rigidbody
-    {
-        get
-        {
-            if(rb == null)
-            {
-                rb = GetComponent<Rigidbody>();
-            }
-            return rb;
         }
     }
 
@@ -58,20 +47,6 @@ public class EnemyController : Entity
             return ragdoll;
         }
     }
-
-    private Collider coll;
-    public Collider Coll
-	{
-		get
-		{
-            if(coll == null)
-			{
-                coll = GetComponent<Collider>();
-			}
-            return coll;
-		}
-	}
-
 	#endregion
 
 	private Coroutine lifeCoroutine = null;
@@ -80,7 +55,6 @@ public class EnemyController : Entity
     private Coroutine attackCoroutine = null;
     public bool IsAttackProcess => attackCoroutine != null;
 
-    public bool isAlive = true;
     private bool isTargetNear = false;
 
     private Wizard target;
@@ -131,7 +105,7 @@ public class EnemyController : Entity
                 isTargetNear = destination.magnitude <= 1f ? true : false;
 				if(isTargetNear)
 				{
-                    Rigidbody.velocity = Vector3.zero;
+                    rb.velocity = Vector3.zero;
                 }
 			}
 			else
@@ -212,11 +186,11 @@ public class EnemyController : Entity
     #endregion
 
     protected virtual void Movement() { }
+    
     protected virtual float AttackAnimationLength()
 	{
         return 0;
 	}
-
 
     private void ReBorn()
     {
@@ -226,7 +200,6 @@ public class EnemyController : Entity
     private void Death()
     {
         Animator.enabled = false;
-        Coll.enabled = false;
 
         Ragdoll.EnableRagdoll(true);
 
@@ -237,16 +210,7 @@ public class EnemyController : Entity
         yield return new WaitForSeconds(1f);
         //отключение физики
         Ragdoll.EnableRagdoll(false);
-        Rigidbody.isKinematic = true;
+        rb.isKinematic = true;
         Ragdoll.EnableColliders(false);
-
-    } 
-
-    protected virtual void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            isAlive = false;
-        }
     }
 }

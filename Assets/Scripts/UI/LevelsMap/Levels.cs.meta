@@ -1,11 +1,9 @@
 fileFormatVersion: 2
-guid: b1f478b24bce9c54fb47ad35a8602fce
+guid: 9c257309ffd45084fbf5dc51df507746
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - adMobPrefab: {fileID: 8736739110816627840, guid: 953bba6ea1695af488b33144136bde3c,
-      type: 3}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
