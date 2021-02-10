@@ -4414,7 +4414,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &202858051
 Transform:
   m_ObjectHideFlags: 0
@@ -4441,9 +4441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 136dcd5a34b09824085cb004a1c1bc0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entities:
-  - {fileID: 1698788880267374447, guid: bc206de0dcecd03489228d621b423dcf, type: 3}
-  - {fileID: 3971452944761235749, guid: 6d5c46999d3ddc94fa3f3cb5155f043b, type: 3}
+  spawnOrders: []
   spawnedEntities: []
 --- !u!1 &202917181
 GameObject:
@@ -18110,7 +18108,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &980733397
 Transform:
   m_ObjectHideFlags: 0
@@ -18137,9 +18135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 136dcd5a34b09824085cb004a1c1bc0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entities:
-  - {fileID: 1698788880267374447, guid: bc206de0dcecd03489228d621b423dcf, type: 3}
-  - {fileID: 3971452944761235749, guid: 6d5c46999d3ddc94fa3f3cb5155f043b, type: 3}
+  spawnOrders: []
   spawnedEntities: []
 --- !u!1 &980995443
 GameObject:
@@ -19538,7 +19534,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1045153738
 Transform:
   m_ObjectHideFlags: 0
@@ -19565,9 +19561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 136dcd5a34b09824085cb004a1c1bc0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entities:
-  - {fileID: 1698788880267374447, guid: bc206de0dcecd03489228d621b423dcf, type: 3}
-  - {fileID: 3971452944761235749, guid: 6d5c46999d3ddc94fa3f3cb5155f043b, type: 3}
+  spawnOrders: []
   spawnedEntities: []
 --- !u!1 &1046139803
 GameObject:
@@ -21204,15 +21198,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b763b21035ae57149bf95c4405c07c3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  totalEntitiesAmount: 0
+  totalEntitiesSpawned: 0
+  totalEntitiesDied: 0
+  totalLeftToKilled: 0
   spawnPoints:
-  - {fileID: 1721362208}
-  - {fileID: 2024131860}
-  - {fileID: 1045153739}
-  - {fileID: 980733398}
   - {fileID: 2024213764}
-  - {fileID: 1926055087}
-  - {fileID: 202858052}
-  - {fileID: 1818664336}
   spawnedEntities: []
   isDebug: 1
 --- !u!1 &1134441610
@@ -31809,7 +31800,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1721362207
 Transform:
   m_ObjectHideFlags: 0
@@ -31836,9 +31827,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 136dcd5a34b09824085cb004a1c1bc0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entities:
-  - {fileID: 1698788880267374447, guid: bc206de0dcecd03489228d621b423dcf, type: 3}
-  - {fileID: 3971452944761235749, guid: 6d5c46999d3ddc94fa3f3cb5155f043b, type: 3}
+  spawnOrders: []
   spawnedEntities: []
 --- !u!1 &1722590397
 GameObject:
@@ -33597,7 +33586,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1818664335
 Transform:
   m_ObjectHideFlags: 0
@@ -33624,9 +33613,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 136dcd5a34b09824085cb004a1c1bc0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entities:
-  - {fileID: 1698788880267374447, guid: bc206de0dcecd03489228d621b423dcf, type: 3}
-  - {fileID: 3971452944761235749, guid: 6d5c46999d3ddc94fa3f3cb5155f043b, type: 3}
+  spawnOrders: []
   spawnedEntities: []
 --- !u!1 &1838775269
 GameObject:
@@ -35300,7 +35287,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1926055086
 Transform:
   m_ObjectHideFlags: 0
@@ -35327,9 +35314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 136dcd5a34b09824085cb004a1c1bc0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entities:
-  - {fileID: 1698788880267374447, guid: bc206de0dcecd03489228d621b423dcf, type: 3}
-  - {fileID: 3971452944761235749, guid: 6d5c46999d3ddc94fa3f3cb5155f043b, type: 3}
+  spawnOrders: []
   spawnedEntities: []
 --- !u!1 &1929116050
 GameObject:
@@ -38017,7 +38002,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2024131859
 Transform:
   m_ObjectHideFlags: 0
@@ -38044,9 +38029,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 136dcd5a34b09824085cb004a1c1bc0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entities:
-  - {fileID: 1698788880267374447, guid: bc206de0dcecd03489228d621b423dcf, type: 3}
-  - {fileID: 3971452944761235749, guid: 6d5c46999d3ddc94fa3f3cb5155f043b, type: 3}
+  spawnOrders: []
   spawnedEntities: []
 --- !u!1 &2024213762
 GameObject:
@@ -38091,9 +38074,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 136dcd5a34b09824085cb004a1c1bc0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entities:
-  - {fileID: 1698788880267374447, guid: bc206de0dcecd03489228d621b423dcf, type: 3}
-  - {fileID: 3971452944761235749, guid: 6d5c46999d3ddc94fa3f3cb5155f043b, type: 3}
+  spawnOrders:
+  - entity: {fileID: 1698788880267374447, guid: bc206de0dcecd03489228d621b423dcf,
+      type: 3}
+    maxEntities: 10
+    countEntities: 1
+    delayStart: 0
+    delayInTuple: 1
+    frequency: 2
   spawnedEntities: []
 --- !u!1 &2034556326
 GameObject:

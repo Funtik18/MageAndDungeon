@@ -1,11 +1,8 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyController : Entity
 {
-    protected EntityStats stats;
-
     public Rigidbody rb;
 
     #region Properties
@@ -57,7 +54,7 @@ public class EnemyController : Entity
 
     private bool isTargetNear = false;
 
-    private Wizard target;
+    protected Wizard target;
     private Transform targetTransform;
     public Transform TargetTransform
 	{
@@ -129,10 +126,7 @@ public class EnemyController : Entity
     }
 
     #region Attack
-    private void AttackMag()
-    {
-        target.TakeDamage();
-    }
+    
 
 
     private bool canAttack = true;
@@ -163,7 +157,7 @@ public class EnemyController : Entity
 			{
 				if(canAttack)
 				{
-                    AttackMag();
+                    AttackTarget();
 
                     canAttack = false;
                 }
@@ -187,11 +181,6 @@ public class EnemyController : Entity
 
     protected virtual void Movement() { }
     
-    protected virtual float AttackAnimationLength()
-	{
-        return 0;
-	}
-
     private void ReBorn()
     {
         Ragdoll.EnableRagdoll(false);
@@ -204,6 +193,8 @@ public class EnemyController : Entity
         Ragdoll.EnableRagdoll(true);
 
         StartCoroutine(DeathWaiter());
+
+        onDied?.Invoke(this);
     }
     private IEnumerator DeathWaiter()
 	{

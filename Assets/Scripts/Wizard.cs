@@ -36,9 +36,9 @@ public class Wizard : MonoBehaviour
         StartLine();
     }
 
-	public void TakeDamage()
+	public void TakeDamage(int damage)
 	{
-        player.Stats.HealthPoints--;
+        player.Stats.HealthPoints-= damage;
 
         UIManager.Instance.UpdateStatistics();
         CheckDeath();
@@ -57,11 +57,16 @@ public class Wizard : MonoBehaviour
         InvokeRepeating("passiveMoneyIncrease", 0, 3);
     }
 
+    public void AddMoney(int money)
+	{
+        player.Stats.Money += money;
+     
+        UIManager.Instance.UpdateStatistics();
+    }
+
     private void passiveMoneyIncrease()
     {
-        UIManager.Instance.UpdateStatistics();
-
-        player.Stats.Money += player.Stats.IncomeAmount;
+        AddMoney(player.Stats.IncomeAmount);
     }
 
     #region Line Circle

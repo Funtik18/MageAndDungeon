@@ -32,10 +32,7 @@ public class WindowFailGame : MonoBehaviour
 	{
 		interaction.onTap = delegate
 			{
-				StopOpenWindow();
-				SceneLoaderManager.Instance.LoadLevelsMap();
 				SceneLoaderManager.Instance.AllowLoadScene();
-
 			};
 		btnReward.onClick.AddListener(delegate {
 			StopOpenWindow();
@@ -52,6 +49,8 @@ public class WindowFailGame : MonoBehaviour
 	}
 	private IEnumerator Open()
 	{
+		SceneLoaderManager.Instance.LoadLevelsMap();
+
 		Fader.CanvasGroup.interactable = true;
 		Fader.CanvasGroup.blocksRaycasts = true;
 		Fader.FadeIn();
