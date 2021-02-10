@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour
         GameObject refCol = collision.gameObject;
         if(refCol.layer == 9)//layer enemy
 		{
-            refCol.transform.root.GetComponent<EnemyController>().TakeDamage(Stats.Damage);
+            refCol.transform.root.GetComponent<Entity>().TakeDamage(Stats.Damage);
         }
 	}
 }

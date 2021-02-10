@@ -6,13 +6,13 @@ public class FireWall : MonoBehaviour
 {
     public float radius;
 
-    private PlayerStats refStats;
+    private Wizard wizard;
     private List<Entity> entities = new List<Entity>();
 
 	private void Awake()
 	{
         entities = SpawnManager.Instance.spawnedEntities;
-        refStats = GameManager.Instance.WizardTarget.player.Stats;
+        wizard = GameManager.Instance.WizardTarget;
     }
 
 	void Update()
@@ -25,8 +25,7 @@ public class FireWall : MonoBehaviour
                 if(Vector3.Distance(transform.position, refEntity.transform.position) <= radius)
                 {
                     refEntity.isAlive = false;
-                    refStats.Money += 5;
-                    UIManager.Instance.UpdateStatistics();
+                    wizard.AddMoney(refEntity.GetPrice());
                 }
             }
         }

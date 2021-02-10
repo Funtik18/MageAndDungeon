@@ -18,14 +18,81 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
+    [Header("Time")]
+    public float totalTime = 0f;
+    [SerializeField] private float currentTime = 0f;
+    public float CurrentTime
+	{
+		set
+		{
+            currentTime = value;
+            totalLeftTime = totalTime - CurrentTime;
+		}
+		get
+		{
+            return currentTime;
+		}
+	}
+    public float totalLeftTime = 0f;
+
+    [Header("Entities")]
+    [Space]
+    [SerializeField] private int totalEntitiesAmount = 0;
+    public int TotalEntitiesAmount
+	{
+		set
+		{
+            totalEntitiesAmount = value;
+            totalLeftToKilled = TotalEntitiesAmount - TotalEntitiesDied;
+        }
+        get
+		{
+            return totalEntitiesAmount;
+        }
+	}
+
+    [Space]
+    [SerializeField] private int totalEntitiesSpawned = 0;
+    public int TotalEntitiesSpawned 
+    {
+		set
+		{
+            totalEntitiesSpawned = value;
+            totalLeftToKilled = TotalEntitiesAmount - TotalEntitiesDied;
+        }
+        get
+		{
+            return totalEntitiesSpawned;
+        }
+    }
+
+    [SerializeField] private int totalEntitiesDied = 0;
+    public int TotalEntitiesDied
+    {
+		set
+		{
+            totalEntitiesDied = value;
+            totalLeftToKilled = TotalEntitiesAmount - TotalEntitiesDied;
+        }
+        get
+		{
+            return totalEntitiesDied;
+		}
+	}
+
+    [Space]
+    public int totalLeftToKilled = 0;
+
+
+    
+    [Header("Spawns")]
+    [Space]
     public List<SpawnPoint> spawnPoints = new List<SpawnPoint>();
 
     public List<Entity> spawnedEntities = new List<Entity>();
-    //need alive spawned entities!
 
     [Header("Debug")]
     public bool isDebug = false;
-
 
     public void StartSpawn()
 	{
@@ -44,8 +111,19 @@ public class SpawnManager : MonoBehaviour
 
     public void AddEntity(Entity entity)
 	{
-        if(!spawnedEntities.Contains(entity))
+		if(!spawnedEntities.Contains(entity))
+		{
             spawnedEntities.Add(entity);
+            TotalEntitiesSpawned++;
+        }
+    }
+    public void RemoveEntity(Entity entity)
+	{
+		if(spawnedEntities.Contains(entity))
+		{
+            spawnedEntities.Remove(entity);
+            TotalEntitiesDied++;
+        }
     }
 
 
@@ -62,7 +140,7 @@ public class SpawnManager : MonoBehaviour
         
 		for(int i = 0; i < spawnPoints.Count; i++)
 		{
-            if(spawnPoints[i].entities.Count > 0) Gizmos.color = Color.green;
+            if(spawnPoints[i].spawnOrders.Count > 0) Gizmos.color = Color.green;
             else Gizmos.color = Color.red;
 
             Gizmos.DrawSphere(spawnPoints[i].transform.position, 0.2f);
