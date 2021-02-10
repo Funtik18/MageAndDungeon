@@ -19,14 +19,14 @@ public class SpawnManager : MonoBehaviour
     }
 
     [Header("Time")]
-    public float totalTime = 0f;
+    public float totalWaveTime = 0f;
     [SerializeField] private float currentTime = 0f;
     public float CurrentTime
 	{
 		set
 		{
             currentTime = value;
-            totalLeftTime = totalTime - CurrentTime;
+            totalLeftTime = totalWaveTime - CurrentTime;
 		}
 		get
 		{
@@ -140,8 +140,8 @@ public class SpawnManager : MonoBehaviour
         
 		for(int i = 0; i < spawnPoints.Count; i++)
 		{
-            if(spawnPoints[i].spawnOrders.Count > 0) Gizmos.color = Color.green;
-            else Gizmos.color = Color.red;
+            //if(spawnPoints[i].spawnOrders.Count > 0) Gizmos.color = Color.green;
+            //else Gizmos.color = Color.red;
 
             Gizmos.DrawSphere(spawnPoints[i].transform.position, 0.2f);
 		}
