@@ -41,12 +41,8 @@ public class UIManager : MonoBehaviour
 
     private void Awake()
 	{
-        windowStart.onClosed = StartPrepare;
+        windowStart.onClosed = WindowStartClossed;
 
-        windowFail.interaction.onTap = delegate
-        {
-            SceneLoaderManager.Instance.AllowLoadScene();
-        };
         windowFail.btnReward.onClick.AddListener(delegate {
             windowFail.StopOpenWindow();
             
@@ -62,16 +58,15 @@ public class UIManager : MonoBehaviour
             joybutton.IsBlock = false;
         });
 
-
-        GameManager.Instance.WizardTarget.onDeath = EndPrepare;
+        GameManager.Instance.WizardTarget.onDeath = WizardDeath;
     }
 	private void Start()
 	{
         windowStart.OpenWindow();
     }
 
-    public void StartPrepare()
-	{
+    public void WindowStartClossed()//подготовка ui после нажатия на windowStart
+    {
         joystick.StartOpenJoystick();
         joybutton.StartOpenButton();
 
@@ -81,7 +76,7 @@ public class UIManager : MonoBehaviour
         GameManager.Instance.WizardTarget.StartIncome();
     }
 
-    public void EndPrepare()
+    public void WizardDeath()//подготовка ui после смерти гг
 	{
         SpawnManager.Instance.PauseWaves();
         windowFail.StartOpenWindow();
@@ -90,8 +85,16 @@ public class UIManager : MonoBehaviour
         joybutton.IsBlock = true;
     }
 
+    public void WinWindow()
+	{
+        joystick.isBlock = true;
+        joybutton.IsBlock = true;
 
-	public void UpdateStatistics()
+        windowWin.StartOpenWindow();
+
+    }
+
+    public void UpdateStatistics()
 	{
         statistics.healthCircle.FillAmount = (float) Stats.CurrentHealthPoints / Stats.MaxHealthPoints;
         statistics.moneyCount.text = Stats.Money.ToString();

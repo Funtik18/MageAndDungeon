@@ -265,7 +265,7 @@ public class WaveOrder
 		[Tooltip("Сколько должна продлиться волна.")]
 		public float totalWaveTime;
 		public float currentTime;
-		public float startTime;
+		[HideInInspector] public float startTime;
 		public float LeftTime
 		{
 			get

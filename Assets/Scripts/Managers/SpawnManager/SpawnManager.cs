@@ -46,13 +46,24 @@ public class SpawnManager : MonoBehaviour
         instruction.StartInstruction(this);
 
         statistics.TotalEntities = instruction.GetTotalEnteties();
+        statistics.timeInfo.totalLevelTime = instruction.GetTotalMaxTime();
 
         while(instruction.IsInstructionProcess)
 		{
             yield return null;
         }
 
-        Debug.Log("WIN!!! CheckDieds");
+
+        Debug.LogError("Добей выживших!!!");
+
+        while(statistics.totalLeftToKill != 0)
+		{
+            yield return null;
+		}
+
+        Debug.LogError("WIN!!!");
+
+        UIManager.Instance.WinWindow();
 
         StopWaves();
     }
@@ -142,26 +153,12 @@ public class SpawnManager : MonoBehaviour
 
         public int totalLeftToKill;
 
-        [SerializeField] private TimeInfo timeInfo;
+        public TimeInfo timeInfo;
     }
     [System.Serializable]
     public struct TimeInfo
 	{
         public float totalLevelTime;
-        [SerializeField] private float currentTime;
-        public float CurrentTime
-        {
-            set
-            {
-                currentTime = value;
-                totalLeftTime = totalLevelTime - CurrentTime;
-            }
-            get
-            {
-                return currentTime;
-            }
-        }
-        [SerializeField] private float totalLeftTime;
     }
 }
 
@@ -253,7 +250,19 @@ public class SpawnInstruction
         }
         return count;
 	}
-
+    
+    /// <summary>
+    /// Максимальная продолжительность уровня +-.
+    /// </summary>
+    public float GetTotalMaxTime()
+	{
+        float time = 0f;
+		for(int i = 0; i < spawnUnites.Count; i++)
+		{
+            time += spawnUnites[i].GetLongestWaveTime();
+        }
+        return time;
+	}
 
 	[System.Serializable]
     public class SpawnUnite

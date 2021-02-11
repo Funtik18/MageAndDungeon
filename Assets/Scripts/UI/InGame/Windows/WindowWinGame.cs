@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -6,6 +7,8 @@ using UnityEditor;
 
 public class WindowWinGame : MonoBehaviour
 {
+	public PanelInteraction interaction;
+
 	private Fader fader;
 	public Fader Fader
 	{
@@ -16,6 +19,41 @@ public class WindowWinGame : MonoBehaviour
 				fader = GetComponent<Fader>();
 			}
 			return fader;
+		}
+	}
+
+	private Coroutine windowCoroutine = null;
+	public bool IsWindowProcess => windowCoroutine != null;
+
+	public void StartOpenWindow()
+	{
+		if(!IsWindowProcess)
+		{
+			interaction.onTap = delegate { SceneLoaderManager.Instance.AllowLoadScene(); };
+			windowCoroutine = StartCoroutine(Open());
+		}
+	}
+	private IEnumerator Open()
+	{
+		SceneLoaderManager.Instance.LoadLevelsMap();
+
+		Fader.CanvasGroup.interactable = true;
+		Fader.CanvasGroup.blocksRaycasts = true;
+		Fader.FadeIn();
+
+		while(Fader.IsFadeProcess)
+		{
+			yield return null;
+		}
+
+		StopOpenWindow();
+	}
+	public void StopOpenWindow()
+	{
+		if(IsWindowProcess)
+		{
+			StopCoroutine(windowCoroutine);
+			windowCoroutine = null;
 		}
 	}
 
