@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using System.Collections;
 
@@ -12,6 +11,7 @@ using UnityEditor;
 public class SpawnTimer : MonoBehaviour
 {
 	public UnityAction onTap;
+	public UnityAction onTimeOut;
 
     [SerializeField] private Image timeImage;
 
@@ -43,8 +43,6 @@ public class SpawnTimer : MonoBehaviour
 	}
 
 	private float secs = 1f;
-	private bool tap = false;
-
 	private Coroutine timerCoroutine = null;
 	public bool IsTimerProcess => timerCoroutine != null;
 
@@ -53,46 +51,51 @@ public class SpawnTimer : MonoBehaviour
 		interaction.onTap = delegate
 		{
 			onTap?.Invoke();
-			tap = true;
+			TimerFadeOut();
 		};
 	}
 
+	public void TimerFadeIn()
+	{
+		Fader.CanvasGroup.interactable = true;
+		Fader.CanvasGroup.blocksRaycasts = true;
+		Fader.FadeIn();
+	}
+	public void TimerFadeOut()
+	{
+		Fader.FadeOut();
+		Fader.CanvasGroup.interactable = false;
+		Fader.CanvasGroup.blocksRaycasts = false;
+	}
 
-	public void StartTimer(float secs)
+	public void StartTimer(float secs, UnityAction action)
 	{
 		if(!IsTimerProcess)
 		{
 			this.secs = secs;
+
+			onTap = action;
+
+			TimerFadeIn();
+			
 			timerCoroutine = StartCoroutine(Timer());
 		}
 	}
 	private IEnumerator Timer()
 	{
-		Fader.CanvasGroup.interactable = true;
-		Fader.CanvasGroup.blocksRaycasts = true;
-		Fader.FadeIn();
-
-		bool once = true;
 		float currentSecs = secs;
 		FillAmount = currentSecs / secs;
-
 
 		while(FillAmount != 0)
 		{
 			FillAmount = currentSecs / secs;
-
 			currentSecs -= Time.deltaTime;
 
-			if(once)
-				if(tap)
-				{
-					Fader.FadeOut();
-					Fader.CanvasGroup.interactable = false;
-					Fader.CanvasGroup.blocksRaycasts = false;
 
-					once = false;
-					tap = false;
-				}
+			//if(FillAmount == 0)
+			//{
+			//	onTimeOut?.Invoke();
+			//}
 
 			if(Fader.CanvasGroup.alpha == 0)
 			{
@@ -102,20 +105,14 @@ public class SpawnTimer : MonoBehaviour
 			yield return null;
 		}
 
-
-		if(Fader.CanvasGroup.alpha != 0)
-		{
-			Fader.FadeOut();
-			Fader.CanvasGroup.interactable = false;
-			Fader.CanvasGroup.blocksRaycasts = false;
-		}
-
 		StopTimer();
 	}
 	private void StopTimer()
 	{
 		if(IsTimerProcess)
 		{
+			TimerFadeOut();
+			
 			StopCoroutine(timerCoroutine);
 			timerCoroutine = null;
 		}

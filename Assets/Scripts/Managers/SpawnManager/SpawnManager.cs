@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class SpawnManager : MonoBehaviour
 {
@@ -18,103 +18,68 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
-    [Header("Time")]
-    public float totalWaveTime = 0f;
-    [SerializeField] private float currentTime = 0f;
-    public float CurrentTime
-	{
-		set
-		{
-            currentTime = value;
-            totalLeftTime = totalWaveTime - CurrentTime;
-		}
-		get
-		{
-            return currentTime;
-		}
-	}
-    public float totalLeftTime = 0f;
-
-    [Header("Entities")]
-    [Space]
-    [SerializeField] private int totalEntitiesAmount = 0;
-    public int TotalEntitiesAmount
-	{
-		set
-		{
-            totalEntitiesAmount = value;
-            totalLeftToKilled = TotalEntitiesAmount - TotalEntitiesDied;
-        }
-        get
-		{
-            return totalEntitiesAmount;
-        }
-	}
-
-    [Space]
-    [SerializeField] private int totalEntitiesSpawned = 0;
-    public int TotalEntitiesSpawned 
-    {
-		set
-		{
-            totalEntitiesSpawned = value;
-            totalLeftToKilled = TotalEntitiesAmount - TotalEntitiesDied;
-        }
-        get
-		{
-            return totalEntitiesSpawned;
-        }
-    }
-
-    [SerializeField] private int totalEntitiesDied = 0;
-    public int TotalEntitiesDied
-    {
-		set
-		{
-            totalEntitiesDied = value;
-            totalLeftToKilled = TotalEntitiesAmount - TotalEntitiesDied;
-        }
-        get
-		{
-            return totalEntitiesDied;
-		}
-	}
-
-    [Space]
-    public int totalLeftToKilled = 0;
-
-
-    
-    [Header("Spawns")]
-    [Space]
-    public List<SpawnPoint> spawnPoints = new List<SpawnPoint>();
+    public LevelStatistics statistics;
 
     public List<Entity> spawnedEntities = new List<Entity>();
 
-    [Header("Debug")]
-    public bool isDebug = false;
+    [Header("Spawns")]
+    public SpawnInstruction instruction;
 
-    public void StartSpawn()
+
+	private void Awake()
 	{
-		for(int i = 0; i < spawnPoints.Count; i++)
+        statistics = new LevelStatistics();
+    }
+
+    #region Spawn
+    private Coroutine spawnCoroutine = null;
+    public bool IsSpawnProcess => spawnCoroutine != null; 
+    public void StartWaves()
+	{
+		if(!IsSpawnProcess)
 		{
-            spawnPoints[i].StartSpawn();
+            spawnCoroutine = StartCoroutine(Spawn());
         }
 	}
-    public void StopSpawn()
+    private IEnumerator Spawn()
 	{
-		for(int i = 0; i < spawnPoints.Count; i++)
-		{
-            spawnPoints[i].StopSpawn();
-		}
-	}
+        instruction.StartInstruction(this);
 
-    public void AddEntity(Entity entity)
+        Debug.LogError(instruction.GetTotalEnteties());
+        statistics.TotalEntities = instruction.GetTotalEnteties();
+
+        while(instruction.IsInstructionProcess)
+		{
+            yield return null;
+        }
+        Debug.LogError("YOU WIN!!!");
+        StopWaves();
+    }
+    public void PauseWaves()
+	{
+
+	}
+    public void ResumeWaves()
+	{
+
+	}
+    public void StopWaves()
+	{
+        if(IsSpawnProcess)
+        {
+            StopCoroutine(spawnCoroutine);
+            spawnCoroutine = null;
+        }
+    }
+	#endregion
+
+	public void AddEntity(Entity entity)
 	{
 		if(!spawnedEntities.Contains(entity))
 		{
             spawnedEntities.Add(entity);
-            TotalEntitiesSpawned++;
+
+            statistics.TotaSpawnedlEntities++;
         }
     }
     public void RemoveEntity(Entity entity)
@@ -122,28 +87,211 @@ public class SpawnManager : MonoBehaviour
 		if(spawnedEntities.Contains(entity))
 		{
             spawnedEntities.Remove(entity);
-            TotalEntitiesDied++;
+
+            statistics.TotalDiedEntities++;
         }
     }
 
+    [System.Serializable]
+    public class LevelStatistics
+    {
+        [SerializeField] private int totalEntities;
+        public int TotalEntities
+		{
+			set
+			{
+                totalEntities = value;
+            }
+			get
+			{
+                return totalEntities;
+            }
+		}
 
-    [ContextMenu("GetAllSpawnPoints")]
-    private void GetAllSpawnPoints()
+
+        [SerializeField] private int totalSpawnedEntities;
+        public int TotaSpawnedlEntities
+        {
+            set
+            {
+                totalSpawnedEntities = value;
+                totalLeftToKill = TotaSpawnedlEntities - TotalDiedEntities;
+            }
+            get
+            {
+                return totalSpawnedEntities;
+            }
+        }
+
+        [SerializeField] private int totalDiedEntities;
+        public int TotalDiedEntities
+        {
+            set
+            {
+                totalDiedEntities = value;
+                totalLeftToKill = TotaSpawnedlEntities - TotalDiedEntities;
+            }
+            get
+            {
+                return totalDiedEntities;
+            }
+        }
+
+        public int totalLeftToKill;
+
+        [SerializeField] private TimeInfo timeInfo;
+    }
+    [System.Serializable]
+    public struct TimeInfo
 	{
-        spawnPoints = GetComponentsInChildren<SpawnPoint>().ToList();
+        public float totalLevelTime;
+        [SerializeField] private float currentTime;
+        public float CurrentTime
+        {
+            set
+            {
+                currentTime = value;
+                totalLeftTime = totalLevelTime - CurrentTime;
+            }
+            get
+            {
+                return currentTime;
+            }
+        }
+        [SerializeField] private float totalLeftTime;
+    }
+}
+
+[System.Serializable]
+public class SpawnInstruction
+{
+    public List<SpawnUnite> spawnUnites = new List<SpawnUnite>();
+
+    private MonoBehaviour processOwner;
+
+    [HideInInspector] public bool isPause = false;
+
+	#region Instruction
+	private Coroutine instuctionCoroutine = null;
+    public bool IsInstructionProcess => instuctionCoroutine != null;
+    public void StartInstruction(MonoBehaviour owner)
+	{
+		if(!IsInstructionProcess)
+		{
+            processOwner = owner;
+            instuctionCoroutine = processOwner.StartCoroutine(Instruction());
+		}
+	}
+    private IEnumerator Instruction()
+	{
+        for(int i = 0; i < spawnUnites.Count; i++)
+		{
+            List<SpawnPoint> points = spawnUnites[i].spawnPoints;
+
+            for(int j = 0; j < points.Count; j++)
+            {
+                points[j].StartSpawn();
+            }
+
+            bool skip = false;
+
+            float startTime = Time.time;
+            float currentTime = Time.time - startTime;
+            float totalTime = spawnUnites[i].GetLongestWaveTime();
+            while(currentTime < totalTime)//ждём окончания самой долгой микро волны
+            {
+                if(currentTime >= totalTime * 0.25f)
+                {
+                    if(i != spawnUnites.Count - 1)
+                    {
+                        spawnUnites[i + 1].ShowSkipers(totalTime - currentTime, delegate { skip = true; });
+                    }
+                }
+
+                currentTime = Time.time - startTime;
+
+				if(skip)
+				{
+
+                    break;
+                }
+                yield return null;
+            }
+        }
+
+        StopInstruction();
+    }
+    public void PauseInstruction()
+	{
+
+	}
+    public void ResumeInstruction()
+	{
+
+	}
+    public void StopInstruction()
+	{
+		if(IsInstructionProcess)
+		{
+            processOwner.StopCoroutine(instuctionCoroutine);
+            instuctionCoroutine = null;
+		}
+	}
+	#endregion
+
+    /// <summary>
+    /// Всего сущностей.
+    /// </summary>
+    public int GetTotalEnteties()
+	{
+        int count = 0;
+		for(int i = 0; i < spawnUnites.Count; i++)
+		{
+            count += spawnUnites[i].GetTotalEntitiesPoint();
+        }
+        return count;
 	}
 
 
-	private void OnDrawGizmos()
+	[System.Serializable]
+    public class SpawnUnite
 	{
-        if(!isDebug) return;
-        
-		for(int i = 0; i < spawnPoints.Count; i++)
-		{
-            //if(spawnPoints[i].spawnOrders.Count > 0) Gizmos.color = Color.green;
-            //else Gizmos.color = Color.red;
+        public List<SpawnPoint> spawnPoints = new List<SpawnPoint>();
 
-            Gizmos.DrawSphere(spawnPoints[i].transform.position, 0.2f);
+        public void ShowSkipers(float secs, UnityAction action)
+		{
+			for(int i = 0; i < spawnPoints.Count; i++)
+			{
+                action += spawnPoints[i].timer.TimerFadeOut;
+            }
+
+            for(int i = 0; i < spawnPoints.Count; i++)
+			{
+                spawnPoints[i].ShowTimer(secs, action);
+			}
+		}
+
+        /// <summary>
+        /// Сколько всего сушностей на точке спавна
+        /// </summary>
+        public int GetTotalEntitiesPoint()
+		{
+            int count = 0;
+			for(int i = 0; i < spawnPoints.Count; i++)
+			{
+                count += spawnPoints[i].GetTotalEntitiesWaves();
+			}
+            return count;
+		}
+
+        public float GetLongestWaveTime()
+		{
+            float time = 0f;
+			for(int i = 0; i < spawnPoints.Count; i++)
+			{
+                time = Mathf.Max(time, spawnPoints[i].GetTotalTimeWaves());
+			}
+            return time;
 		}
 	}
 }

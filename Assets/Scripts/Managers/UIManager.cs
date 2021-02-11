@@ -57,13 +57,13 @@ public class UIManager : MonoBehaviour
 
         statistics.StartOpenStatistics();
 
-        SpawnManager.Instance.StartSpawn();
+        SpawnManager.Instance.StartWaves();
         GameManager.Instance.WizardTarget.StartIncome();
     }
 
     public void EndPrepare()
 	{
-        SpawnManager.Instance.StopSpawn();
+        //SpawnManager.Instance.StopSpawn();
         windowFail.StartOpenWindow();
 
         joystick.isBlock = true;
