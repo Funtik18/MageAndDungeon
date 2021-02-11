@@ -6,7 +6,7 @@ using UnityEditor;
 
 public class StatisticsInGame : MonoBehaviour
 {
-	public TMPro.TextMeshProUGUI hpCount;
+	public HealthCircle healthCircle;
 	public TMPro.TextMeshProUGUI moneyCount;
 
 	private Fader fader;

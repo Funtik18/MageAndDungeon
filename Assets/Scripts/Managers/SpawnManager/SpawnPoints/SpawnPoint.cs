@@ -9,7 +9,6 @@ public class SpawnPoint : MonoBehaviour
 	public SpawnTimer timer;
 
 	[Header("SpawnMachine")]
-	[HideInInspector] public List<Entity> spawnedEntities = new List<Entity>();
 
 	public List<WaveOrder> waves = new List<WaveOrder>();
 
@@ -57,8 +56,9 @@ public class SpawnPoint : MonoBehaviour
 		Entity temp = Instantiate(entity, transform);
 		temp.transform.SetParent(null);
 
+		temp.transform.position += new Vector3(Random.Range(-2f, 2f), 0, Random.Range(-2f, 2f));
+
 		temp.onDied = SpawnManager.Instance.RemoveEntity;//action
-		spawnedEntities.Add(temp);
 		SpawnManager.Instance.AddEntity(temp);
 		return temp;
 	}

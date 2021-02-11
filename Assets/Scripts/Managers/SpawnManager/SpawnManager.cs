@@ -45,23 +45,25 @@ public class SpawnManager : MonoBehaviour
 	{
         instruction.StartInstruction(this);
 
-        Debug.LogError(instruction.GetTotalEnteties());
         statistics.TotalEntities = instruction.GetTotalEnteties();
 
         while(instruction.IsInstructionProcess)
 		{
             yield return null;
         }
-        Debug.LogError("YOU WIN!!!");
+
+        Debug.Log("WIN!!! CheckDieds");
+
         StopWaves();
     }
     public void PauseWaves()
 	{
+        instruction.isPause = true;
 
-	}
+    }
     public void ResumeWaves()
 	{
-
+        instruction.isPause = false;
 	}
     public void StopWaves()
 	{
@@ -108,14 +110,15 @@ public class SpawnManager : MonoBehaviour
             }
 		}
 
+        public float storedTime;
 
+        [Space]
         [SerializeField] private int totalSpawnedEntities;
         public int TotaSpawnedlEntities
         {
             set
             {
                 totalSpawnedEntities = value;
-                totalLeftToKill = TotaSpawnedlEntities - TotalDiedEntities;
             }
             get
             {
@@ -129,7 +132,7 @@ public class SpawnManager : MonoBehaviour
             set
             {
                 totalDiedEntities = value;
-                totalLeftToKill = TotaSpawnedlEntities - TotalDiedEntities;
+                totalLeftToKill = TotalEntities - TotalDiedEntities;
             }
             get
             {
@@ -200,11 +203,12 @@ public class SpawnInstruction
             float totalTime = spawnUnites[i].GetLongestWaveTime();
             while(currentTime < totalTime)//ждём окончания самой долгой микро волны
             {
-                if(currentTime >= totalTime * 0.25f)
+                if(i != spawnUnites.Count - 1)
                 {
-                    if(i != spawnUnites.Count - 1)
+                    SpawnUnite unite = spawnUnites[i + 1];
+                    if(currentTime >= totalTime * unite.skipWaiter)
                     {
-                        spawnUnites[i + 1].ShowSkipers(totalTime - currentTime, delegate { skip = true; });
+                        unite.ShowSkipers(totalTime - currentTime, delegate { skip = true; });
                     }
                 }
 
@@ -212,23 +216,21 @@ public class SpawnInstruction
 
 				if(skip)
 				{
-
+                    //сколько выйграл времeни
+                    SpawnManager.Instance.statistics.storedTime += (totalTime - currentTime);
                     break;
                 }
                 yield return null;
             }
+
+			while(isPause)
+			{
+                yield return null;
+			}
         }
 
         StopInstruction();
     }
-    public void PauseInstruction()
-	{
-
-	}
-    public void ResumeInstruction()
-	{
-
-	}
     public void StopInstruction()
 	{
 		if(IsInstructionProcess)
@@ -256,6 +258,8 @@ public class SpawnInstruction
 	[System.Serializable]
     public class SpawnUnite
 	{
+        [Range(0f, 1f)]
+        public float skipWaiter = 1f;
         public List<SpawnPoint> spawnPoints = new List<SpawnPoint>();
 
         public void ShowSkipers(float secs, UnityAction action)

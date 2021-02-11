@@ -58,7 +58,7 @@ public class Fader : MonoBehaviour
 
 		StopFade();
 	}
-	private void StopFade()
+	public void StopFade()
 	{
 		if(IsFadeProcess)
 		{

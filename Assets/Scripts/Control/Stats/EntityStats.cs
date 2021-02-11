@@ -9,18 +9,32 @@ public class EntityStats
 public class PlayerStats : EntityStats
 {
 	#region Stats
-	protected VariableInt healthPoints;
-	public int HealthPoints
+	protected VariableInt maxHealthPoints;
+	public int MaxHealthPoints
 	{
 		set
 		{
-			healthPoints.value = Mathf.Max(0, value);
+			maxHealthPoints.value = Mathf.Max(0, value);
 		}
 		get
 		{
-			return healthPoints.value;
+			return maxHealthPoints.value;
 		}
 	}
+
+	protected VariableInt currentHealthPoints;
+	public int CurrentHealthPoints
+	{
+		set
+		{
+			currentHealthPoints.value = Mathf.Max(0, value);
+		}
+		get
+		{
+			return currentHealthPoints.value;
+		}
+	}
+
 
 	protected VariableFloat speed;
 	public float Speed
@@ -89,7 +103,9 @@ public class PlayerStats : EntityStats
 	#endregion
 	public PlayerStats(PlayerSetup setup)
 	{
-		healthPoints = new VariableInt(setup.hpAmount);
+		maxHealthPoints = new VariableInt(setup.hpAmount);
+		currentHealthPoints = new VariableInt(setup.hpAmount);
+		
 		speed = new VariableFloat(setup.speed);
 		radius = new VariableFloat(setup.radius);
 		incomeAmount = new VariableInt(setup.incomeAmount);

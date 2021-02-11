@@ -43,6 +43,26 @@ public class UIManager : MonoBehaviour
 	{
         windowStart.onClosed = StartPrepare;
 
+        windowFail.interaction.onTap = delegate
+        {
+            SceneLoaderManager.Instance.AllowLoadScene();
+        };
+        windowFail.btnReward.onClick.AddListener(delegate {
+            windowFail.StopOpenWindow();
+            
+            AdMobManager.Instance.adMobInterstitial.ShowInterstitial();
+
+            GameManager.Instance.WizardTarget.ReBorn(Stats.MaxHealthPoints/2);
+
+            windowFail.CloseWindow();
+
+            SpawnManager.Instance.ResumeWaves();
+
+            joystick.isBlock = false;
+            joybutton.IsBlock = false;
+        });
+
+
         GameManager.Instance.WizardTarget.onDeath = EndPrepare;
     }
 	private void Start()
@@ -63,7 +83,7 @@ public class UIManager : MonoBehaviour
 
     public void EndPrepare()
 	{
-        //SpawnManager.Instance.StopSpawn();
+        SpawnManager.Instance.PauseWaves();
         windowFail.StartOpenWindow();
 
         joystick.isBlock = true;
@@ -73,7 +93,7 @@ public class UIManager : MonoBehaviour
 
 	public void UpdateStatistics()
 	{
-        statistics.hpCount.text = Stats.HealthPoints.ToString();
+        statistics.healthCircle.FillAmount = (float) Stats.CurrentHealthPoints / Stats.MaxHealthPoints;
         statistics.moneyCount.text = Stats.Money.ToString();
     }
 }

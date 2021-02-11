@@ -7,6 +7,7 @@ public class Wizard : MonoBehaviour
 {
     public PlayerController player;
 
+    private bool isDead = false;
     public UnityAction onDeath;
 
     [Header("Line")]
@@ -38,19 +39,33 @@ public class Wizard : MonoBehaviour
 
 	public void TakeDamage(int damage)
 	{
-        player.Stats.HealthPoints-= damage;
+        if(isDead) return;
+
+        player.Stats.CurrentHealthPoints-= damage;
+        
+        Died();
 
         UIManager.Instance.UpdateStatistics();
-        CheckDeath();
     }
 
-    private void CheckDeath()
+    public void ReBorn(int countHealthPoint)
 	{
-        if(player.Stats.HealthPoints < 1)
+        player.Stats.CurrentHealthPoints = countHealthPoint;
+
+        if(player.Stats.CurrentHealthPoints > 0)
+            isDead = false;
+	}
+    public void Died()
+	{
+        if(player.Stats.CurrentHealthPoints < 1)
         {
+            isDead = true;
             onDeath?.Invoke();
         }
     }
+
+
+
 
     public void StartIncome()
     {

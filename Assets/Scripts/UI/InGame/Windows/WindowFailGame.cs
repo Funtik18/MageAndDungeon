@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 #if UNITY_EDITOR
@@ -28,18 +27,6 @@ public class WindowFailGame : MonoBehaviour
 	private Coroutine windowCoroutine = null;
 	public bool IsWindowProcess => windowCoroutine != null;
 
-	private void Awake()
-	{
-		interaction.onTap = delegate
-			{
-				SceneLoaderManager.Instance.AllowLoadScene();
-			};
-		btnReward.onClick.AddListener(delegate {
-			StopOpenWindow();
-			AdMobManager.Instance.adMobInterstitial.ShowInterstitial();
-		});
-	}
-
 	public void StartOpenWindow()
 	{
 		if(!IsWindowProcess)
@@ -62,7 +49,7 @@ public class WindowFailGame : MonoBehaviour
 
 		StopOpenWindow();
 	}
-	private void StopOpenWindow()
+	public void StopOpenWindow()
 	{
 		if(IsWindowProcess)
 		{
@@ -83,7 +70,7 @@ public class WindowFailGame : MonoBehaviour
 #endif
 	}
 	[ContextMenu("CloseWindow")]
-	private void CloseWindow()
+	public void CloseWindow()
 	{
 		Fader.CanvasGroup.alpha = 0;
 		Fader.CanvasGroup.interactable = false;

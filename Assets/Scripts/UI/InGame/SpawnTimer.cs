@@ -91,12 +91,6 @@ public class SpawnTimer : MonoBehaviour
 			FillAmount = currentSecs / secs;
 			currentSecs -= Time.deltaTime;
 
-
-			//if(FillAmount == 0)
-			//{
-			//	onTimeOut?.Invoke();
-			//}
-
 			if(Fader.CanvasGroup.alpha == 0)
 			{
 				break;
