@@ -48,11 +48,11 @@ public class SpawnTimer : MonoBehaviour
 
 	private void Awake()
 	{
-		interaction.onTap = delegate
+		interaction.onTap.AddListener(delegate
 		{
 			onTap?.Invoke();
 			TimerFadeOut();
-		};
+		});
 	}
 
 	public void TimerFadeIn()

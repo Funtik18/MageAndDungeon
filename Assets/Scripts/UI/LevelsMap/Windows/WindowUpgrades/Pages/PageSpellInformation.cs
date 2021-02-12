@@ -4,8 +4,13 @@
 using UnityEditor;
 #endif
 
-public class WindowUpgrades : MonoBehaviour
+public class PageSpellInformation : MonoBehaviour
 {
+    [SerializeField] private TMPro.TextMeshProUGUI tittle;
+    [SerializeField] private TMPro.TextMeshProUGUI description;
+    [SerializeField] private TMPro.TextMeshProUGUI cost;
+    [SerializeField] private TMPro.TextMeshProUGUI additionalInfo;
+
     private Fader fader;
     public Fader Fader
     {
@@ -19,31 +24,16 @@ public class WindowUpgrades : MonoBehaviour
         }
     }
 
-    public TMPro.TMP_FontAsset fontAsset;
-    [Space]
-    public BookPages book;
-
-    public void ResetState()
+    public void ShowSpellInformation(SpellData data)
 	{
-        book.pageSpells.UnChoseSpells();
-        book.pageSpellInformation.CloseWindow();
+        tittle.text = data.spellName;
+        description.text = data.spellDiscription;
+        cost.text = "COST : " + data.nextLevel[0].newPrice;
+        additionalInfo.text = data.spellAdditionalInfo;
+
+        OpenWindow();
     }
 
-
-    [ContextMenu("ChangeBookFont")]
-    private void ChangeBookFont()
-    {
-        TMPro.TextMeshProUGUI[] txts = GetComponentsInChildren<TMPro.TextMeshProUGUI>();
-
-		for(int i = 0; i < txts.Length; i++)
-		{
-            txts[i].font = fontAsset;
-		}
-
-#if UNITY_EDITOR
-        EditorUtility.SetDirty(gameObject);
-#endif
-    }
 
     [ContextMenu("OpenWindow")]
     public void OpenWindow()
