@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using System.Linq;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+using System.Collections;
+using System.Collections.Generic;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -40,13 +40,23 @@ public class Levels : MonoBehaviour
             levels[i].GetComponent<Button>().interactable = false;
 		}
 	}
-    private void LoadScenes()
+    public void LoadBrawlScene()
 	{
+        SceneLoaderManager.Instance.LoadLevelBrawl();
+        StartCoroutine(SceneWaiter());
+    }
 
-	}
+    private IEnumerator SceneWaiter()
+    {
+        while(!SceneLoaderManager.Instance.IsLoadComplited)
+        {
+            yield return null;
+        }
+        SceneLoaderManager.Instance.AllowLoadScene();
+    }
 
 
-	[ContextMenu("GetAllLevels")]
+    [ContextMenu("GetAllLevels")]
     private void GetAllLevels()
     {
         levels = GetComponentsInChildren<Level>().ToList();
@@ -55,7 +65,7 @@ public class Levels : MonoBehaviour
 #endif
     }
 
-        [ContextMenu("OpenLevels")]
+    [ContextMenu("OpenLevels")]
     private void OpenButton()
     {
         Fader.CanvasGroup.alpha = 1;
