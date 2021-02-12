@@ -8,6 +8,7 @@ public class Wizard : MonoBehaviour
     public PlayerController player;
 
     private bool isDead = false;
+    [HideInInspector]public bool isReborn = false;
     public UnityAction onDeath;
 
     [Header("SecondChanceSpel")]
@@ -56,7 +57,11 @@ public class Wizard : MonoBehaviour
         player.Stats.CurrentHealthPoints = countHealthPoint;
 
         if(player.Stats.CurrentHealthPoints > 0)
+        {
             isDead = false;
+            isReborn = true;
+        }
+            
 	}
     public void Died()
 	{

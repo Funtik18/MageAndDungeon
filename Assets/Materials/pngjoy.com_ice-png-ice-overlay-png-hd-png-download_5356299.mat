@@ -7,11 +7,10 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Particles2
-  m_Shader: {fileID: 4800000, guid: 4775e5a8f344d6348adf934e722da85d, type: 3}
-  m_ShaderKeywords: BlendAdd Clip_OFF FrameBlend_OFF FresnelFade_OFF SoftParticles_OFF
-    VertLight_OFF
-  m_LightmapFlags: 1
+  m_Name: pngjoy.com_ice-png-ice-overlay-png-hd-png-download_5356299
+  m_Shader: {fileID: 10751, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -41,7 +40,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
+        m_Texture: {fileID: 2800000, guid: 3c6fa59111bd8e24daf4ac2ae88b3897, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -57,19 +56,14 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - CullMode: 2
-    - DstMode: 1
-    - SrcMode: 5
     - _BumpScale: 1
-    - _Cutoff: 0.5
-    - _Cutout: 0.2
+    - _ColorMask: 15
+    - _Cutoff: 0.007
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _FresnelStr: 1
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _InvFade: 1
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -77,9 +71,15 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
     - _UVSec: 0
+    - _UseUIAlphaClip: 0
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _TintColor: {r: 0, g: 0.82894444, b: 1, a: 1}
+    - _Specular: {r: 1, g: 1, b: 1, a: 1}

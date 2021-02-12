@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class EnemyController : Entity
 {
+    public bool isFrozen = false;
+
     public Rigidbody rb;
 
     #region Properties
@@ -11,7 +13,7 @@ public class EnemyController : Entity
     {
         get
         {
-            if(currentTransform == null)
+            if (currentTransform == null)
             {
                 currentTransform = transform;
             }
@@ -24,7 +26,7 @@ public class EnemyController : Entity
     {
         get
         {
-            if(animator == null)
+            if (animator == null)
             {
                 animator = GetComponent<Animator>();
             }
@@ -37,16 +39,16 @@ public class EnemyController : Entity
     {
         get
         {
-            if(ragdoll == null)
+            if (ragdoll == null)
             {
                 ragdoll = GetComponent<RagdollController>();
             }
             return ragdoll;
         }
     }
-	#endregion
+    #endregion
 
-	private Coroutine lifeCoroutine = null;
+    private Coroutine lifeCoroutine = null;
     public bool IsLifeCycle => lifeCoroutine != null;
 
     private Coroutine attackCoroutine = null;
@@ -57,42 +59,48 @@ public class EnemyController : Entity
     protected Wizard target;
     private Transform targetTransform;
     public Transform TargetTransform
-	{
-		get
-		{
-            if(targetTransform == null)
-			{
-                if(target == null)
-				{
+    {
+        get
+        {
+            if (targetTransform == null)
+            {
+                if (target == null)
+                {
                     target = GameManager.Instance.WizardTarget;
                 }
                 targetTransform = target.transform;
-			}
+            }
             return targetTransform;
-		}
-	}
+        }
+    }
 
     protected override void Awake()
     {
         StartLife();
     }
 
+    private void Update()
+    {
+        if (isFrozen)
+            rb.velocity = Vector3.zero;
+    }
+
     #region Life
     private void StartLife()
-	{
-		if(!IsLifeCycle)
-		{
+    {
+        if (!IsLifeCycle)
+        {
             lifeCoroutine = StartCoroutine(Life());
-		}
-	}
+        }
+    }
     private IEnumerator Life()
-	{
+    {
         Animator.SetTrigger("Walk");
 
-        while(isAlive)
-		{
-			if(!isTargetNear)
-			{
+        while (isAlive)
+        {
+            if (!isTargetNear)
+            {
                 Vector3 destination = TargetTransform.position - transform.position;
 
                 transform.LookAt(TargetTransform);
@@ -100,13 +108,13 @@ public class EnemyController : Entity
                 Movement();
 
                 isTargetNear = destination.magnitude <= 1f ? true : false;
-				if(isTargetNear)
-				{
+                if (isTargetNear)
+                {
                     rb.velocity = Vector3.zero;
                 }
-			}
-			else
-			{
+            }
+            else
+            {
                 StartAttack();
             }
             yield return new WaitForFixedUpdate();
@@ -115,30 +123,30 @@ public class EnemyController : Entity
         StopLife();
     }
     public void StopLife()
-	{
-		if(IsLifeCycle)
-		{
+    {
+        if (IsLifeCycle)
+        {
             StopCoroutine(lifeCoroutine);
             lifeCoroutine = null;
-		}
+        }
 
         Death();
     }
 
     #region Attack
-    
+
 
 
     private bool canAttack = true;
     private void StartAttack()
-	{
-		if(!IsAttackProcess)
-		{
+    {
+        if (!IsAttackProcess)
+        {
             attackCoroutine = StartCoroutine(Attack());
-		}
-	}
+        }
+    }
     private IEnumerator Attack()
-	{
+    {
         Animator.SetTrigger("Attack");
 
         yield return null;
@@ -149,14 +157,14 @@ public class EnemyController : Entity
 
         float startTime = Time.time;
         float currentTime = Time.time - startTime;
-        while(currentTime < animatorStateInfo.length)
-		{
+        while (currentTime < animatorStateInfo.length)
+        {
             currentTime = Time.time - startTime;
 
-            if(currentTime >= AttackAnimationLength())
-			{
-				if(canAttack)
-				{
+            if (currentTime >= AttackAnimationLength())
+            {
+                if (canAttack)
+                {
                     AttackTarget();
 
                     canAttack = false;
@@ -169,8 +177,8 @@ public class EnemyController : Entity
         StopAttack();
     }
     protected void StopAttack()
-	{
-        if(IsAttackProcess)
+    {
+        if (IsAttackProcess)
         {
             StopCoroutine(attackCoroutine);
             attackCoroutine = null;
@@ -179,8 +187,24 @@ public class EnemyController : Entity
     #endregion
     #endregion
 
+    public void getFrozen(float time)
+    {
+        if (!isFrozen)
+            StartCoroutine(Frozen(time));
+    }
+
+    public IEnumerator Frozen(float time)
+    {
+        isFrozen = true;
+        rb.velocity = Vector3.zero;
+        GetComponentInChildren<MeshRenderer>().enabled = true;
+        yield return new WaitForSeconds(time);
+        GetComponentInChildren<MeshRenderer>().enabled = false;
+        isFrozen = false;
+    }
+
     protected virtual void Movement() { }
-    
+
     private void ReBorn()
     {
         Ragdoll.EnableRagdoll(false);
@@ -197,7 +221,7 @@ public class EnemyController : Entity
         onDied?.Invoke(this);
     }
     private IEnumerator DeathWaiter()
-	{
+    {
         yield return new WaitForSeconds(2f);
         //отключение физики
         Ragdoll.EnableRagdoll(false);
@@ -207,11 +231,11 @@ public class EnemyController : Entity
 
         float startTime = Time.time;
         float currentTime = Time.time - startTime;
-		while(currentTime <= 3f)
-		{
+        while (currentTime <= 3f)
+        {
             transform.position += Vector3.down * 0.5f * Time.deltaTime;
             yield return null;
-		}
+        }
 
         DestroyImmediate(gameObject);
     }

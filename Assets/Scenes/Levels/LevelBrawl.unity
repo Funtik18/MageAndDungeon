@@ -22819,6 +22819,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 586469883}
+  secondChance: {fileID: 5964262470228246398, guid: acf39d9f4addf294d93fa56fa373961b,
+    type: 3}
   line: {fileID: 919132148726236746}
   lineUpdateTime: 0.04
   posY: 1
