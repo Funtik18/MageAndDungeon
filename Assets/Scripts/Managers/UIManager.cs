@@ -39,6 +39,7 @@ public class UIManager : MonoBehaviour
     public FixedJoystick joystick;
     public JoyButton fireWall;
     public JoyButton hellishFrost;
+    public JoyButton thunderStorm;
 
     private void Awake()
     {
@@ -58,8 +59,9 @@ public class UIManager : MonoBehaviour
             SpawnManager.Instance.ResumeWaves();
 
             joystick.isBlock = false;
+            hellishFrost.IsBlock = false;
             fireWall.IsBlock = false;
-            
+            thunderStorm.IsBlock = false;
         });
 
         GameManager.Instance.WizardTarget.onDeath = WizardDeath;
@@ -74,6 +76,7 @@ public class UIManager : MonoBehaviour
         joystick.StartOpenJoystick();
         fireWall.StartOpenButton();
         hellishFrost.StartOpenButton();
+        thunderStorm.StartOpenButton();
 
         statistics.StartOpenStatistics();
 
@@ -88,14 +91,16 @@ public class UIManager : MonoBehaviour
 
         joystick.isBlock = true;
         fireWall.IsBlock = true;
-        fireWall.IsBlock = true;
+        hellishFrost.IsBlock = true;
+        thunderStorm.IsBlock = true;
     }
 
     public void WinWindow()
     {
         joystick.isBlock = true;
         fireWall.IsBlock = true;
-        fireWall.IsBlock = true;
+        hellishFrost.IsBlock = true;
+        thunderStorm.IsBlock = true;
 
         windowWin.StartOpenWindow();
 
