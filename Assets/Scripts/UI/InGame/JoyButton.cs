@@ -8,6 +8,8 @@ using UnityEditor;
 
 public class JoyButton : MonoBehaviour,IPointerUpHandler,IPointerDownHandler
 {
+    public float spelDuration;
+
     private bool isBlock = false;
     public bool IsBlock
 	{
@@ -64,7 +66,7 @@ public class JoyButton : MonoBehaviour,IPointerUpHandler,IPointerDownHandler
 
         Pressed = true;
         currentSpell = Instantiate(spel) as GameObject;
-        StartCoroutine(SpellCasting(5));
+        StartCoroutine(SpellCasting(spelDuration));
     }
     public void OnPointerUp(PointerEventData eventData)
     {
