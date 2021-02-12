@@ -24,6 +24,7 @@ public class SceneLoaderManager : MonoBehaviour
 
     private const string mainMenuSceneName = "MainMenu";
     private const string levelsMapSceneName = "LevelsMap";
+    private const string levelsBrawlSceneName = "LevelBrawl";
 
     private string currentSceneOnLoad;
 
@@ -51,10 +52,16 @@ public class SceneLoaderManager : MonoBehaviour
     {
         StartLoadScene(levelsMapSceneName);
     }
+    public void LoadLevelBrawl()
+	{
+        StartLoadScene(levelsBrawlSceneName);
+    }
     public void LoadLevelByName(string levelName = "Level_0")
 	{
         StartLoadScene(levelName);
     }
+
+
 
 
     public void AllowLoadScene()

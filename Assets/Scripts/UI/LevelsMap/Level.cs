@@ -13,7 +13,7 @@ public class Level : MonoBehaviour
 	private void LoadClick()
 	{
 		string levelName = data.levelName + data.levelN;
-		SceneLoaderManager.Instance.LoadLevelByName();
+		SceneLoaderManager.Instance.LoadLevelByName(levelName);
 
 		StartCoroutine(SceneWaiter());
 	}

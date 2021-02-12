@@ -198,10 +198,21 @@ public class EnemyController : Entity
     }
     private IEnumerator DeathWaiter()
 	{
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         //отключение физики
         Ragdoll.EnableRagdoll(false);
         rb.isKinematic = true;
         Ragdoll.EnableColliders(false);
+        yield return new WaitForSeconds(5f);
+
+        float startTime = Time.time;
+        float currentTime = Time.time - startTime;
+		while(currentTime <= 3f)
+		{
+            transform.position += Vector3.down * 0.5f * Time.deltaTime;
+            yield return null;
+		}
+
+        DestroyImmediate(gameObject);
     }
 }
