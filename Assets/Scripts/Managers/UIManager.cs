@@ -45,11 +45,12 @@ public class UIManager : MonoBehaviour
 
         windowFail.btnReward.onClick.AddListener(delegate {
             windowFail.StopOpenWindow();
-            
+            GameManager.Instance.WizardTarget.secondChance.SecondChanceCast();
+
             AdMobManager.Instance.adMobInterstitial.ShowInterstitial();
 
             GameManager.Instance.WizardTarget.ReBorn(Stats.MaxHealthPoints/2);
-
+            
             windowFail.CloseWindow();
 
             SpawnManager.Instance.ResumeWaves();

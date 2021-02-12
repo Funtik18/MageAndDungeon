@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Player
   m_EditorClassIdentifier: 
   playerName: Gandalf
-  hpAmount: 100
+  hpAmount: 10
   speed: 10
   radius: 8
   incomeAmount: 1

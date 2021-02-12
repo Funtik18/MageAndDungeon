@@ -10,6 +10,9 @@ public class Wizard : MonoBehaviour
     private bool isDead = false;
     public UnityAction onDeath;
 
+    [Header("SecondChanceSpel")]
+    public SecondChance secondChance;
+
     [Header("Line")]
     public LineRenderer line;
     public float lineUpdateTime = 0.1f;
@@ -63,9 +66,6 @@ public class Wizard : MonoBehaviour
             onDeath?.Invoke();
         }
     }
-
-
-
 
     public void StartIncome()
     {
