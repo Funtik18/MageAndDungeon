@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 190671086324399384}
   - component: {fileID: 6839730897102998149}
   m_Layer: 0
-  m_Name: LightingStrike
+  m_Name: Fury of Hevan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,5 +44,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spel: {fileID: 4829167432624988706, guid: 96730f8640590934eacb6f860058e7f9, type: 3}
-  timeToNextStrike: 3
+  timeToNextStrike: 1
   maxStrikes: 5
