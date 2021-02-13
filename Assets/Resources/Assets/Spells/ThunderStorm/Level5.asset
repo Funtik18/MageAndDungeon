@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c75305f233df23f418922a3488698c52, type: 3}
-  m_Name: Level4
+  m_Name: Level5
   m_EditorClassIdentifier: 
-  newPrice: 0
-  newDurability: 0
-  newDamage: 0
-  newCooldown: 0
+  newPrice: 1000
+  newDurability: 20
+  newDamage: 5
+  newCooldown: 40

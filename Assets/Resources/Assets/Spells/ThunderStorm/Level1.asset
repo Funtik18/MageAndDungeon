@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c75305f233df23f418922a3488698c52, type: 3}
   m_Name: Level1
   m_EditorClassIdentifier: 
-  newPrice: 0
-  newDurability: 0
-  newDamage: 0
-  newCooldown: 0
+  newPrice: 500
+  newDurability: 5
+  newDamage: 1
+  newCooldown: 40
