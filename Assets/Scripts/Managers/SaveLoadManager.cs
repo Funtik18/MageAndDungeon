@@ -1,113 +1,169 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
-public class SaveLoadManager : MonoBehaviour
+public class SaveLoadManager
 {
-    private static SaveLoadManager instance;
-    public static SaveLoadManager Instance
+	public const string mainStatisticPath = "/saves/statistics.save";
+
+	public const string savePath = "/saves";
+
+	public static bool Save(string saveName, object saveData)
 	{
-		get
+		BinaryFormatter formatter = GetBinaryFormate();
+
+		if(!Directory.Exists(Application.persistentDataPath + savePath))
 		{
-			if(instance == null)
-			{
-				instance = FindObjectOfType<SaveLoadManager>();
-				if(instance == null)
-				{
-					instance = new GameObject("_SaveLoadManager").AddComponent<SaveLoadManager>();
-					DontDestroyOnLoad(instance);
-				}
-			}
-			return instance;
+			Directory.CreateDirectory(Application.persistentDataPath + savePath);
+		}
+
+		string path = Application.persistentDataPath + saveName;
+
+		FileStream file = File.Create(path);
+
+		formatter.Serialize(file, saveData);
+
+		file.Close();
+
+		return true;
+	}
+
+	public static object Load(string path)
+	{
+		if(!File.Exists(path))
+		{
+			return null;
+		}
+
+		BinaryFormatter formatter = GetBinaryFormate();
+
+		FileStream file = File.Open(path, FileMode.Open);
+
+		try
+		{
+			object save = formatter.Deserialize(file);
+			file.Close();
+			return save;
+		}
+		catch
+		{
+			Debug.LogErrorFormat("Failed to load file {0}", path);
+			file.Close();
+			return null;
 		}
 	}
 
-	private const string currentGoldKeyName = "CurrentGold";
-	private const string currentDiamondKeyName = "CurrentDiamond";
-	private const string currentLevelKeyName = "CurrentLevel";
-
-
-	private int currentGold = -1;
-	public int CurrentGold
+	private static BinaryFormatter GetBinaryFormate()
 	{
-		set
-		{
-			if(currentGold != value)
-			{
-				currentGold = value;
-				PlayerPrefs.SetInt(currentGoldKeyName, currentGold);
-			}
-		}
-		get
-		{
-			if(currentGold == -1)
-			{
-				currentGold = PlayerPrefs.GetInt(currentGoldKeyName, -1);
-				if(currentGold == -1)//first time
-				{
-					CurrentGold = 0;
-				}
-			}
-			return currentGold;
-		}
+		BinaryFormatter formatter = new BinaryFormatter();
+		return formatter;
 	}
 
+	////   private static SaveLoadManager instance;
+	////   public static SaveLoadManager Instance
+	////{
+	////	get
+	////	{
+	////		if(instance == null)
+	////		{
+	////			instance = FindObjectOfType<SaveLoadManager>();
+	////			if(instance == null)
+	////			{
+	////				instance = new GameObject("_SaveLoadManager").AddComponent<SaveLoadManager>();
+	////				DontDestroyOnLoad(instance);
+	////			}
+	////		}
+	////		return instance;
+	////	}
+	////}
 
-	private int currentDiamond = -1;
-	public int CurrentDiamond
-	{
-		set
-		{
-			if(currentDiamond != value)
-			{
-				currentDiamond = value;
-				PlayerPrefs.SetInt(currentDiamondKeyName, currentDiamond);
-			}
-		}
-		get
-		{
-			if(currentDiamond == -1)
-			{
-				currentDiamond = PlayerPrefs.GetInt(currentDiamondKeyName, -1);
-				if(currentDiamond == -1)//first time
-				{
-					CurrentDiamond = 0;
-				}
-			}
-			return currentDiamond;
-
-		}
-	}
+	//private const string currentGoldKeyName = "CurrentGold";
+	//private const string currentDiamondKeyName = "CurrentDiamond";
+	//private const string currentLevelKeyName = "CurrentLevel";
 
 
-	private int currentLevel = -1;
-	public int CurrentLevel
-	{
-		set
-		{
-			if(currentLevel != value)
-			{
-				currentLevel = value;
-				PlayerPrefs.SetInt(currentLevelKeyName, currentLevel);
-			}
-		}
-		get
-		{
-			if(currentLevel == -1)
-			{
-				currentLevel = PlayerPrefs.GetInt(currentLevelKeyName, -1);
-				if(currentLevel == -1)//first time
-				{
-					CurrentLevel = 0;
-				}
-			}
-			return currentLevel;
-		}
-	}
+
+	//private int currentGold = -1;
+	//public int CurrentGold
+	//{
+	//	set
+	//	{
+	//		if(currentGold != value)
+	//		{
+	//			currentGold = value;
+	//			PlayerPrefs.SetInt(currentGoldKeyName, currentGold);
+	//		}
+	//	}
+	//	get
+	//	{
+	//		if(currentGold == -1)
+	//		{
+	//			currentGold = PlayerPrefs.GetInt(currentGoldKeyName, -1);
+	//			if(currentGold == -1)//first time
+	//			{
+	//				CurrentGold = 0;
+	//			}
+	//		}
+	//		return currentGold;
+	//	}
+	//}
 
 
-	private void DisposeAll()
-	{
-		PlayerPrefs.DeleteAll();
-	}
+	//private int currentDiamond = -1;
+	//public int CurrentDiamond
+	//{
+	//	set
+	//	{
+	//		if(currentDiamond != value)
+	//		{
+	//			currentDiamond = value;
+	//			PlayerPrefs.SetInt(currentDiamondKeyName, currentDiamond);
+	//		}
+	//	}
+	//	get
+	//	{
+	//		if(currentDiamond == -1)
+	//		{
+	//			currentDiamond = PlayerPrefs.GetInt(currentDiamondKeyName, -1);
+	//			if(currentDiamond == -1)//first time
+	//			{
+	//				CurrentDiamond = 0;
+	//			}
+	//		}
+	//		return currentDiamond;
+
+	//	}
+	//}
+
+
+	//private int currentLevel = -1;
+	//public int CurrentLevel
+	//{
+	//	set
+	//	{
+	//		if(currentLevel != value)
+	//		{
+	//			currentLevel = value;
+	//			PlayerPrefs.SetInt(currentLevelKeyName, currentLevel);
+	//		}
+	//	}
+	//	get
+	//	{
+	//		if(currentLevel == -1)
+	//		{
+	//			currentLevel = PlayerPrefs.GetInt(currentLevelKeyName, -1);
+	//			if(currentLevel == -1)//first time
+	//			{
+	//				CurrentLevel = 0;
+	//			}
+	//		}
+	//		return currentLevel;
+	//	}
+	//}
+
+
+	//private void DisposeAll()
+	//{
+	//	PlayerPrefs.DeleteAll();
+	//}
 }

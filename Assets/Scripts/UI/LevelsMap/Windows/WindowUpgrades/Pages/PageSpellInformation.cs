@@ -7,6 +7,7 @@ using UnityEditor;
 public class PageSpellInformation : MonoBehaviour
 {
     [SerializeField] private TMPro.TextMeshProUGUI tittle;
+    [SerializeField] private TMPro.TextMeshProUGUI level;
     [SerializeField] private TMPro.TextMeshProUGUI description;
     [SerializeField] private TMPro.TextMeshProUGUI cost;
     [SerializeField] private TMPro.TextMeshProUGUI additionalInfo;
@@ -27,8 +28,9 @@ public class PageSpellInformation : MonoBehaviour
     public void ShowSpellInformation(SpellData data)
 	{
         tittle.text = data.spellName;
+        level.text = "0";
         description.text = data.spellDiscription;
-        cost.text = "COST : " + data.nextLevel[0].newPrice;
+        cost.text = data.nextLevel[0].newPrice.ToString();
         additionalInfo.text = data.spellAdditionalInfo;
 
         OpenWindow();

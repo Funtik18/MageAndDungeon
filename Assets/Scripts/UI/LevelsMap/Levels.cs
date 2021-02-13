@@ -27,18 +27,18 @@ public class Levels : MonoBehaviour
 
 	private void Awake()
 	{
-        int currentLevel = SaveLoadManager.Instance.CurrentLevel;
+  //      int currentLevel = SaveLoadManager.Instance.CurrentLevel;
 
-        if(currentLevel >= levels.Count) { Debug.LogError("PlayerPrefs error"); return; }
+  //      if(currentLevel >= levels.Count) { Debug.LogError("PlayerPrefs error"); return; }
 
-        for(int i = 0; i <= currentLevel; i++)
-		{
-            levels[i].GetComponent<Image>().color = Color.green;
-        }
-		for(int i = currentLevel + 1; i < levels.Count; i++)
-		{
-            levels[i].GetComponent<Button>().interactable = false;
-		}
+  //      for(int i = 0; i <= currentLevel; i++)
+		//{
+  //          levels[i].GetComponent<Image>().color = Color.green;
+  //      }
+		//for(int i = currentLevel + 1; i < levels.Count; i++)
+		//{
+  //          levels[i].GetComponent<Button>().interactable = false;
+		//}
 	}
     public void LoadBrawlScene()
 	{
