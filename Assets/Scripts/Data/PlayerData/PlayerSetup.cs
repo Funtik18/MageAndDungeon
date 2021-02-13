@@ -4,7 +4,6 @@
 
 public class PlayerSetup : ScriptableObject
 {
-    public string playerName;
     public int hpAmount;
     public float speed;
     public float radius;

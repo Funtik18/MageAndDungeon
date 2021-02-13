@@ -11,22 +11,22 @@ public class SpellUI : MonoBehaviour, IPointerDownHandler
 {
 	public UnityAction<SpellUI> onTap;
 
-	public SpellData data;
+	[HideInInspector] public SpellData data;
+	[HideInInspector] public int statIndex = 0;
 	[Space]
 	public PanelInteraction interaction;
 	[SerializeField] private Image icon;
 	[SerializeField] private Image frame;
 
-	private bool isChosen = false;
 	public bool IsChosen
 	{
 		set
 		{
-			isChosen = value;
+			chosenImage.enabled = value;
 		}
 		get
 		{
-			return isChosen;
+			return chosenImage.enabled;
 		}
 	}
 	[SerializeField] private Image chosenImage;
@@ -39,24 +39,9 @@ public class SpellUI : MonoBehaviour, IPointerDownHandler
 		onTap?.Invoke(this);
 	}
 
-	public void ChoseSpell()
-	{
-		chosenImage.enabled = true;
-	}
-	public void UnChoseSpell()
-	{
-		chosenImage.enabled = false;
-	}
-
-	[ContextMenu("UpdateSpellInfo")]
-	private void UpdateInformation()
+	public void UpdateSpell()
 	{
 		icon.sprite = data.icon;
-
-		spellName.text = data.spellName;
-
-#if UNITY_EDITOR
-		EditorUtility.SetDirty(gameObject);
-#endif
+		spellName.text = data.russianInfo.name;
 	}
 }

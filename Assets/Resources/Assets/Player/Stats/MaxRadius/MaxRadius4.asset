@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62dd8a770902b2b4db8b488e02c1652e, type: 3}
+  m_Name: MaxRadius4
+  m_EditorClassIdentifier: 
+  englishInfo: {fileID: 11400000, guid: 17fbdc3a478800846b8d6655740d7284, type: 2}
+  russianInfo: {fileID: 11400000, guid: eb52ab2254948464e8c475b85a985f74, type: 2}
+  level: 4
+  price: 0
+  maxRadius: 0

@@ -9,9 +9,11 @@ using UnityEditor;
 
 public class PageSpells : MonoBehaviour
 {
-    public List<SpellUI> spells = new List<SpellUI>();
+	public SpellUI spellHellishFrost;
+	public SpellUI spellPunishingFist;
+	public SpellUI spellThunderStorm;
 
-	[SerializeField] private PageSpellInformation pageInformation;
+	private List<SpellUI> spellsUI = new List<SpellUI>();
 
 	private Fader fader;
 	public Fader Fader
@@ -26,42 +28,56 @@ public class PageSpells : MonoBehaviour
 		}
 	}
 
-	private void Awake()
-	{
-		for(int i = 0; i < spells.Count; i++)
-		{
-			spells[i].onTap = Click;
-		}
-	}
+	[SerializeField] private PageSpellInformation pageInformation;
 
 	public void Click(SpellUI spellUI)
 	{
 		UnChoseSpells();
 
-		spellUI.ChoseSpell();
+		spellUI.IsChosen = true;
 
-		SpellUIData spellUIData = new SpellUIData(spellUI.data, spells.IndexOf(spellUI));
-
-		pageInformation.ShowSpellInformation(spellUIData);
+		pageInformation.ShowSpellInformation(spellUI);
 	}
 
 	public void UnChoseSpells()
 	{
-		for(int i = 0; i < spells.Count; i++)
+		for(int i = 0; i < spellsUI.Count; i++)
 		{
-			spells[i].UnChoseSpell();
+			spellsUI[i].IsChosen = false;
 		}
 	}
 
-	[ContextMenu("GetSpells")]
-	private void GetAllSpells()
+	public void UpdateSpells(PlayerOpportunitiesData data)
 	{
-		spells = GetComponentsInChildren<SpellUI>().ToList();
+		spellsUI.Clear();
 
-#if UNITY_EDITOR
-		EditorUtility.SetDirty(gameObject);
-#endif
+		spellsUI.Add(spellHellishFrost);
+		spellsUI.Add(spellPunishingFist);
+		spellsUI.Add(spellThunderStorm);
+
+		UpdateSpell(spellHellishFrost, data.hellishFrostDatas[SaveData.Instance.spellsLevels[0]], 0);
+		UpdateSpell(spellPunishingFist, data.punishingFistDatas[SaveData.Instance.spellsLevels[1]], 1);
+		UpdateSpell(spellThunderStorm, data.thunderStormDatas[SaveData.Instance.spellsLevels[2]], 2);
+
+		for(int i = 0; i < spellsUI.Count; i++)
+		{
+			if(spellsUI[i].IsChosen)
+			{
+				pageInformation.ShowSpellInformation(spellsUI[i]);
+				break;
+			}
+		}
 	}
+	private void UpdateSpell(SpellUI spellUI, SpellData data, int spellIndex)
+	{
+		spellUI.data = data;
+		spellUI.statIndex = spellIndex;
+
+		spellUI.onTap += Click;
+
+		spellUI.UpdateSpell();
+	}
+
 
 	[ContextMenu("OpenWindow")]
 	public void OpenWindow()
@@ -82,39 +98,5 @@ public class PageSpells : MonoBehaviour
 #if UNITY_EDITOR
 		EditorUtility.SetDirty(gameObject);
 #endif
-	}
-
-
-	[System.Serializable]
-	public class SpellUIData
-	{
-		public string name;
-		public int level;
-		public string description;
-		public string additionalInfo;
-		public int price;
-
-		public int spellIndex;
-
-		private SpellData data;
-		public SpellUIData(SpellData data, int spellIndex)
-		{
-			this.data = data;
-
-			this.spellIndex = spellIndex;
-		
-			name = data.spellName;
-			description = data.spellDiscription;
-			additionalInfo = data.spellAdditionalInfo;
-
-			level = SaveData.Instance.currentLevelSpells[spellIndex];
-			price = data.nextLevel[level].newPrice;
-		}
-
-		public void UpdateData()
-		{
-			level = SaveData.Instance.currentLevelSpells[spellIndex];
-			price = data.nextLevel[level].newPrice;
-		}
 	}
 }

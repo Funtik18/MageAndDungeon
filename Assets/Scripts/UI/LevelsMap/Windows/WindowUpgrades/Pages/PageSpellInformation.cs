@@ -28,14 +28,14 @@ public class PageSpellInformation : MonoBehaviour
         }
     }
 
-	private PageSpells.SpellUIData currentData;
-	public void ShowSpellInformation(PageSpells.SpellUIData data)
+	private SpellUI currentSpell;
+	public void ShowSpellInformation(SpellUI spellUI)
 	{
-		currentData = data;
+		currentSpell = spellUI;
 
 		UpdatePage();
 
-		if(currentData.level >= 4)
+		if(currentSpell.data.level >= 4)
 		{
 			acceptButton.GetComponent<Image>().enabled = false;
 		}
@@ -45,7 +45,7 @@ public class PageSpellInformation : MonoBehaviour
 
 			acceptButton.onClick.RemoveAllListeners();
 
-			if(currentData.price <= SaveData.Instance.currentGold)
+			if(currentSpell.data.price <= SaveData.Instance.currentGold)
 			{
 				acceptButton.GetComponent<Image>().color = Color.green;
 
@@ -62,25 +62,23 @@ public class PageSpellInformation : MonoBehaviour
 
 	private void AcceptBuy()
 	{
-		SaveData.Instance.currentGold -= currentData.price;
-		SaveData.Instance.currentLevelSpells[currentData.spellIndex]++;
+		SaveData.Instance.currentGold -= currentSpell.data.price;
+
+		SaveData.Instance.spellsLevels[currentSpell.statIndex]++;
 
 		SaveLoadManager.Save(SaveLoadManager.mainStatisticPath, SaveData.Instance);
 
 		//upd
-		MainStatistics.Instance.UpdateUI();
-
-		currentData.UpdateData();
-		ShowSpellInformation(currentData);
+		LevelsMapManager.Instance.UpdateUI();
 	}
 
 	private void UpdatePage()
 	{
-		tittle.text = currentData.name;
-		level.text = currentData.level.ToString();
-		description.text = currentData.description;
-		cost.text = currentData.price.ToString();
-		additionalInfo.text = currentData.additionalInfo;
+		tittle.text = currentSpell.data.russianInfo.name;
+		level.text = currentSpell.data.level.ToString();
+		description.text = currentSpell.data.russianInfo.description;
+		cost.text = currentSpell.data.price.ToString();
+		additionalInfo.text = currentSpell.data.russianInfo.additional;
 	}
 
 	[ContextMenu("OpenWindow")]

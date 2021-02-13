@@ -17,16 +17,21 @@ public class SaveData
 	public int currentGold;
 	public int currentDiamonds;
 
-	public int[] currentLevelSpells = new int[3];
+	public int[] statsLevels = new int[2];
+	public int[] spellsLevels = new int[3];
 
 	public SaveData StartValues()
 	{
-		currentGold = 0;
+		currentGold = 1000;
 		currentDiamonds = 0;
 
-		for(int i = 0; i < currentLevelSpells.Length; i++)
+		for(int i = 0; i < statsLevels.Length; i++)
 		{
-			currentLevelSpells[i] = 0;
+			statsLevels[i] = 0;
+		}
+		for(int i = 0; i < spellsLevels.Length; i++)
+		{
+			spellsLevels[i] = 0;
 		}
 		
 		return this;
@@ -37,9 +42,13 @@ public class SaveData
 		currentGold = data.currentGold;
 		currentDiamonds = data.currentDiamonds;
 
-		for(int i = 0; i < currentLevelSpells.Length; i++)
+		for(int i = 0; i < statsLevels.Length; i++)
 		{
-			currentLevelSpells[i] = data.currentLevelSpells[i];
+			statsLevels[i] = data.statsLevels[i];
+		}
+		for(int i = 0; i < spellsLevels.Length; i++)
+		{
+			spellsLevels[i] = data.spellsLevels[i];
 		}
 	}
 }
