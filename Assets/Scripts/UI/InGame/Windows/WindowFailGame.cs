@@ -32,7 +32,7 @@ public class WindowFailGame : MonoBehaviour
     {
         if (!IsWindowProcess)
         {
-            interaction.onTap = delegate { SceneLoaderManager.Instance.AllowLoadScene(); };
+            interaction.onTap.AddListener(delegate { SceneLoaderManager.Instance.AllowLoadScene(); });
             windowCoroutine = StartCoroutine(Open());
         }
     }

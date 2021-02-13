@@ -31,10 +31,10 @@ public class WindowStartGame : MonoBehaviour
 
 	private void Awake()
 	{
-		interaction.onTap = Tap;
+		interaction.onTap.AddListener(Tap);
 	}
 
-	private void Tap(PointerEventData eventData)
+	private void Tap()
 	{
 		StartCloseWindow();
 	}
