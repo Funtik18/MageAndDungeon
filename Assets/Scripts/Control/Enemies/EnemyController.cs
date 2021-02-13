@@ -135,8 +135,6 @@ public class EnemyController : Entity
 
     #region Attack
 
-
-
     private bool canAttack = true;
     private void StartAttack()
     {
@@ -163,7 +161,7 @@ public class EnemyController : Entity
 
             if (currentTime >= AttackAnimationLength())
             {
-                if (canAttack)
+                if (canAttack && !isFrozen)
                 {
                     AttackTarget();
 
@@ -196,10 +194,14 @@ public class EnemyController : Entity
     public IEnumerator Frozen(float time)
     {
         isFrozen = true;
+        Animator.speed = 0;
+
         rb.velocity = Vector3.zero;
         GetComponentInChildren<MeshRenderer>().enabled = true;
         yield return new WaitForSeconds(time);
         GetComponentInChildren<MeshRenderer>().enabled = false;
+        
+        Animator.speed = 1;
         isFrozen = false;
     }
 

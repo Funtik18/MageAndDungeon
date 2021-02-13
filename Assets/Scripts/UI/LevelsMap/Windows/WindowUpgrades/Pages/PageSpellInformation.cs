@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -11,6 +12,8 @@ public class PageSpellInformation : MonoBehaviour
     [SerializeField] private TMPro.TextMeshProUGUI description;
     [SerializeField] private TMPro.TextMeshProUGUI cost;
     [SerializeField] private TMPro.TextMeshProUGUI additionalInfo;
+    [Space]
+    [SerializeField] private Button acceptButton;
 
     private Fader fader;
     public Fader Fader
@@ -25,19 +28,62 @@ public class PageSpellInformation : MonoBehaviour
         }
     }
 
-    public void ShowSpellInformation(SpellData data)
+	private PageSpells.SpellUIData currentData;
+	public void ShowSpellInformation(PageSpells.SpellUIData data)
 	{
-        tittle.text = data.spellName;
-        level.text = "0";
-        description.text = data.spellDiscription;
-        cost.text = data.nextLevel[0].newPrice.ToString();
-        additionalInfo.text = data.spellAdditionalInfo;
+		currentData = data;
 
-        OpenWindow();
-    }
+		UpdatePage();
 
+		if(currentData.level >= 4)
+		{
+			acceptButton.GetComponent<Image>().enabled = false;
+		}
+		else
+		{
+			acceptButton.GetComponent<Image>().enabled = true;
 
-    [ContextMenu("OpenWindow")]
+			acceptButton.onClick.RemoveAllListeners();
+
+			if(currentData.price <= SaveData.Instance.currentGold)
+			{
+				acceptButton.GetComponent<Image>().color = Color.green;
+
+				acceptButton.onClick.AddListener(AcceptBuy);
+			}
+			else
+			{
+				acceptButton.GetComponent<Image>().color = Color.red;
+			}
+		}
+
+		OpenWindow();
+	}
+
+	private void AcceptBuy()
+	{
+		SaveData.Instance.currentGold -= currentData.price;
+		SaveData.Instance.currentLevelSpells[currentData.spellIndex]++;
+
+		SaveLoadManager.Save(SaveLoadManager.mainStatisticPath, SaveData.Instance);
+
+		//upd
+		MainStatistics.Instance.UpdateUI();
+
+		currentData.UpdateData();
+		ShowSpellInformation(currentData);
+	}
+
+	private void UpdatePage()
+	{
+		tittle.text = currentData.name;
+		level.text = currentData.level.ToString();
+		description.text = currentData.description;
+		cost.text = currentData.price.ToString();
+		additionalInfo.text = currentData.additionalInfo;
+	}
+
+	[ContextMenu("OpenWindow")]
     public void OpenWindow()
     {
         Fader.CanvasGroup.alpha = 1;

@@ -81,7 +81,6 @@ public class UIManager : MonoBehaviour
         statistics.StartOpenStatistics();
 
         SpawnManager.Instance.StartWaves();
-        GameManager.Instance.WizardTarget.StartIncome();
     }
 
     public void WizardDeath()//подготовка ui после смерти гг

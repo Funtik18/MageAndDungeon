@@ -17,19 +17,29 @@ public class SaveData
 	public int currentGold;
 	public int currentDiamonds;
 
+	public int[] currentLevelSpells = new int[3];
 
 	public SaveData StartValues()
 	{
-		currentGold = 100000;
+		currentGold = 0;
 		currentDiamonds = 0;
 
+		for(int i = 0; i < currentLevelSpells.Length; i++)
+		{
+			currentLevelSpells[i] = 0;
+		}
+		
 		return this;
 	}
-
 
 	public void RefreshData(SaveData data)
 	{
 		currentGold = data.currentGold;
 		currentDiamonds = data.currentDiamonds;
+
+		for(int i = 0; i < currentLevelSpells.Length; i++)
+		{
+			currentLevelSpells[i] = data.currentLevelSpells[i];
+		}
 	}
 }

@@ -72,21 +72,11 @@ public class Wizard : MonoBehaviour
         }
     }
 
-    public void StartIncome()
-    {
-        InvokeRepeating("passiveMoneyIncrease", 0, 3);
-    }
-
     public void AddMoney(int money)
 	{
         player.Stats.Money += money;
      
         UIManager.Instance.UpdateStatistics();
-    }
-
-    private void passiveMoneyIncrease()
-    {
-        AddMoney(player.Stats.IncomeAmount);
     }
 
     #region Line Circle

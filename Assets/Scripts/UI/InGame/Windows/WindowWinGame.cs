@@ -35,6 +35,11 @@ public class WindowWinGame : MonoBehaviour
 	}
 	private IEnumerator Open()
 	{
+		PlayerStats stats = GameManager.Instance.WizardTarget.player.Stats;
+
+		SaveData.Instance.currentGold += stats.Money;
+		SaveLoadManager.Save(SaveLoadManager.mainStatisticPath, SaveData.Instance);
+
 		SceneLoaderManager.Instance.LoadLevelsMap();
 
 		Fader.CanvasGroup.interactable = true;
