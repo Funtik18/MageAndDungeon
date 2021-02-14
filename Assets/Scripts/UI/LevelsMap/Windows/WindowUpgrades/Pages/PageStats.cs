@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine.UI;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -11,7 +12,7 @@ public class PageStats : MonoBehaviour
 	public StatUI statMaxHP;
 	
 	public StatUI statMaxDamage;
-	public StatUI statMaDamageOverTime;
+	public StatUI statMaxDamageOverTime;
 
 	public StatUI statSpeed;
 
@@ -22,6 +23,11 @@ public class PageStats : MonoBehaviour
 	public StatUI statMobScalarProfit;
 
 	private List<StatUI> statsUI = new List<StatUI>();
+
+	[SerializeField] private PageStatInformation pageInformation;
+
+	public ScrollRect rect;
+
 
 	private Fader fader;
 	public Fader Fader
@@ -36,7 +42,6 @@ public class PageStats : MonoBehaviour
 		}
 	}
 
-	[SerializeField] private PageStatInformation pageInformation;
 
 	public void Click(StatUI statUI)
 	{
@@ -57,13 +62,25 @@ public class PageStats : MonoBehaviour
 
 	public void UpdateStats(PlayerOpportunitiesData data)
 	{
+		rect.verticalScrollbar.value = 1f;
+
+		UpdateStat(statMaxHP, data.maxHps[SaveData.Instance.statsLevels[0]], 0);
+		UpdateStat(statMaxDamage, data.maxDamages[SaveData.Instance.statsLevels[1]], 1);
+		UpdateStat(statMaxDamageOverTime, data.maxDamageOverTimes[SaveData.Instance.statsLevels[2]], 2);
+		UpdateStat(statSpeed, data.maxSpeeds[SaveData.Instance.statsLevels[3]], 3);
+		UpdateStat(statRadius, data.maxRadiuses[SaveData.Instance.statsLevels[4]], 4);
+		UpdateStat(statPassiveIncome, data.maxPassiveIncomes[SaveData.Instance.statsLevels[5]], 5);
+		UpdateStat(statMobScalarProfit, data.maxMobScalarProfits[SaveData.Instance.statsLevels[6]], 6);
+
 		statsUI.Clear();
 
-		//statsUI.Add(statMaxHP);
-		//statsUI.Add(statMaxRadius);
-
-		//UpdateStat(statMaxHP, data.maxHps[SaveData.Instance.statsLevels[0]], 0);
-		//UpdateStat(statMaxRadius, data.maxRadiuses[SaveData.Instance.statsLevels[1]], 1);
+		statsUI.Add(statMaxHP);
+		statsUI.Add(statMaxDamage);
+		statsUI.Add(statMaxDamageOverTime);
+		statsUI.Add(statSpeed);
+		statsUI.Add(statRadius);
+		statsUI.Add(statPassiveIncome);
+		statsUI.Add(statMobScalarProfit);
 
 		for(int i = 0; i < statsUI.Count; i++)
 		{

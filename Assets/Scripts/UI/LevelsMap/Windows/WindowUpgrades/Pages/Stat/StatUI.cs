@@ -3,19 +3,12 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
-
 public class StatUI : MonoBehaviour, IPointerDownHandler
 {
 	public UnityAction<StatUI> onTap;
 
 	[HideInInspector] public StatData data;
 	[HideInInspector] public int statIndex = 0;
-
-	[Space]
-	public PanelInteraction interaction;
 
 	public bool IsChosen
 	{

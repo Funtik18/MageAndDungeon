@@ -135,8 +135,38 @@ public class PlayerStats : EntityStats
 	}
 	#endregion
 	#endregion
+
+	#region Spells
+	protected SpellHellishFrostData spellHellishFrost;
+	public SpellHellishFrostData SpellHellishFrost
+	{
+		get
+		{
+			return spellHellishFrost;
+		}
+	}
+
+	protected SpellPunishingFistData spellPunishingFist;
+	public SpellPunishingFistData SpellPunishingFist
+	{
+		get
+		{
+			return spellPunishingFist;
+		}
+	}
+
+	protected SpellThunderStormData spellThunderStorm;
+	public SpellThunderStormData SpellThunderStorm
+	{
+		get
+		{
+			return spellThunderStorm;
+		}
+	}
+	#endregion
 	public PlayerStats(PlayerOpportunitiesData playerOpportunities, SaveData data)
 	{
+		//stats
 		int hp = playerOpportunities.maxHps[data.statsLevels[0]].maxHP;
 		maxHealthPoints = new VariableInt(hp);
 		currentHealthPoints = new VariableInt(hp);
@@ -153,6 +183,11 @@ public class PlayerStats : EntityStats
 		mobScalarProfit = new VariableFloat(playerOpportunities.maxMobScalarProfits[data.statsLevels[6]].scalar);
 
 		currentMoney = new VariableInt(100);
+
+		//spells
+		spellHellishFrost = playerOpportunities.hellishFrosts[data.spellsLevels[0]];
+		spellPunishingFist = playerOpportunities.punishingFists[data.spellsLevels[1]];
+		spellThunderStorm = playerOpportunities.thunderStorms[data.spellsLevels[2]];
 	}
 }
 

@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
 
 	public PlayerOpportunitiesData playerOpportunities;
 
+
 	private SaveData data;
 	private SaveData Data
 	{
@@ -72,11 +73,9 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
+
 	private void Awake()
 	{
 		if(Data == null) { }
-
-		Debug.LogError(Stats.CurrentHealthPoints);
-		Debug.LogError(Stats.CurrentMoney);
 	}
 }

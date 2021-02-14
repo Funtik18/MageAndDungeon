@@ -13,8 +13,8 @@ public class PlayerOpportunitiesData : ScriptableObject
     public List<StatMaxSpeedData> maxSpeeds = new List<StatMaxSpeedData>();
     public List<StatMaxRadiusData> maxRadiuses = new List<StatMaxRadiusData>();
 
-    public List<StatMaxMobScalarProfitData> maxMobScalarProfits = new List<StatMaxMobScalarProfitData>();
     public List<StatMaxPassiveIncomeData> maxPassiveIncomes = new List<StatMaxPassiveIncomeData>();
+    public List<StatMaxMobScalarProfitData> maxMobScalarProfits = new List<StatMaxMobScalarProfitData>();
 
     [Header("Spells")]
     public List<SpellHellishFrostData> hellishFrosts = new List<SpellHellishFrostData>();
