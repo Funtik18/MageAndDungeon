@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40b849ea0a2556c449ed6cf5b201f608, type: 3}
+  m_Name: MaxDamage4
+  m_EditorClassIdentifier: 
+  englishInfo: {fileID: 11400000, guid: 9d0ff1a5202be6c44b361176d1cea931, type: 2}
+  russianInfo: {fileID: 11400000, guid: 8914d5744b2ac9a43a5fbc726bc40993, type: 2}
+  level: 4
+  price: 0
+  damage: 0

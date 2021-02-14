@@ -6,10 +6,18 @@ using UnityEngine;
 public class PlayerOpportunitiesData : ScriptableObject
 {
     [Header("Stats")]
-    public List<StatMaxHPData> maxHPDatas = new List<StatMaxHPData>();
-    public List<StatMaxRadiusData> maxRadiusDatas = new List<StatMaxRadiusData>();
+    public List<StatMaxHPData> maxHps = new List<StatMaxHPData>();
+    
+    public List<StatMaxDamageData> maxDamages = new List<StatMaxDamageData>();
+    public List<StatMaxDamageOverTimeData> maxDamageOverTimes = new List<StatMaxDamageOverTimeData>();
+    public List<StatMaxSpeedData> maxSpeeds = new List<StatMaxSpeedData>();
+    public List<StatMaxRadiusData> maxRadiuses = new List<StatMaxRadiusData>();
+
+    public List<StatMaxMobScalarProfitData> maxMobScalarProfits = new List<StatMaxMobScalarProfitData>();
+    public List<StatMaxPassiveIncomeData> maxPassiveIncomes = new List<StatMaxPassiveIncomeData>();
+
     [Header("Spells")]
-    public List<SpellHellishFrostData> hellishFrostDatas = new List<SpellHellishFrostData>();
-    public List<SpellPunishingFistData> punishingFistDatas = new List<SpellPunishingFistData>();
-    public List<SpellThunderStormData> thunderStormDatas = new List<SpellThunderStormData>();
+    public List<SpellHellishFrostData> hellishFrosts = new List<SpellHellishFrostData>();
+    public List<SpellPunishingFistData> punishingFists = new List<SpellPunishingFistData>();
+    public List<SpellThunderStormData> thunderStorms = new List<SpellThunderStormData>();
 }

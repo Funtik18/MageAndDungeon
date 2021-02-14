@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(menuName = "Scriptable Object/Spells/New Spell", fileName = "Spell")]
 [System.Serializable]
 public class SpellData : ScriptableObject
 {

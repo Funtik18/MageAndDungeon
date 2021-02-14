@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8440259650313034729}
   - component: {fileID: 8464071103631056696}
   m_Layer: 0
-  m_Name: GameControllerHandler
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,8 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c053cbe8e9ac9a45946266577809cf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPref: {fileID: 1799553355866579056, guid: bc206de0dcecd03489228d621b423dcf,
-    type: 3}
-  moneyCount: 0
-  hpCount: 3
-  passiveErning: 5
+  playerOpportunities: {fileID: 11400000, guid: 67fc7c22a1401b94f9ff8c1ed0db5a30,
+    type: 2}

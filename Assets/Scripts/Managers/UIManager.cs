@@ -17,16 +17,16 @@ public class UIManager : MonoBehaviour
 
     private PlayerStats stats;
     private PlayerStats Stats
-    {
-        get
-        {
-            if (stats == null)
-            {
-                stats = GameManager.Instance.WizardTarget.player.Stats;
-            }
+	{
+		get
+		{
+            if(stats == null)
+			{
+                stats = GameManager.Instance.Stats;
+			}
             return stats;
-        }
-    }
+		}
+	}
 
     public StatisticsInGame statistics;
 
@@ -102,7 +102,6 @@ public class UIManager : MonoBehaviour
         thunderStorm.IsBlock = true;
 
         windowWin.StartOpenWindow();
-
     }
 
     public void UpdateStatistics()
@@ -114,6 +113,6 @@ public class UIManager : MonoBehaviour
             statistics.healthCircle.Reborned((float)Stats.CurrentHealthPoints / Stats.MaxHealthPoints);
         }
 
-            statistics.moneyCount.text = Stats.Money.ToString();
+            statistics.moneyCount.text = Stats.CurrentMoney.ToString();
     }
 }

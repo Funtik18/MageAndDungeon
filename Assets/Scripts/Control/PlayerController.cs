@@ -2,21 +2,32 @@
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private PlayerSetup playerSetup;
+    private Transform wizard;
+    private Transform Wizard
+	{
+		get
+		{
+            if(wizard == null)
+			{
+                wizard = GameManager.Instance.WizardTarget.transform;
+            }
+            return wizard;
+		}
+	}
+
     private PlayerStats stats;
-    public PlayerStats Stats
+    private PlayerStats Stats
 	{
 		get
 		{
             if(stats == null)
 			{
-                stats = new PlayerStats(playerSetup);
-			}
+                stats = GameManager.Instance.Stats;
+            }
             return stats;
 		}
 	}
 
-    [SerializeField] private Wizard wizard;
 
     private Joystick joyStick;
     private JoyButton joyButton;
@@ -24,10 +35,6 @@ public class PlayerController : MonoBehaviour
 
     Vector3 mov;
     Vector3 oldPos;
-    private void Awake()
-    {
-        wizard = GameManager.Instance.WizardTarget;
-    }
 
     private void Start()
     {
@@ -47,9 +54,9 @@ public class PlayerController : MonoBehaviour
         Vector3 movement = new Vector3(joyStick.Horizontal, 0, joyStick.Vertical);
         Vector3 newPos = transform.position + movement;
 
-        Vector3 offset = newPos - wizard.transform.position;
+        Vector3 offset = newPos - Wizard.position;
 
-        mov = wizard.transform.position + Vector3.ClampMagnitude(offset, Stats.Radius);
+        mov = Wizard.position + Vector3.ClampMagnitude(offset, Stats.Radius);
 
         oldPos.y = 0;
         mov.y = 0;

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(menuName = "Scriptable Object/New Skeleton Setup", fileName = "New Skeleton")]
+[CreateAssetMenu(menuName = "Scriptable Object/Entities/New Skeleton Setup", fileName = "New Skeleton")]
 public class SkeletonSetup : EnemySetup
 {
     public int hpAmount;

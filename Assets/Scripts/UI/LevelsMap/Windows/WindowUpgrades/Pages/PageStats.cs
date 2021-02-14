@@ -9,7 +9,17 @@ using UnityEditor;
 public class PageStats : MonoBehaviour
 {
 	public StatUI statMaxHP;
-	public StatUI statMaxRadius;
+	
+	public StatUI statMaxDamage;
+	public StatUI statMaDamageOverTime;
+
+	public StatUI statSpeed;
+
+	public StatUI statRadius;
+
+	public StatUI statPassiveIncome;
+
+	public StatUI statMobScalarProfit;
 
 	private List<StatUI> statsUI = new List<StatUI>();
 
@@ -49,11 +59,11 @@ public class PageStats : MonoBehaviour
 	{
 		statsUI.Clear();
 
-		statsUI.Add(statMaxHP);
-		statsUI.Add(statMaxRadius);
+		//statsUI.Add(statMaxHP);
+		//statsUI.Add(statMaxRadius);
 
-		UpdateStat(statMaxHP, data.maxHPDatas[SaveData.Instance.statsLevels[0]], 0);
-		UpdateStat(statMaxRadius, data.maxRadiusDatas[SaveData.Instance.statsLevels[1]], 1);
+		//UpdateStat(statMaxHP, data.maxHps[SaveData.Instance.statsLevels[0]], 0);
+		//UpdateStat(statMaxRadius, data.maxRadiuses[SaveData.Instance.statsLevels[1]], 1);
 
 		for(int i = 0; i < statsUI.Count; i++)
 		{

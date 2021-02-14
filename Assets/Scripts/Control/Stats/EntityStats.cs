@@ -1,14 +1,12 @@
 ﻿using UnityEngine;
 
 [System.Serializable]
-public class EntityStats
-{
-    protected string enemyName;
-}
+public class EntityStats { }
 
 public class PlayerStats : EntityStats
 {
 	#region Stats
+	#region HealthPoints
 	protected VariableInt maxHealthPoints;
 	public int MaxHealthPoints
 	{
@@ -34,47 +32,9 @@ public class PlayerStats : EntityStats
 			return currentHealthPoints.value;
 		}
 	}
+	#endregion
 
-
-	protected VariableFloat speed;
-	public float Speed
-	{
-		set
-		{
-			speed.value = Mathf.Max(0, value);
-		}
-		get
-		{
-			return speed.value;
-		}
-	}
-
-	protected VariableFloat radius;
-	public float Radius
-	{
-		set
-		{
-			radius.value = Mathf.Max(1f, value);
-		}
-		get
-		{
-			return radius.value;
-		}
-	}
-
-	protected VariableInt incomeAmount;
-	public int IncomeAmount
-	{
-		set
-		{
-			incomeAmount.value = Mathf.Max(0, value);
-		}
-		get
-		{
-			return incomeAmount.value;
-		}
-	}
-
+	#region Damage
 	protected VariableInt damage;
 	public int Damage
 	{
@@ -88,29 +48,111 @@ public class PlayerStats : EntityStats
 		}
 	}
 
-	protected VariableInt money;
-	public int Money
+	protected VariableInt damageOverTime;
+	public int DamageOverTime
 	{
 		set
 		{
-			money.value = Mathf.Max(0, value);
+			damageOverTime.value = Mathf.Max(0, value);
 		}
 		get
 		{
-			return money.value;
+			return damageOverTime.value;
 		}
 	}
 	#endregion
-	public PlayerStats(PlayerSetup setup)
+
+	#region Speed
+	protected VariableFloat speed;
+	public float Speed
 	{
-		maxHealthPoints = new VariableInt(setup.hpAmount);
-		currentHealthPoints = new VariableInt(setup.hpAmount);
-		
-		speed = new VariableFloat(setup.speed);
-		radius = new VariableFloat(setup.radius);
-		incomeAmount = new VariableInt(setup.incomeAmount);
-		damage = new VariableInt(setup.damage);
-		money = new VariableInt(setup.startMoney);
+		set
+		{
+			speed.value = Mathf.Max(0, value);
+		}
+		get
+		{
+			return speed.value;
+		}
+	}
+	#endregion
+
+	#region Radius
+	protected VariableFloat radius;
+	public float Radius
+	{
+		set
+		{
+			radius.value = Mathf.Max(1f, value);
+		}
+		get
+		{
+			return radius.value;
+		}
+	}
+	#endregion
+
+	#region Income
+	protected VariableInt incomeAmount;
+	public int IncomeAmount
+	{
+		set
+		{
+			incomeAmount.value = Mathf.Max(0, value);
+		}
+		get
+		{
+			return incomeAmount.value;
+		}
+	}
+
+	protected VariableFloat mobScalarProfit;
+	public float MobScalarProfit
+	{
+		set
+		{
+			mobScalarProfit.value = Mathf.Max(1, value);
+		}
+		get
+		{
+			return mobScalarProfit.value;
+		}
+	}
+	#endregion
+
+	#region Money
+	protected VariableInt currentMoney;
+	public int CurrentMoney
+	{
+		set
+		{
+			currentMoney.value = Mathf.Max(0, value);
+		}
+		get
+		{
+			return currentMoney.value;
+		}
+	}
+	#endregion
+	#endregion
+	public PlayerStats(PlayerOpportunitiesData playerOpportunities, SaveData data)
+	{
+		int hp = playerOpportunities.maxHps[data.statsLevels[0]].maxHP;
+		maxHealthPoints = new VariableInt(hp);
+		currentHealthPoints = new VariableInt(hp);
+
+		damage = new VariableInt(playerOpportunities.maxDamages[data.statsLevels[1]].damage);
+		damageOverTime = new VariableInt(playerOpportunities.maxDamageOverTimes[data.statsLevels[2]].damage);
+
+		speed = new VariableFloat(playerOpportunities.maxSpeeds[data.statsLevels[3]].speed);
+
+		radius = new VariableFloat(playerOpportunities.maxRadiuses[data.statsLevels[4]].radius);
+
+		incomeAmount = new VariableInt(playerOpportunities.maxPassiveIncomes[data.statsLevels[5]].income);
+
+		mobScalarProfit = new VariableFloat(playerOpportunities.maxMobScalarProfits[data.statsLevels[6]].scalar);
+
+		currentMoney = new VariableInt(100);
 	}
 }
 

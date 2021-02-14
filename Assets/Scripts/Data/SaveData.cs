@@ -17,7 +17,7 @@ public class SaveData
 	public int currentGold;
 	public int currentDiamonds;
 
-	public int[] statsLevels = new int[2];
+	public int[] statsLevels = new int[7];
 	public int[] spellsLevels = new int[3];
 
 	public SaveData StartValues()
@@ -37,7 +37,7 @@ public class SaveData
 		return this;
 	}
 
-	public void RefreshData(SaveData data)
+	public SaveData RefreshData(SaveData data)
 	{
 		currentGold = data.currentGold;
 		currentDiamonds = data.currentDiamonds;
@@ -50,5 +50,7 @@ public class SaveData
 		{
 			spellsLevels[i] = data.spellsLevels[i];
 		}
+
+		return this;
 	}
 }

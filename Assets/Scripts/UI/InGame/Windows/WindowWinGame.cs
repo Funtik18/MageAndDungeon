@@ -35,9 +35,9 @@ public class WindowWinGame : MonoBehaviour
 	}
 	private IEnumerator Open()
 	{
-		PlayerStats stats = GameManager.Instance.WizardTarget.player.Stats;
+		PlayerStats stats = GameManager.Instance.Stats;
 
-		SaveData.Instance.currentGold += stats.Money;
+		SaveData.Instance.currentGold += stats.CurrentMoney;
 		SaveLoadManager.Save(SaveLoadManager.mainStatisticPath, SaveData.Instance);
 
 		SceneLoaderManager.Instance.LoadLevelsMap();

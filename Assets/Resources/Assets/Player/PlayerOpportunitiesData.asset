@@ -12,31 +12,61 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ddf46de92216e46b484188d9234f81, type: 3}
   m_Name: PlayerOpportunitiesData
   m_EditorClassIdentifier: 
-  maxHPDatas:
+  maxHps:
   - {fileID: 11400000, guid: bf92f5260b59a5a4fb33a47c2e61024b, type: 2}
   - {fileID: 11400000, guid: e132a42133465ab46ba5f2ed0c1af475, type: 2}
   - {fileID: 11400000, guid: 6dcaec0d374789849914e406667d8919, type: 2}
   - {fileID: 11400000, guid: 025e6c56577470b4798f1cb404dedc6c, type: 2}
   - {fileID: 11400000, guid: 2e25193c3b2164640950d586675c4137, type: 2}
-  maxRadiusDatas:
+  maxDamages:
+  - {fileID: 11400000, guid: e4517f8f70899b948a377eb6ea39ab54, type: 2}
+  - {fileID: 11400000, guid: eb208354b8733834f910be4b7a986e6b, type: 2}
+  - {fileID: 11400000, guid: 19f7154125abfef4ab83e8d02e700523, type: 2}
+  - {fileID: 11400000, guid: 0aa940186e1835c46af00c0fa196e2b9, type: 2}
+  - {fileID: 11400000, guid: 9ca8269a2076d08458b29d3723ba9b25, type: 2}
+  maxDamageOverTimes:
+  - {fileID: 11400000, guid: 909a606376ad1cd43911bb3da4f6f17d, type: 2}
+  - {fileID: 11400000, guid: 0d30eca476862c846a0981ac7d18e79b, type: 2}
+  - {fileID: 11400000, guid: 2a5d85134e12bc646adc7210a93ecfb8, type: 2}
+  - {fileID: 11400000, guid: ef0afdd884ab90d45b04b5766878167d, type: 2}
+  - {fileID: 11400000, guid: 23306739500a7de4781d79d61b0b35e4, type: 2}
+  maxSpeeds:
+  - {fileID: 11400000, guid: a5fda169dd1814a4f9bdd61ea39b2a39, type: 2}
+  - {fileID: 11400000, guid: 17b01c1b6ca71f54f9a8f52687df0cdd, type: 2}
+  - {fileID: 11400000, guid: 1ba1166c5ebb14d4d9e932e02f198448, type: 2}
+  - {fileID: 11400000, guid: dbd814a1983dfcd479d4d2e0c3c2c9b6, type: 2}
+  - {fileID: 11400000, guid: 5c26b34c036df534eb70688a6a90f067, type: 2}
+  maxRadiuses:
   - {fileID: 11400000, guid: c85bd0ae60619fa44a6910d14a75065a, type: 2}
   - {fileID: 11400000, guid: 1a2038dec00f4464aa9eb9a838bb3868, type: 2}
   - {fileID: 11400000, guid: 3088688d5138afa4682e01006e02d977, type: 2}
   - {fileID: 11400000, guid: 2bda46bd7a725634fbdc5a9c3eb46a24, type: 2}
   - {fileID: 11400000, guid: c668501951dfa374b810ae75b7ff8630, type: 2}
-  hellishFrostDatas:
+  maxMobScalarProfits:
+  - {fileID: 11400000, guid: bb90da15536cc734c952a35b9b770382, type: 2}
+  - {fileID: 11400000, guid: e8e9e5700a53c924bbbb71927ae98148, type: 2}
+  - {fileID: 11400000, guid: 5f2bdaef6257f654eaeab6b8970284d7, type: 2}
+  - {fileID: 11400000, guid: 6e4a89d521cef194d8c57f5b066657b0, type: 2}
+  - {fileID: 11400000, guid: e4186abb8d6cb094fb7325af696ed171, type: 2}
+  maxPassiveIncomes:
+  - {fileID: 11400000, guid: 4fa385af5892f2841bfe060f6ea00ff1, type: 2}
+  - {fileID: 11400000, guid: ba2dae75c530b5848816ff6b9f91e951, type: 2}
+  - {fileID: 11400000, guid: 600123f957a1db2449f48f2daea8fca9, type: 2}
+  - {fileID: 11400000, guid: cf65fa196c50df144af499ea759a32f2, type: 2}
+  - {fileID: 11400000, guid: ed12d06ed78487348a354165bcfdb5d5, type: 2}
+  hellishFrosts:
   - {fileID: 11400000, guid: 58f14320eff89684084866aff9f09d80, type: 2}
   - {fileID: 11400000, guid: 09bb16e1526566b43a26ac9f7c8058a9, type: 2}
   - {fileID: 11400000, guid: 6dd05f8bf8752224db8ca843fa207633, type: 2}
   - {fileID: 11400000, guid: c30f3efb49f10534ab3aff985b24b139, type: 2}
   - {fileID: 11400000, guid: cfc81e7647c872e49a9e679d5671f39a, type: 2}
-  punishingFistDatas:
+  punishingFists:
   - {fileID: 11400000, guid: ba56e0601d7730945976111688fc25e5, type: 2}
   - {fileID: 11400000, guid: d6fe1a9904c348740b1ee974d1567373, type: 2}
   - {fileID: 11400000, guid: 137dd010d75f848478a3aa0d674fc91d, type: 2}
   - {fileID: 11400000, guid: 1c6089815662d7e409efbd3a81f613fe, type: 2}
   - {fileID: 11400000, guid: 2ce60317b9e3c2b4594cc3eb344de580, type: 2}
-  thunderStormDatas:
+  thunderStorms:
   - {fileID: 11400000, guid: 2bae07e0e10a5904f968e83d41665799, type: 2}
   - {fileID: 11400000, guid: cac354bf709e9cd49a3a2ad1b4537d25, type: 2}
   - {fileID: 11400000, guid: 2f8bdb43f9335e245a850874b41746ee, type: 2}

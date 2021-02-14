@@ -1,7 +1,5 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "Stat", menuName = "Scriptable Object/Stats/New Stat")]
 [System.Serializable]
 public class StatData : ScriptableObject
 {

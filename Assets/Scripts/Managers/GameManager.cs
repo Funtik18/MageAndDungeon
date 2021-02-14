@@ -10,13 +10,42 @@ public class GameManager : MonoBehaviour
             if(instance == null)
             {
                 instance = FindObjectOfType<GameManager>();
-                DontDestroyOnLoad(instance);
             }
             return instance;
         }
 	}
 
-    private Wizard wizardTarget;
+	public PlayerOpportunitiesData playerOpportunities;
+
+	private SaveData data;
+	private SaveData Data
+	{
+		get
+		{
+			if(data == null)
+			{
+				//data = (SaveData)SaveLoadManager.Load(Application.persistentDataPath + SaveLoadManager.mainStatisticPath);
+				//data = SaveData.Instance.RefreshData(data);
+				//Debug.LogError(Application.persistentDataPath + SaveLoadManager.mainStatisticPath);
+				data = (SaveData)SaveLoadManager.Load(Application.persistentDataPath + SaveLoadManager.mainStatisticPath);
+				if(data == null)//first time
+				{
+					data = SaveData.Instance.StartValues();
+					SaveLoadManager.Save(SaveLoadManager.mainStatisticPath, data);
+
+					data = SaveData.Instance.RefreshData(data);
+				}
+				else
+				{
+					data = SaveData.Instance.RefreshData(data);
+				}
+			}
+			return data;
+		}
+	}
+
+
+	private Wizard wizardTarget;
     public Wizard WizardTarget
 	{
 		get
@@ -27,5 +56,27 @@ public class GameManager : MonoBehaviour
             }
             return wizardTarget;
 		}
+	}
+
+
+	[SerializeField]private PlayerStats stats;
+	public PlayerStats Stats
+	{
+		get
+		{
+			if(stats == null)
+			{
+				stats = new PlayerStats(playerOpportunities, Data);
+			}
+			return stats;
+		}
+	}
+
+	private void Awake()
+	{
+		if(Data == null) { }
+
+		Debug.LogError(Stats.CurrentHealthPoints);
+		Debug.LogError(Stats.CurrentMoney);
 	}
 }

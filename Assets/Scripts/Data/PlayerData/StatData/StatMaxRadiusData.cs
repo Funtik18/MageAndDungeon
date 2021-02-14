@@ -4,5 +4,5 @@
 [System.Serializable]
 public class StatMaxRadiusData : StatData
 {
-	public float maxRadius;
+	public float radius;
 }

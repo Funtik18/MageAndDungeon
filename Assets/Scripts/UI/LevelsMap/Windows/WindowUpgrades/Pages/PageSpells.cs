@@ -55,9 +55,9 @@ public class PageSpells : MonoBehaviour
 		spellsUI.Add(spellPunishingFist);
 		spellsUI.Add(spellThunderStorm);
 
-		UpdateSpell(spellHellishFrost, data.hellishFrostDatas[SaveData.Instance.spellsLevels[0]], 0);
-		UpdateSpell(spellPunishingFist, data.punishingFistDatas[SaveData.Instance.spellsLevels[1]], 1);
-		UpdateSpell(spellThunderStorm, data.thunderStormDatas[SaveData.Instance.spellsLevels[2]], 2);
+		UpdateSpell(spellHellishFrost, data.hellishFrosts[SaveData.Instance.spellsLevels[0]], 0);
+		UpdateSpell(spellPunishingFist, data.punishingFists[SaveData.Instance.spellsLevels[1]], 1);
+		UpdateSpell(spellThunderStorm, data.thunderStorms[SaveData.Instance.spellsLevels[2]], 2);
 
 		for(int i = 0; i < spellsUI.Count; i++)
 		{
