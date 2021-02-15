@@ -18,3 +18,12 @@ public class VariableFloat
 		value = initValue;
 	}
 }
+[System.Serializable]
+public class VariableBoolean
+{
+	public bool value;
+	public VariableBoolean(bool initValue)
+	{
+		value = initValue;
+	}
+}

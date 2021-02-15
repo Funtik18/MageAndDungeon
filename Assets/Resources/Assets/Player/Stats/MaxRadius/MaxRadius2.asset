@@ -16,4 +16,4 @@ MonoBehaviour:
   russianInfo: {fileID: 11400000, guid: eb52ab2254948464e8c475b85a985f74, type: 2}
   level: 2
   price: 0
-  maxRadius: 0
+  radius: 9

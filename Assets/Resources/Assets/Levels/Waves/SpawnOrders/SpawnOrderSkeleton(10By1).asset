@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bae163bcf114474da025b9dc43f422b, type: 3}
+  m_Name: SpawnOrderSkeleton(10By1)
+  m_EditorClassIdentifier: 
+  entity: {fileID: 1698788880267374447, guid: bc206de0dcecd03489228d621b423dcf, type: 3}
+  countTuples: 10
+  countEntitiesInTuples: 1
+  time:
+    delayInTuple: 0.5
+    frequency: 1

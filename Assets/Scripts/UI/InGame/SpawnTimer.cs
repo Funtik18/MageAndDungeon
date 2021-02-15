@@ -17,6 +17,8 @@ public class SpawnTimer : MonoBehaviour
 
 	[SerializeField] private PanelInteraction interaction;
 
+	[HideInInspector] public VariableBoolean isPause;
+
 	private Fader fader;
 	public Fader Fader
 	{
@@ -94,6 +96,13 @@ public class SpawnTimer : MonoBehaviour
 			if(Fader.CanvasGroup.alpha == 0)
 			{
 				break;
+			}
+
+			Debug.LogError((isPause == null), gameObject);
+
+			while(isPause.value)
+			{
+				yield return null;
 			}
 
 			yield return null;

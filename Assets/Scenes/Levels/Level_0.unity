@@ -3262,20 +3262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 349598184}
-  waves:
-  - spawnOrders:
-    - entity: {fileID: 1698788880267374447, guid: bc206de0dcecd03489228d621b423dcf,
-        type: 3}
-      countTuples: 15
-      countEntitiesInTuples: 1
-      timeInfo:
-        delayInTuple: 0
-        frequency: 1
-    timeInfo:
-      addTime: 1
-      totalWaveTime: 0
-      currentTime: 0
-      startTime: 0
+  wavesOrders: []
 --- !u!4 &138500414
 Transform:
   m_ObjectHideFlags: 0
@@ -4627,20 +4614,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 314188339}
-  waves:
-  - spawnOrders:
-    - entity: {fileID: 1698788880267374447, guid: bc206de0dcecd03489228d621b423dcf,
-        type: 3}
-      countTuples: 15
-      countEntitiesInTuples: 1
-      timeInfo:
-        delayInTuple: 0
-        frequency: 1
-    timeInfo:
-      addTime: 1
-      totalWaveTime: 0
-      currentTime: 0
-      startTime: 0
+  wavesOrders:
+  - waveData: {fileID: 11400000, guid: 38cfad2b3b706f640bba94e6fa1fb9f5, type: 2}
 --- !u!1 &202917181
 GameObject:
   m_ObjectHideFlags: 0
@@ -10976,7 +10951,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 586469876}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.49, y: 1, z: -2.59}
+  m_LocalPosition: {x: 0, y: 1, z: -2}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -19803,7 +19778,7 @@ GameObject:
   - component: {fileID: 1045153738}
   - component: {fileID: 1045153739}
   m_Layer: 0
-  m_Name: Step2
+  m_Name: Step9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19836,20 +19811,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 204843126}
-  waves:
-  - spawnOrders:
-    - entity: {fileID: 1698788880267374447, guid: bc206de0dcecd03489228d621b423dcf,
-        type: 3}
-      countTuples: 15
-      countEntitiesInTuples: 1
-      timeInfo:
-        delayInTuple: 0
-        frequency: 1
-    timeInfo:
-      addTime: 1
-      totalWaveTime: 0
-      currentTime: 0
-      startTime: 0
+  wavesOrders:
+  - waveData: {fileID: 11400000, guid: 38cfad2b3b706f640bba94e6fa1fb9f5, type: 2}
 --- !u!1 &1046139803
 GameObject:
   m_ObjectHideFlags: 0
@@ -20218,6 +20181,161 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1049486680}
   m_Mesh: {fileID: -7385438962141555999, guid: 41c7ad4acf54b1a4f85b955ff26c6b70, type: 3}
+--- !u!1 &1055862141
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1055862142}
+  - component: {fileID: 1055862147}
+  - component: {fileID: 1055862146}
+  - component: {fileID: 1055862145}
+  - component: {fileID: 1055862144}
+  - component: {fileID: 1055862143}
+  m_Layer: 5
+  m_Name: Thunderstorm (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1055862142
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055862141}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1608850685}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -300, y: 378}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1055862143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055862141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1055862146}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1133463368}
+        m_MethodName: Stop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1055862144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055862141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8700c5dcd2be77d4fb8e29340d9eb51f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!225 &1055862145
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055862141}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &1055862146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055862141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 54628aafa20f64b40ae661038ee7abf0, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1055862147
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055862141}
+  m_CullTransparentMesh: 0
 --- !u!1 &1065219182
 GameObject:
   m_ObjectHideFlags: 0
@@ -21377,28 +21495,14 @@ MonoBehaviour:
   spawnedEntities: []
   instruction:
     spawnUnites:
-    - skipWaiter: 1
+    - skipWaiter: 0
       spawnPoints:
       - {fileID: 2024213764}
-      - {fileID: 1721362208}
-    - skipWaiter: 0.2
-      spawnPoints:
-      - {fileID: 1045153739}
-      - {fileID: 202858052}
-    - skipWaiter: 0.25
-      spawnPoints:
-      - {fileID: 2024213764}
-      - {fileID: 1721362208}
     - skipWaiter: 0.5
       spawnPoints:
-      - {fileID: 1909922260}
-      - {fileID: 1772057712}
-      - {fileID: 138500413}
-      - {fileID: 1931374674}
-    - skipWaiter: 0.8
-      spawnPoints:
+      - {fileID: 1721362208}
+      - {fileID: 1045153739}
       - {fileID: 202858052}
-    isPause: 0
 --- !u!1 &1134441610
 GameObject:
   m_ObjectHideFlags: 0
@@ -32081,7 +32185,7 @@ GameObject:
   - component: {fileID: 1721362207}
   - component: {fileID: 1721362208}
   m_Layer: 0
-  m_Name: Step1
+  m_Name: Step6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32114,20 +32218,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 388801192}
-  waves:
-  - spawnOrders:
-    - entity: {fileID: 1698788880267374447, guid: bc206de0dcecd03489228d621b423dcf,
-        type: 3}
-      countTuples: 5
-      countEntitiesInTuples: 1
-      timeInfo:
-        delayInTuple: 0
-        frequency: 1
-    timeInfo:
-      addTime: 1
-      totalWaveTime: 0
-      currentTime: 0
-      startTime: 0
+  wavesOrders:
+  - waveData: {fileID: 11400000, guid: 38cfad2b3b706f640bba94e6fa1fb9f5, type: 2}
 --- !u!1 &1722590397
 GameObject:
   m_ObjectHideFlags: 0
@@ -33359,20 +33451,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 1807146721}
-  waves:
-  - spawnOrders:
-    - entity: {fileID: 1698788880267374447, guid: bc206de0dcecd03489228d621b423dcf,
-        type: 3}
-      countTuples: 10
-      countEntitiesInTuples: 1
-      timeInfo:
-        delayInTuple: 0
-        frequency: 1
-    timeInfo:
-      addTime: 1
-      totalWaveTime: 0
-      currentTime: 0
-      startTime: 0
+  wavesOrders: []
 --- !u!4 &1772057713
 Transform:
   m_ObjectHideFlags: 0
@@ -35361,20 +35440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 1146017267}
-  waves:
-  - spawnOrders:
-    - entity: {fileID: 1698788880267374447, guid: bc206de0dcecd03489228d621b423dcf,
-        type: 3}
-      countTuples: 15
-      countEntitiesInTuples: 1
-      timeInfo:
-        delayInTuple: 0
-        frequency: 1
-    timeInfo:
-      addTime: 1
-      totalWaveTime: 0
-      currentTime: 0
-      startTime: 0
+  wavesOrders: []
 --- !u!4 &1909922261
 Transform:
   m_ObjectHideFlags: 0
@@ -35787,20 +35853,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 1763209068}
-  waves:
-  - spawnOrders:
-    - entity: {fileID: 1698788880267374447, guid: bc206de0dcecd03489228d621b423dcf,
-        type: 3}
-      countTuples: 15
-      countEntitiesInTuples: 1
-      timeInfo:
-        delayInTuple: 0
-        frequency: 1
-    timeInfo:
-      addTime: 1
-      totalWaveTime: 0
-      currentTime: 0
-      startTime: 0
+  wavesOrders: []
 --- !u!4 &1931374675
 Transform:
   m_ObjectHideFlags: 0
@@ -38519,7 +38572,7 @@ GameObject:
   - component: {fileID: 2024213763}
   - component: {fileID: 2024213764}
   m_Layer: 0
-  m_Name: Step0
+  m_Name: Step12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38552,20 +38605,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 6565319609904749904}
-  waves:
-  - spawnOrders:
-    - entity: {fileID: 1698788880267374447, guid: bc206de0dcecd03489228d621b423dcf,
-        type: 3}
-      countTuples: 5
-      countEntitiesInTuples: 1
-      timeInfo:
-        delayInTuple: 0
-        frequency: 1
-    timeInfo:
-      addTime: 1
-      totalWaveTime: 0
-      currentTime: 0
-      startTime: 0
+  wavesOrders:
+  - waveData: {fileID: 11400000, guid: 6592b28fa4774bf45818141f0c2793fe, type: 2}
+  - waveData: {fileID: 11400000, guid: 6592b28fa4774bf45818141f0c2793fe, type: 2}
 --- !u!1 &2034556326
 GameObject:
   m_ObjectHideFlags: 0

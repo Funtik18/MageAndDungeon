@@ -235,6 +235,7 @@ public class EnemyController : Entity
         float currentTime = Time.time - startTime;
         while (currentTime <= 3f)
         {
+            currentTime = Time.time - startTime;
             transform.position += Vector3.down * 0.5f * Time.deltaTime;
             yield return null;
         }
