@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3728ea50d34771428d5d7ea8f2c0a8c, type: 3}
+  m_Script: {fileID: 11500000, guid: d387523eb731630438ddab618931eea2, type: 3}
   m_Name: Zombie
   m_EditorClassIdentifier: 
-  enemyName: 
-  hpAmount: 2
-  speed: 35
+  entity: {fileID: 3971452944761235749, guid: 6d5c46999d3ddc94fa3f3cb5155f043b, type: 3}
+  hpAmount: 4
+  speed: 100
   damage: 1
-  price: 2
+  price: 1
   animationLength: 1.17

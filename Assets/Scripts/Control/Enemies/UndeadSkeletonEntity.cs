@@ -2,14 +2,13 @@
 
 public class UndeadSkeletonEntity : EnemyController
 {
-    [SerializeField] private SkeletonSetup currentSetup;
     public SkeletonStats Stats
 	{
 		get
 		{
             if(stats == null)
 			{
-                stats = new SkeletonStats(currentSetup);
+                stats = new SkeletonStats(data);
             }
             return stats as SkeletonStats;
         }

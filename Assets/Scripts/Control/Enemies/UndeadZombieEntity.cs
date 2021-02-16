@@ -2,19 +2,17 @@
 
 public class UndeadZombieEntity : EnemyController
 {
-	[SerializeField] private ZombieSetup currentSetup;
 	public ZombieStats Stats
 	{
 		get
 		{
 			if(stats == null)
 			{
-				stats = new ZombieStats(currentSetup);
+				stats = new ZombieStats(data);
 			}
 			return stats as ZombieStats;
 		}
-	}  
-
+	}
 
 	protected override void Movement()
 	{

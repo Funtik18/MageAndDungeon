@@ -3,6 +3,7 @@ using UnityEngine.Events;
 
 public class Entity : MonoBehaviour
 {
+	public EntityData data;
 	protected EntityStats stats;
 
 	public UnityAction<Entity> onDied;

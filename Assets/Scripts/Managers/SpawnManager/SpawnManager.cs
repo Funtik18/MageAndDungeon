@@ -45,13 +45,13 @@ public class SpawnManager : MonoBehaviour
         instruction.StartInstruction(this);
 
         statistics.TotalEntities = instruction.GetTotalEnteties();
-        statistics.timeInfo.totalLevelTime = instruction.GetTotalMaxTime();
+        statistics.totalGold = instruction.GetTotalGold();
+        statistics.totalLevelTime = instruction.GetTotalMaxTime();
 
         while(instruction.IsInstructionProcess)
 		{
             yield return null;
         }
-
 
         Debug.LogError("Добей выживших!!!");
 
@@ -68,11 +68,11 @@ public class SpawnManager : MonoBehaviour
     }
     public void PauseWaves()
 	{
-        //instruction.isPause = true;
+        instruction.isPause.value = true;
     }
     public void ResumeWaves()
 	{
-        //instruction.isPause = false;
+        instruction.isPause.value = false;
 	}
     public void StopWaves()
 	{
@@ -107,6 +107,8 @@ public class SpawnManager : MonoBehaviour
     [System.Serializable]
     public class LevelStatistics
     {
+
+        [Header("Entities")]
         [SerializeField] private int totalEntities;
         public int TotalEntities
 		{
@@ -119,9 +121,6 @@ public class SpawnManager : MonoBehaviour
                 return totalEntities;
             }
 		}
-
-        public float storedTime;
-
         [Space]
         [SerializeField] private int totalSpawnedEntities;
         public int TotaSpawnedlEntities
@@ -152,23 +151,23 @@ public class SpawnManager : MonoBehaviour
 
         public int totalLeftToKill;
 
-        public TimeInfo timeInfo;
-    }
-    [System.Serializable]
-    public struct TimeInfo
-	{
+        [Header("Gold")]
+        public int totalGold;
+
+        [Header("Time")]
         public float totalLevelTime;
+        public float storedTime;
     }
 }
 
 [System.Serializable]
 public class SpawnInstruction
 {
+    public VariableBoolean isPause = new VariableBoolean(false);
+
     public List<SpawnUnite> spawnUnites = new List<SpawnUnite>();
 
     private MonoBehaviour processOwner;
-
-    public VariableBoolean isPause = new VariableBoolean(false);
 
     #region Instruction
     private Coroutine instuctionCoroutine = null;
@@ -264,6 +263,16 @@ public class SpawnInstruction
         return count;
     }
 
+    public int GetTotalGold()
+	{
+        int gold = 0;
+        for(int i = 0; i < spawnUnites.Count; i++)
+        {
+            gold += spawnUnites[i].GetTotalGoldPoint();
+        }
+        return gold;
+	}
+
     /// <summary>
     /// Максимальная продолжительность уровня +-.
     /// </summary>
@@ -289,7 +298,7 @@ public class SpawnInstruction
         {
             for(int i = 0; i < spawnPoints.Count; i++)
             {
-                action += spawnPoints[i].timer.TimerFadeOut;
+                action += spawnPoints[i].timer.IncreaseSpeed;
             }
 
             for(int i = 0; i < spawnPoints.Count; i++)
@@ -310,7 +319,15 @@ public class SpawnInstruction
             }
             return count;
         }
-
+        public int GetTotalGoldPoint()
+		{
+            int count = 0;
+            for(int i = 0; i < spawnPoints.Count; i++)
+            {
+                count += spawnPoints[i].GetTotalGoldWaves();
+            }
+            return count;
+        }
         public float GetLongestWaveTime()
         {
             float time = 0f;
@@ -401,6 +418,17 @@ public class WaveOrder
         return count;
     }
 
+    public int GetTotalGoldWave()
+	{
+        int count = 0;
+
+        for(int i = 0; i < waveData.spawnOrdersData.Count; i++)
+        {
+            count += waveData.spawnOrdersData[i].GetTotalGold();
+        }
+        return count;
+    }
+
     /// <summary>
     ///	Сколько продлится волна.
     /// </summary>
@@ -448,7 +476,7 @@ public class SpawnOrder
         {
             for(int j = 0; j < orderData.countEntitiesInTuples; j++)//tuple
             {
-                spawnOwner.SpawnEntity(orderData.entity);
+                spawnOwner.SpawnEntity(orderData.data);
 
                 if(j != orderData.countEntitiesInTuples - 1)
                 {

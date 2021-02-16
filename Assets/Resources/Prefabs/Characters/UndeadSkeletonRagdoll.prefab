@@ -500,10 +500,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e770458fc690dc4dafac22d9470ba9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: efbba37bac7f281428cbb85bb5411476, type: 2}
   isAlive: 1
   isFrozen: 0
   rb: {fileID: 1359816693626947013}
-  currentSetup: {fileID: 11400000, guid: efbba37bac7f281428cbb85bb5411476, type: 2}
 --- !u!114 &7478685049399122142
 MonoBehaviour:
   m_ObjectHideFlags: 0

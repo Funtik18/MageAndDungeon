@@ -17,6 +17,8 @@ public class SpawnTimer : MonoBehaviour
 
 	[SerializeField] private PanelInteraction interaction;
 
+	private float speedFilling = 1;
+
 	[HideInInspector] public VariableBoolean isPause;
 
 	private Fader fader;
@@ -53,8 +55,16 @@ public class SpawnTimer : MonoBehaviour
 		interaction.onTap.AddListener(delegate
 		{
 			onTap?.Invoke();
-			TimerFadeOut();
 		});
+	}
+
+	public void IncreaseSpeed()
+	{
+		speedFilling = 50f;
+	}
+	public void DecreaseSpeed()
+	{
+		speedFilling = 1f;
 	}
 
 	public void TimerFadeIn()
@@ -65,6 +75,7 @@ public class SpawnTimer : MonoBehaviour
 	}
 	public void TimerFadeOut()
 	{
+		DecreaseSpeed();
 		Fader.FadeOut();
 		Fader.CanvasGroup.interactable = false;
 		Fader.CanvasGroup.blocksRaycasts = false;
@@ -91,14 +102,12 @@ public class SpawnTimer : MonoBehaviour
 		while(FillAmount != 0)
 		{
 			FillAmount = currentSecs / secs;
-			currentSecs -= Time.deltaTime;
+			currentSecs -= speedFilling * Time.deltaTime;
 
 			if(Fader.CanvasGroup.alpha == 0)
 			{
 				break;
 			}
-
-			Debug.LogError((isPause == null), gameObject);
 
 			while(isPause.value)
 			{

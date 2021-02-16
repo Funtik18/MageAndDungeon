@@ -191,6 +191,7 @@ public class PlayerStats : EntityStats
 	}
 }
 
+
 public class SkeletonStats : EntityStats
 {
 	#region Stats
@@ -259,7 +260,7 @@ public class SkeletonStats : EntityStats
 		}
 	}
 	#endregion
-	public SkeletonStats(SkeletonSetup setup)
+	public SkeletonStats(EntityData setup)
 	{
 		healthPoints = new VariableInt(setup.hpAmount);
 		speed = new VariableFloat(setup.speed);
@@ -270,5 +271,5 @@ public class SkeletonStats : EntityStats
 }
 public class ZombieStats : SkeletonStats 
 {
-	public ZombieStats(ZombieSetup setup) : base(setup) { }
+	public ZombieStats(EntityData setup) : base(setup) { }
 }

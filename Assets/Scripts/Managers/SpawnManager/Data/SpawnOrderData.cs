@@ -5,7 +5,7 @@
 public class SpawnOrderData : ScriptableObject
 {
 	[Tooltip("Сущность которую спавним.")]
-	public Entity entity;
+	public EntityData data;
 
 	[Range(1, 1000)]
 	[Tooltip("Сколько 'пачек' сущностей НУЖНО заспавнить.")]
@@ -20,6 +20,11 @@ public class SpawnOrderData : ScriptableObject
 	public int GetTotalEntities()
 	{
 		return countTuples * countEntitiesInTuples;
+	}
+
+	public int GetTotalGold()
+	{
+		return GetTotalEntities() * data.price; 
 	}
 
 	public float GetTotalTimeSpawn()

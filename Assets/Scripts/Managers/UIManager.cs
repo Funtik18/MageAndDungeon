@@ -113,6 +113,6 @@ public class UIManager : MonoBehaviour
             statistics.healthCircle.Reborned((float)Stats.CurrentHealthPoints / Stats.MaxHealthPoints);
         }
 
-            statistics.moneyCount.text = Stats.CurrentMoney.ToString();
+        statistics.moneyCount.text = Stats.CurrentMoney.ToString();
     }
 }

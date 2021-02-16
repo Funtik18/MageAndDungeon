@@ -59,9 +59,9 @@ public class SpawnPoint : MonoBehaviour
 	/// </summary>
 	/// <param name="entity"></param>
 	/// <returns></returns>
-	public Entity SpawnEntity(Entity entity)
+	public Entity SpawnEntity(EntityData data)
 	{
-		Entity temp = Instantiate(entity, transform);
+		Entity temp = Instantiate(data.entity, transform);
 		temp.transform.SetParent(null);
 
 		temp.transform.position += new Vector3(Random.Range(-2f, 2f), 0, Random.Range(-2f, 2f));
@@ -85,6 +85,16 @@ public class SpawnPoint : MonoBehaviour
 		for(int i = 0; i < wavesOrders.Count; i++)
 		{
 			count += wavesOrders[i].GetTotalEntittiesWave();
+		}
+		return count;
+	}
+
+	public int GetTotalGoldWaves()
+	{
+		int count = 0;
+		for(int i = 0; i < wavesOrders.Count; i++)
+		{
+			count += wavesOrders[i].GetTotalGoldWave();
 		}
 		return count;
 	}

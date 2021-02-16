@@ -527,10 +527,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e770458fc690dc4dafac22d9470ba9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: fc528c27136c24749bda452a68ce9715, type: 2}
   isAlive: 1
   isFrozen: 0
   rb: {fileID: 2469333551429885070}
-  currentSetup: {fileID: 11400000, guid: aac909af3c1c41a4aa81603e1e0a6a68, type: 2}
 --- !u!114 &6292232030123770261
 MonoBehaviour:
   m_ObjectHideFlags: 0
