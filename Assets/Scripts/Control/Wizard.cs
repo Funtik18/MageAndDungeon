@@ -55,6 +55,8 @@ public class Wizard : MonoBehaviour
 	{
         UIManager.Instance.UpdateStatistics();
 
+        UpdateLinePoints();
+
         StartLine();
     }
 
