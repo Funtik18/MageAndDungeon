@@ -9,6 +9,9 @@ using UnityEditor;
 public class JoyButton : MonoBehaviour,IPointerUpHandler,IPointerDownHandler
 {
     public float spelDuration;
+    public float coolDown;
+
+    AbilityCooldoown myCooldown;
 
     private bool isBlock = false;
     public bool IsBlock
@@ -46,6 +49,7 @@ public class JoyButton : MonoBehaviour,IPointerUpHandler,IPointerDownHandler
     public void StartOpenButton()
     {
         Fader.FadeIn();
+        myCooldown = GetComponentInChildren<AbilityCooldoown>();
         IsBlock = isBlock;
     }
 
@@ -63,10 +67,15 @@ public class JoyButton : MonoBehaviour,IPointerUpHandler,IPointerDownHandler
     public void OnPointerDown(PointerEventData eventData)
     {
         if(isBlock) return;
+        if (!myCooldown.isCooldown)
+        {
+            myCooldown.StartCooldown();
+            Pressed = true;
+            currentSpell = Instantiate(spel) as GameObject;
+            StartCoroutine(SpellCasting(spelDuration));
+        }
 
-        Pressed = true;
-        currentSpell = Instantiate(spel) as GameObject;
-        StartCoroutine(SpellCasting(spelDuration));
+
     }
     public void OnPointerUp(PointerEventData eventData)
     {
