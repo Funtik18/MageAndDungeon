@@ -5,4 +5,6 @@
 public class StatMaxDamageOverTimeData : StatData
 {
     public int damage;
+    public int arrowsCount;
+    public int frequency;
 }

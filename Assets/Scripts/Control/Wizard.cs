@@ -28,7 +28,9 @@ public class Wizard : MonoBehaviour
 
     [Header("Periodic mage casting")]
     public GameObject selfDefenceSpell;
+    public float damage;
     public float timeToCast;
+    public int arrowsCount;
     float time=0;
 
     [Header("Line")]
@@ -54,8 +56,15 @@ public class Wizard : MonoBehaviour
     private void Awake()
 	{
         UIManager.Instance.UpdateStatistics();
-
+        GetStats();
         StartLine();
+    }
+
+    void GetStats()
+    {
+        arrowsCount = Stats.ArrowsCount;
+        timeToCast = Stats.Frequency;
+        damage = Stats.DamageOverTime;
     }
 
     private void Update()
@@ -108,7 +117,11 @@ public class Wizard : MonoBehaviour
 
     public void SelfDefence()
     {
-        StartCoroutine(periodicDamage());
+        for (int i = 0; i < arrowsCount; i++)
+        {
+            StartCoroutine(periodicDamage());
+        }
+        
     }
 
     IEnumerator periodicDamage()

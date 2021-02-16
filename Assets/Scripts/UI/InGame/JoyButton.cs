@@ -6,11 +6,20 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
+public enum SpellsName{
+    spellHellishFrost,
+    spellPunishingFist,
+    spellThunderStorm
+}
+
 public class JoyButton : MonoBehaviour,IPointerUpHandler,IPointerDownHandler
 {
+    public SpellsName spellName;
     public float spelDuration;
     public float coolDown;
-
+    public float damage;
+    public float radius;
+    
     AbilityCooldoown myCooldown;
 
     private bool isBlock = false;
@@ -41,6 +50,19 @@ public class JoyButton : MonoBehaviour,IPointerUpHandler,IPointerDownHandler
 		}
 	}
 
+    private PlayerStats stats;
+    private PlayerStats Stats
+    {
+        get
+        {
+            if (stats == null)
+            {
+                stats = GameManager.Instance.Stats;
+            }
+            return stats;
+        }
+    }
+
     public GameObject spel;
     private GameObject currentSpell;
 
@@ -49,9 +71,35 @@ public class JoyButton : MonoBehaviour,IPointerUpHandler,IPointerDownHandler
     public void StartOpenButton()
     {
         Fader.FadeIn();
-        myCooldown = GetComponentInChildren<AbilityCooldoown>();
         IsBlock = isBlock;
+        GetStats();
+        myCooldown = GetComponentInChildren<AbilityCooldoown>();
     }
+
+    void GetStats()
+    {
+        switch (spellName)
+        {
+            case SpellsName.spellPunishingFist:
+                spelDuration = Stats.SpellPunishingFist.durability;
+                damage = Stats.SpellPunishingFist.damage;
+                coolDown = Stats.SpellPunishingFist.cooldown;
+                radius = Stats.Radius;
+                break;
+            case SpellsName.spellHellishFrost:
+                spelDuration = Stats.SpellHellishFrost.durability;
+                coolDown = Stats.SpellHellishFrost.cooldown;
+                radius = Stats.Radius;
+                break;
+            case SpellsName.spellThunderStorm:
+                spelDuration = Stats.SpellThunderStorm.durability;
+                damage = Stats.SpellThunderStorm.damage;
+                coolDown = Stats.SpellThunderStorm.cooldown;
+                radius = Stats.Radius;
+                break;
+        }
+    }
+
 
     private IEnumerator SpellCasting(float sec)
     {
@@ -72,10 +120,32 @@ public class JoyButton : MonoBehaviour,IPointerUpHandler,IPointerDownHandler
             myCooldown.StartCooldown();
             Pressed = true;
             currentSpell = Instantiate(spel) as GameObject;
+            SetStats();
             StartCoroutine(SpellCasting(spelDuration));
         }
+    }
 
-
+    void SetStats()
+    {
+        switch (spellName)
+        {
+            case SpellsName.spellPunishingFist:
+                currentSpell.GetComponent<FireWall>().radius = radius;
+                foreach (var item in currentSpell.GetComponentsInChildren<ParticleSystem>())
+                {
+                    var newShape = item.shape;
+                    newShape.radius = radius;
+                }
+                
+                break;
+            case SpellsName.spellHellishFrost:
+                currentSpell.GetComponent<HellishFrost>().radius = radius;
+                currentSpell.GetComponent<HellishFrost>().spelDuration = spelDuration;
+                break;
+            case SpellsName.spellThunderStorm:
+                currentSpell.GetComponent<LightingStrike>().maxStrikes = spelDuration;
+                break;
+        }
     }
     public void OnPointerUp(PointerEventData eventData)
     {

@@ -48,18 +48,7 @@ public class PlayerStats : EntityStats
 		}
 	}
 
-	protected VariableInt damageOverTime;
-	public int DamageOverTime
-	{
-		set
-		{
-			damageOverTime.value = Mathf.Max(0, value);
-		}
-		get
-		{
-			return damageOverTime.value;
-		}
-	}
+
 	#endregion
 
 	#region Speed
@@ -133,11 +122,56 @@ public class PlayerStats : EntityStats
 			return currentMoney.value;
 		}
 	}
-	#endregion
-	#endregion
+    #endregion
 
-	#region Spells
-	protected SpellHellishFrostData spellHellishFrost;
+    #region SelfDefence
+    protected VariableInt damageOverTime;
+    public int DamageOverTime
+    {
+        set
+        {
+            damageOverTime.value = Mathf.Max(0, value);
+        }
+        get
+        {
+            return damageOverTime.value;
+        }
+    }
+
+    protected VariableInt arrowsCount;
+    public int ArrowsCount
+    {
+        set
+        {
+            arrowsCount.value = Mathf.Max(1, value);
+        }
+        get
+        {
+            return arrowsCount.value;
+        }
+    }
+
+    protected VariableInt frequency;
+    public int Frequency
+    {
+        set
+        {
+            frequency.value = Mathf.Max(0, value);
+        }
+        get
+        {
+            return frequency.value;
+        }
+    }
+
+    #endregion
+
+    #endregion
+
+    #region Spells
+    //protected Spells[] spell
+
+    protected SpellHellishFrostData spellHellishFrost;
 	public SpellHellishFrostData SpellHellishFrost
 	{
 		get
@@ -173,8 +207,11 @@ public class PlayerStats : EntityStats
 
 		damage = new VariableInt(playerOpportunities.maxDamages[data.statsLevels[1]].damage);
 		damageOverTime = new VariableInt(playerOpportunities.maxDamageOverTimes[data.statsLevels[2]].damage);
+        arrowsCount = new VariableInt(playerOpportunities.maxDamageOverTimes[data.statsLevels[2]].arrowsCount);
+        frequency = new VariableInt(playerOpportunities.maxDamageOverTimes[data.statsLevels[2]].frequency);
 
-		speed = new VariableFloat(playerOpportunities.maxSpeeds[data.statsLevels[3]].speed);
+
+        speed = new VariableFloat(playerOpportunities.maxSpeeds[data.statsLevels[3]].speed);
 
 		radius = new VariableFloat(playerOpportunities.maxRadiuses[data.statsLevels[4]].radius);
 
