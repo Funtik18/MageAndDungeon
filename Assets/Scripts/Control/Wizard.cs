@@ -26,6 +26,11 @@ public class Wizard : MonoBehaviour
     [Header("SecondChanceSpel")]
     public SecondChance secondChance;
 
+    [Header("Periodic mage casting")]
+    public GameObject selfDefenceSpell;
+    public float timeToCast;
+    float time=0;
+
     [Header("Line")]
     public LineRenderer line;
     public float lineUpdateTime = 0.1f;
@@ -53,7 +58,17 @@ public class Wizard : MonoBehaviour
         StartLine();
     }
 
-	public void TakeDamage(int damage)
+    private void Update()
+    {
+        time += Time.deltaTime;
+        if (!SpawnManager.Instance.instruction.isPause.value && time>timeToCast)
+        {
+            time = 0;
+            SelfDefence();
+        }
+    }
+
+    public void TakeDamage(int damage)
 	{
         if(isDead) return;
 
@@ -89,6 +104,17 @@ public class Wizard : MonoBehaviour
         Stats.CurrentMoney += money;
      
         UIManager.Instance.UpdateStatistics();
+    }
+
+    public void SelfDefence()
+    {
+        StartCoroutine(periodicDamage());
+    }
+
+    IEnumerator periodicDamage()
+    {
+        yield return new WaitForSeconds(timeToCast);
+        Instantiate(selfDefenceSpell,transform);
     }
 
     #region Line Circle

@@ -9,25 +9,24 @@ public class FireWall : MonoBehaviour
     private Wizard wizard;
     private List<Entity> entities = new List<Entity>();
 
-	private void Awake()
-	{
+    private void Awake()
+    {
         entities = SpawnManager.Instance.spawnedEntities;
         wizard = GameManager.Instance.WizardTarget;
     }
 
-	void Update()
+    void Update()
     {
-		for(int i = 0; i < entities.Count; i++)
-		{
+        for (int i = 0; i < entities.Count; i++)
+        {
             Entity refEntity = entities[i];
-			if(refEntity.isAlive)
-			{
-                if(Vector3.Distance(transform.position, refEntity.transform.position) <= radius)
-                {
-                    refEntity.isAlive = false;
-                    wizard.AddMoney(refEntity.GetPrice());
-                }
+
+            if (Vector3.Distance(transform.position, refEntity.transform.position) <= radius)
+            {
+                refEntity.isAlive = false;
+                wizard.AddMoney(refEntity.GetPrice());
             }
+
         }
     }
 }

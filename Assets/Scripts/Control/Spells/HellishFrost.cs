@@ -10,25 +10,24 @@ public class HellishFrost : MonoBehaviour
     private List<Entity> entities = new List<Entity>();
     List<Entity> temp = new List<Entity>();
 
-	private void Awake()
-	{
+    private void Awake()
+    {
         entities = SpawnManager.Instance.spawnedEntities;
         wizard = GameManager.Instance.WizardTarget;
     }
 
-	void Update()
+    void Update()
     {
-		for(int i = 0; i < entities.Count; i++)
-		{
+        for (int i = 0; i < entities.Count; i++)
+        {
             Entity refEntity = entities[i];
-			if(refEntity.isAlive )
-			{
-                if(Vector3.Distance(transform.position, refEntity.transform.position) <= radius)
-                {
-                    refEntity.GetComponent<EnemyController>().getFrozen(spelDuration);
-                    
-                }
+
+            if (Vector3.Distance(transform.position, refEntity.transform.position) <= radius)
+            {
+                refEntity.GetComponent<EnemyController>().getFrozen(spelDuration);
+
             }
+
         }
         StartCoroutine(wait());
     }
