@@ -79,7 +79,7 @@ public class EnemyController : Entity
         StartLife();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (isFrozen)
             rb.velocity = Vector3.zero;
