@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using DG.Tweening;
+using System.Collections.Generic;
 
 public class SettingsMenu : MonoBehaviour
 {
@@ -7,7 +8,11 @@ public class SettingsMenu : MonoBehaviour
 	[SerializeField] private Vector2 spaceBtw;
 	[Space]
 	[SerializeField] private SettingsMainButton settingsButton;
-	[SerializeField] private SettingsMenuItem[] buttons;
+	[SerializeField] private SettingsMenuItem musicButton;
+	[SerializeField] private SettingsMenuItem soundsButton;
+	[SerializeField] private SettingsMenuItem vibrationButton;
+
+	private List<SettingsMenuItem> buttons = new List<SettingsMenuItem>();
 
 	[Header("Settings Button Rotation")]
 	[SerializeField] private float expandRotationDuration;
@@ -32,8 +37,13 @@ public class SettingsMenu : MonoBehaviour
 
 	private void Awake()
 	{
-		settingsButton.Button.onClick.AddListener(ToggleMenu);
+		CheckMenuItem(musicButton, SaveLoadManager.IsMusic);
+		CheckMenuItem(soundsButton, SaveLoadManager.IsSound);
+		CheckMenuItem(vibrationButton, SaveLoadManager.IsVibration);
 
+		buttons.Add(musicButton);
+		buttons.Add(soundsButton);
+		buttons.Add(vibrationButton);
 
 		settingsButton.Trans.SetAsLastSibling();
 		settingsButtonPosition = settingsButton.Trans.anchoredPosition;
@@ -41,15 +51,34 @@ public class SettingsMenu : MonoBehaviour
 		ResetPositions();
 	}
 
+	public void MusicToggle()
+	{
+		SaveLoadManager.IsMusic = !SaveLoadManager.IsMusic;
+	}
+	public void SoundsToggle()
+	{
+		SaveLoadManager.IsSound = !SaveLoadManager.IsSound;
+	}
+	public void VibrationToggle()
+	{
+		SaveLoadManager.IsVibration = !SaveLoadManager.IsVibration;
+	}
+
+	private void CheckMenuItem(SettingsMenuItem item, bool enable)
+	{
+		item.IsEnable = enable;
+	}
+
+
 	private void ResetPositions()
 	{
-		for(int i = 0; i < buttons.Length; i++)
+		for(int i = 0; i < buttons.Count; i++)
 		{
 			buttons[i].Trans.anchoredPosition = settingsButtonPosition;
 		}
 	}
 
-	private void ToggleMenu()
+	public void MenuToggle()
 	{
 		isClosed = !isClosed;
 
@@ -57,7 +86,7 @@ public class SettingsMenu : MonoBehaviour
 		{
 			settingsButton.Trans.DORotate(-Vector3.forward * 180f, expandRotationDuration).From(Vector3.zero).SetEase(expandRotationEase);
 
-			for(int i = 0; i < buttons.Length; i++)
+			for(int i = 0; i < buttons.Count; i++)
 			{
 				//buttons[i].Trans.anchoredPosition = settingsButtonPosition + spaceBtw * (i + 1);
 				buttons[i].Trans.DOAnchorPos(settingsButtonPosition + spaceBtw * (i + 1), expandDuration).SetEase(expandEase);
@@ -68,9 +97,9 @@ public class SettingsMenu : MonoBehaviour
 		{
 			settingsButton.Trans.DORotate(Vector3.forward * 180f, collapseRotationDuration).From(Vector3.zero).SetEase(collapseRotationEase);
 
-			for(int i = 0; i < buttons.Length; i++)
+			for(int i = 0; i < buttons.Count; i++)
 			{
-				//buttons[i].Trans.anchoredPosition = settingsButtonPosition;
+				//ResetPositions();
 				buttons[i].Trans.DOAnchorPos(settingsButtonPosition, collapseDuration).SetEase(collapseEase);
 				buttons[i].Image.DOFade(0f, collapseDuration);
 			}

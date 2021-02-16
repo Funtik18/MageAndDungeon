@@ -8,6 +8,76 @@ public class SaveLoadManager
 
 	public const string savePath = "/saves";
 
+
+	private static int isMusic = -1;
+	public static bool IsMusic
+	{
+		set
+		{
+			isMusic = value ? 1 : 0;
+			PlayerPrefs.SetInt("OnMusic", isMusic);
+		}
+		get
+		{
+			if(isMusic == -1)
+			{
+				isMusic = PlayerPrefs.GetInt("OnMusic", -1);
+				if(isMusic == -1)
+				{
+					IsMusic = true;
+				}
+			}
+			return isMusic == 1 ? true : false;
+		}
+	}
+
+
+	private static int isSound = -1;
+	public static bool IsSound
+	{
+		set
+		{
+			isSound = value ? 1 : 0;
+			PlayerPrefs.SetInt("OnSound", isSound);
+		}
+		get
+		{
+			if(isSound == -1)
+			{
+				isSound = PlayerPrefs.GetInt("OnSound", -1);
+				if(isSound == -1)
+				{
+					IsSound = true;
+				}
+			}
+			return isSound == 1 ? true : false;
+		}
+	}
+
+
+	private static int isVibration = -1;
+	public static bool IsVibration
+	{
+		set
+		{
+			isVibration = value ? 1 : 0;
+			PlayerPrefs.SetInt("OnVibration", isVibration);
+		}
+		get
+		{
+			if(isVibration == -1)
+			{
+				isVibration = PlayerPrefs.GetInt("OnVibration", -1);
+				if(isVibration == -1)
+				{
+					IsVibration = true;
+				}
+			}
+			return isVibration == 1 ? true : false;
+		}
+	}
+
+
 	public static bool Save(string saveName, object saveData)
 	{
 		BinaryFormatter formatter = GetBinaryFormate();

@@ -6,8 +6,6 @@ using UnityEngine.UI;
 
 public class SettingsMenuItem : MonoBehaviour
 {
-	public UnityAction<SettingsMenuItem> onClick;
-
 	[SerializeField] private Sprite spriteOn;
 	[SerializeField] private Sprite spriteOff;
 
@@ -45,7 +43,6 @@ public class SettingsMenuItem : MonoBehaviour
 			if(button == null)
 			{
 				button = GetComponent<Button>();
-				button.onClick.AddListener(Click);
 			}
 			return button;
 		}
@@ -69,16 +66,8 @@ public class SettingsMenuItem : MonoBehaviour
 		}
 	}
 
-	private void Awake()
+	public void Click()
 	{
-		if(Button) { }
-		if(IsEnable) { }
-	}
-
-	private void Click()
-	{
-		onClick?.Invoke(this);
-
 		IsEnable = !IsEnable;
 	}
 }

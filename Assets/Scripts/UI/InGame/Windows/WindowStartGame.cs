@@ -36,6 +36,7 @@ public class WindowStartGame : MonoBehaviour
 
 	private void Tap()
 	{
+		FindObjectOfType<AudioBackground>().CheckMusic();
 		StartCloseWindow();
 	}
 
