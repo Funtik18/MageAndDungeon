@@ -13,6 +13,13 @@ public class FireWall : MonoBehaviour
     {
         entities = SpawnManager.Instance.spawnedEntities;
         wizard = GameManager.Instance.WizardTarget;
+        //GetComponentInChildren<ParticleSystem>().shape.radius = radius;
+        foreach (var item in GetComponentsInChildren<ParticleSystem>())
+        {
+            var newShape = item.shape;
+            newShape.radius = radius;
+            //item.shape = newShape;
+        }
     }
 
     void Update()
