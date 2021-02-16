@@ -18,7 +18,18 @@ public class SaveData
 	public int currentDiamonds;
 
 	public int[] statsLevels = new int[7];
+	//0 hp
+	//1 dmg
+	//2 dmg overtime
+	//3 speed
+	//4 radius
+	//5 passice income
+	//6 mob scalar
+
 	public int[] spellsLevels = new int[3];
+	//0 frost
+	//1 fist
+	//2 storm
 
 	public SaveData StartValues()
 	{

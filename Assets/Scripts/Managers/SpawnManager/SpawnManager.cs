@@ -84,7 +84,6 @@ public class SpawnManager : MonoBehaviour
     }
     #endregion
     
-
 	public void AddEntity(Entity entity)
 	{
 		if(!spawnedEntities.Contains(entity))
@@ -164,6 +163,7 @@ public class SpawnManager : MonoBehaviour
 public class SpawnInstruction
 {
     public VariableBoolean isPause = new VariableBoolean(false);
+    public VariableBoolean isLoop = new VariableBoolean(false);
 
     public List<SpawnUnite> spawnUnites = new List<SpawnUnite>();
 
@@ -193,50 +193,61 @@ public class SpawnInstruction
             }
         }
 
-        for(int i = 0; i < spawnUnites.Count; i++)
-        {
-            List<SpawnPoint> points = spawnUnites[i].spawnPoints;
 
-            for(int j = 0; j < points.Count; j++)
+		while(true)
+		{
+            for(int i = 0; i < spawnUnites.Count; i++)
             {
-                points[j].StartSpawn();
-            }
+                List<SpawnPoint> points = spawnUnites[i].spawnPoints;
 
-            bool skip = false;
-            bool showTimersOnce = false;
-            float startTime = Time.time;
-            float currentTime = Time.time - startTime;
-            float totalTime = spawnUnites[i].GetLongestWaveTime();
-            while(currentTime < totalTime)//ждём окончания самой долгой микро волны
-            {
-                if(showTimersOnce == false)
-                    if(i != spawnUnites.Count - 1)
-                    {
-                        SpawnUnite unite = spawnUnites[i + 1];
-                        if(currentTime >= totalTime * unite.skipWaiter)
+                for(int j = 0; j < points.Count; j++)
+                {
+                    points[j].StartSpawn();
+                }
+
+                bool skip = false;
+                bool showTimersOnce = false;
+                float startTime = Time.time;
+                float currentTime = Time.time - startTime;
+                float totalTime = spawnUnites[i].GetLongestWaveTime();
+                while(currentTime < totalTime)//ждём окончания самой долгой микро волны
+                {
+                    if(showTimersOnce == false)
+                        if(i != spawnUnites.Count - 1)
                         {
-                            unite.ShowSkipers(totalTime - currentTime, delegate { skip = true; });
-                            showTimersOnce = true;
+                            SpawnUnite unite = spawnUnites[i + 1];
+                            if(currentTime >= totalTime * unite.skipWaiter)
+                            {
+                                unite.ShowSkipers(totalTime - currentTime, delegate { skip = true; });
+                                showTimersOnce = true;
+                            }
                         }
+
+                    currentTime = Time.time - startTime;
+
+                    while(isPause.value)
+                    {
+                        startTime += Time.deltaTime;
+                        yield return null;
                     }
 
-                currentTime = Time.time - startTime;
-
-				while(isPause.value)
-				{
-                    startTime += Time.deltaTime;
+                    if(skip)
+                    {
+                        //сколько выйграл времeни
+                        SpawnManager.Instance.statistics.storedTime += (totalTime - currentTime);
+                        break;
+                    }
                     yield return null;
-				}
-
-                if(skip)
-                {
-                    //сколько выйграл времeни
-                    SpawnManager.Instance.statistics.storedTime += (totalTime - currentTime);
-                    break;
                 }
-                yield return null;
             }
+
+            Debug.Log("Circle");
+            if(isLoop.value == false) break;
+
+            yield return null;
         }
+
+       
 
         StopInstruction();
     }
@@ -263,6 +274,9 @@ public class SpawnInstruction
         return count;
     }
 
+    /// <summary>
+    /// Всего золота.
+    /// </summary>
     public int GetTotalGold()
 	{
         int gold = 0;

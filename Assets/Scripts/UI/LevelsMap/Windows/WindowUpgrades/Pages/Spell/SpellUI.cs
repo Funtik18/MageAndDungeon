@@ -32,6 +32,7 @@ public class SpellUI : MonoBehaviour, IPointerDownHandler
 	public void UpdateSpell()
 	{
 		icon.sprite = data.icon;
+
 		spellName.text = data.russianInfo.name;
 	}
 

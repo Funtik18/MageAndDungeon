@@ -21341,19 +21341,12 @@ MonoBehaviour:
   instruction:
     isPause:
       value: 0
+    isLoop:
+      value: 1
     spawnUnites:
     - skipWaiter: 0
       spawnPoints:
       - {fileID: 2024213764}
-    - skipWaiter: 0.5
-      spawnPoints:
-      - {fileID: 1721362208}
-    - skipWaiter: 0.5
-      spawnPoints:
-      - {fileID: 1045153739}
-    - skipWaiter: 0.5
-      spawnPoints:
-      - {fileID: 202858052}
 --- !u!1 &1134441610
 GameObject:
   m_ObjectHideFlags: 0

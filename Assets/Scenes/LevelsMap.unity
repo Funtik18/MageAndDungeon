@@ -4482,7 +4482,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   opportunitiesData: {fileID: 11400000, guid: 67fc7c22a1401b94f9ff8c1ed0db5a30, type: 2}
-  levelLoader: {fileID: 0}
 --- !u!4 &949931700
 Transform:
   m_ObjectHideFlags: 0
