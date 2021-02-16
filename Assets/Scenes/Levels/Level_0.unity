@@ -21331,12 +21331,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statistics:
     totalEntities: 0
-    storedTime: 0
     totalSpawnedEntities: 0
     totalDiedEntities: 0
     totalLeftToKill: 0
-    timeInfo:
-      totalLevelTime: 0
+    totalGold: 0
+    totalLevelTime: 0
+    storedTime: 0
   spawnedEntities: []
   instruction:
     isPause:
@@ -21841,6 +21841,8 @@ MonoBehaviour:
   isReborn: 0
   secondChance: {fileID: 5964262470228246398, guid: acf39d9f4addf294d93fa56fa373961b,
     type: 3}
+  selfDefenceSpell: {fileID: 0}
+  timeToCast: 0
   line: {fileID: 919132148726236746}
   lineUpdateTime: 0.04
   posY: 1
