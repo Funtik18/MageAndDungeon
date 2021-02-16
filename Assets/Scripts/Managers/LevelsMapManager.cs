@@ -17,12 +17,8 @@ public class LevelsMapManager : MonoBehaviour
 
 	public PlayerOpportunitiesData opportunitiesData;
 
-	public Animator levelLoader;
-
 	private void Awake()
 	{
-		levelLoader.SetTrigger("TransitionOut");
-
 		//Debug.LogError(Application.persistentDataPath + SaveLoadManager.mainStatisticPath);
 		SaveData data = (SaveData)SaveLoadManager.Load(Application.persistentDataPath + SaveLoadManager.mainStatisticPath);
 		if(data == null)//first time
