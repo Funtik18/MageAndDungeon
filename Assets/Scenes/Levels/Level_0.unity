@@ -21214,6 +21214,8 @@ MonoBehaviour:
   instruction:
     isPause:
       value: 0
+    isLoop:
+      value: 0
     spawnUnites:
     - skipWaiter: 0
       spawnPoints:
@@ -21719,7 +21721,9 @@ MonoBehaviour:
     type: 3}
   selfDefenceSpell: {fileID: 9044819216500295333, guid: 1b512294b5b82ad479f62c91e00bee5f,
     type: 3}
+  damage: 0
   timeToCast: 3
+  arrowsCount: 0
   line: {fileID: 919132148726236746}
   lineUpdateTime: 0.04
   posY: 1

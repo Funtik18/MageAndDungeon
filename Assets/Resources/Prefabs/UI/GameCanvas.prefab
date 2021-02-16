@@ -609,8 +609,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc3bb33417089174ab345f9dd6007769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spellName: 1
   spelDuration: 15
   coolDown: 15
+  damage: 0
+  radius: 0
   spel: {fileID: 1263555352264440802, guid: aa081a177cf40394f9f8e2c1fd101713, type: 3}
 --- !u!1 &1885814041247500028
 GameObject:
@@ -906,8 +909,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc3bb33417089174ab345f9dd6007769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spellName: 2
   spelDuration: 15
   coolDown: 15
+  damage: 0
+  radius: 0
   spel: {fileID: 5902880217611380547, guid: 06a4e04268cabb748993ebe150fc7d4c, type: 3}
 --- !u!1 &1885814041870100399
 GameObject:
@@ -6287,8 +6293,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc3bb33417089174ab345f9dd6007769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spellName: 0
   spelDuration: 15
   coolDown: 15
+  damage: 0
+  radius: 0
   spel: {fileID: 2276457294668110697, guid: c4180cd4a4642cf4a9bcbde5d2480a8d, type: 3}
 --- !u!1 &1885814043026455860
 GameObject:
