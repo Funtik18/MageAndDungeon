@@ -236,6 +236,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c72c47ef63c74244908de408d38bead, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onTap:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6565319610998832684
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,6 +250,7 @@ GameObject:
   - component: {fileID: 6565319610998832683}
   - component: {fileID: 6565319610998832682}
   - component: {fileID: 934434471441902008}
+  - component: {fileID: 6586238316852672004}
   - component: {fileID: 3216371830487860053}
   - component: {fileID: 6559337715287055006}
   m_Layer: 0
@@ -299,6 +303,25 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!95 &6586238316852672004
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6565319610998832684}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6e03053df3e28d847b6438622bf94ef8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &3216371830487860053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,6 +348,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeImage: {fileID: 6565319610100749848}
   interaction: {fileID: 1315299213685981862}
+  isPause:
+    value: 0
 --- !u!1 &6565319611297578907
 GameObject:
   m_ObjectHideFlags: 0

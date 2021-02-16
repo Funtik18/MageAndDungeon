@@ -21331,12 +21331,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statistics:
     totalEntities: 0
-    storedTime: 0
     totalSpawnedEntities: 0
     totalDiedEntities: 0
     totalLeftToKill: 0
-    timeInfo:
-      totalLevelTime: 0
+    totalGold: 0
+    totalLevelTime: 0
+    storedTime: 0
   spawnedEntities: []
   instruction:
     isPause:
@@ -21345,6 +21345,9 @@ MonoBehaviour:
     - skipWaiter: 0
       spawnPoints:
       - {fileID: 2024213764}
+    - skipWaiter: 0.5
+      spawnPoints:
+      - {fileID: 1721362208}
     - skipWaiter: 0.5
       spawnPoints:
       - {fileID: 1721362208}
@@ -26087,49 +26090,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1402379994
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1402379996}
-  - component: {fileID: 1402379995}
-  m_Layer: 0
-  m_Name: IAPManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1402379995
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1402379994}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7b541637e7ac504aab728f7a393998b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1402379996
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1402379994}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1404322037
 GameObject:
@@ -41061,8 +41021,8 @@ GameObject:
   - component: {fileID: 3469287836912931671}
   - component: {fileID: 1711813856341763997}
   - component: {fileID: 919132148726236746}
-  - component: {fileID: 1175558828}
   - component: {fileID: 919132148726236745}
+  - component: {fileID: 1175558828}
   m_Layer: 0
   m_Name: CenterWizardThrone
   m_TagString: Untagged
@@ -41471,6 +41431,75 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4825547147162372937}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4908743024949500171
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4908743026234099665, guid: 23126fc5622c1484686eb780dc778349,
+        type: 3}
+      propertyPath: m_Name
+      value: IAPManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908743026234099671, guid: 23126fc5622c1484686eb780dc778349,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908743026234099671, guid: 23126fc5622c1484686eb780dc778349,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908743026234099671, guid: 23126fc5622c1484686eb780dc778349,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908743026234099671, guid: 23126fc5622c1484686eb780dc778349,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908743026234099671, guid: 23126fc5622c1484686eb780dc778349,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908743026234099671, guid: 23126fc5622c1484686eb780dc778349,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908743026234099671, guid: 23126fc5622c1484686eb780dc778349,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908743026234099671, guid: 23126fc5622c1484686eb780dc778349,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908743026234099671, guid: 23126fc5622c1484686eb780dc778349,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908743026234099671, guid: 23126fc5622c1484686eb780dc778349,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908743026234099671, guid: 23126fc5622c1484686eb780dc778349,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 23126fc5622c1484686eb780dc778349, type: 3}
 --- !u!1001 &5808415274722198938
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41478,6 +41507,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 536164471025889645, guid: 49e4d5136bb598742a74f76fd37c8154,
+        type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 536725007165335811, guid: 49e4d5136bb598742a74f76fd37c8154,
         type: 3}
       propertyPath: m_Pivot.x
@@ -41608,6 +41642,16 @@ PrefabInstance:
       propertyPath: thunderStorm
       value: 
       objectReference: {fileID: 1997949239}
+    - target: {fileID: 5808415275816576766, guid: 49e4d5136bb598742a74f76fd37c8154,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5808415275816576766, guid: 49e4d5136bb598742a74f76fd37c8154,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5808415276237246729, guid: 49e4d5136bb598742a74f76fd37c8154,
         type: 3}
       propertyPath: spelDuration
