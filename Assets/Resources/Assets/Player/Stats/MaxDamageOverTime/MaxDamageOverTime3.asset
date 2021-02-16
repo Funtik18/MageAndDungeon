@@ -17,3 +17,5 @@ MonoBehaviour:
   level: 3
   price: 0
   damage: 0
+  arrowsCount: 2
+  frequency: 3
