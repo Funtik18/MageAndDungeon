@@ -26,11 +26,8 @@ public class LightingStrike : MonoBehaviour
         for (int i = 0; i < entities.Count; i++)
         {
             Entity refEntity = entities[i];
-            if (refEntity.isAlive)
-            {
                 if (!temp.Contains(refEntity))
-                    temp.Add(refEntity);
-            }
+                    temp.Add(refEntity);            
         }
         if (currentTime >= timeToNextStrike && maxStrikes > 0)
         {

@@ -14,15 +14,11 @@ public class MagePeriodicDamage : MonoBehaviour
     {
         entities = SpawnManager.Instance.spawnedEntities;
         target = entities[Random.Range(0, entities.Count)].transform;
-        while (!target.GetComponent<EnemyController>().isAlive)
-        {
-            target = entities[Random.Range(0, entities.Count)].transform;
-        }
-
     }
 
     private void Update()
     {
+        transform.LookAt(target);
         transform.position = Vector3.MoveTowards(transform.position,target.position,speed*Time.deltaTime);
         
         if (Vector3.Distance(transform.position, target.position)<0.5f)

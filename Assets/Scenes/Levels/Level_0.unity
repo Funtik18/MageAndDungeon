@@ -21844,8 +21844,9 @@ MonoBehaviour:
   isReborn: 0
   secondChance: {fileID: 5964262470228246398, guid: acf39d9f4addf294d93fa56fa373961b,
     type: 3}
-  selfDefenceSpell: {fileID: 0}
-  timeToCast: 0
+  selfDefenceSpell: {fileID: 9044819216500295333, guid: 1b512294b5b82ad479f62c91e00bee5f,
+    type: 3}
+  timeToCast: 3
   line: {fileID: 919132148726236746}
   lineUpdateTime: 0.04
   posY: 1

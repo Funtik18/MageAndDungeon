@@ -29,8 +29,8 @@ public class Wizard : MonoBehaviour
     [Header("Periodic mage casting")]
     public GameObject selfDefenceSpell;
     public float timeToCast;
-    public bool isCasting;
     float time=0;
+
     [Header("Line")]
     public LineRenderer line;
     public float lineUpdateTime = 0.1f;
@@ -61,7 +61,7 @@ public class Wizard : MonoBehaviour
     private void Update()
     {
         time += Time.deltaTime;
-        if (isCasting && time>timeToCast)
+        if (!SpawnManager.Instance.instruction.isPause.value && time>timeToCast)
         {
             time = 0;
             SelfDefence();
