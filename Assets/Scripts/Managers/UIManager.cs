@@ -30,8 +30,6 @@ public class UIManager : MonoBehaviour
 
     public StatisticsInGame statistics;
 
-    public Animator levelLoader;
-
     [Header("Windows")]
     public WindowStartGame windowStart;
     public WindowFailGame windowFail;
@@ -45,8 +43,6 @@ public class UIManager : MonoBehaviour
 
     private void Awake()
     {
-        levelLoader.SetTrigger("TransitionOut");
-
         windowStart.onClosed = WindowStartClossed;
 
         windowFail.btnReward.onClick.AddListener(delegate
