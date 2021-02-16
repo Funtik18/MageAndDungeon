@@ -56,7 +56,8 @@ public class Wizard : MonoBehaviour
     private void Awake()
 	{
         UIManager.Instance.UpdateStatistics();
-        GetStats();
+		UpdateLinePoints();
+		GetStats();
         StartLine();
     }
 
