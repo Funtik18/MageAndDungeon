@@ -34,6 +34,20 @@ public class SpawnTimer : MonoBehaviour
 		}
 	}
 
+	private Animator animator;
+	public Animator Animator
+	{
+		get
+		{
+			if(animator == null)
+			{
+				animator = GetComponent<Animator>();
+			}
+			return animator;
+		}
+	}
+
+
 	public float FillAmount
 	{
 		set
@@ -52,6 +66,7 @@ public class SpawnTimer : MonoBehaviour
 
 	private void Awake()
 	{
+		Animator.enabled = false;
 		interaction.onTap.AddListener(delegate
 		{
 			onTap?.Invoke();
@@ -96,6 +111,10 @@ public class SpawnTimer : MonoBehaviour
 	}
 	private IEnumerator Timer()
 	{
+
+		Animator.enabled = true;
+		Animator.SetTrigger("Open");
+
 		float currentSecs = secs;
 		FillAmount = currentSecs / secs;
 
@@ -116,7 +135,7 @@ public class SpawnTimer : MonoBehaviour
 
 			yield return null;
 		}
-
+		Animator.SetTrigger("Close");
 		StopTimer();
 	}
 	private void StopTimer()

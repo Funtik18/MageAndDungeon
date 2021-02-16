@@ -25,21 +25,6 @@ public class Levels : MonoBehaviour
 
     [SerializeField] private List<Level> levels = new List<Level>();
 
-	private void Awake()
-	{
-  //      int currentLevel = SaveLoadManager.Instance.CurrentLevel;
-
-  //      if(currentLevel >= levels.Count) { Debug.LogError("PlayerPrefs error"); return; }
-
-  //      for(int i = 0; i <= currentLevel; i++)
-		//{
-  //          levels[i].GetComponent<Image>().color = Color.green;
-  //      }
-		//for(int i = currentLevel + 1; i < levels.Count; i++)
-		//{
-  //          levels[i].GetComponent<Button>().interactable = false;
-		//}
-	}
     public void LoadBrawlScene()
 	{
         SceneLoaderManager.Instance.LoadLevelBrawl();
