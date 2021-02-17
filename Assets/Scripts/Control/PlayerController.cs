@@ -28,6 +28,18 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 
+    private AudioPlayerPunch audioSound;
+    public AudioPlayerPunch AudioSound
+	{
+		get
+		{
+            if(audioSound == null)
+			{
+                audioSound = GetComponent<AudioPlayerPunch>();
+			}
+            return audioSound;
+		}
+	}
 
     private Joystick joyStick;
     private JoyButton joyButton;
@@ -69,6 +81,8 @@ public class PlayerController : MonoBehaviour
         GameObject refCol = collision.gameObject;
         if(refCol.layer == 9)//layer enemy
 		{
+            AudioSound.PlayAudio();
+
             refCol.transform.root.GetComponent<Entity>().TakeDamage(Stats.Damage);
         }
 	}

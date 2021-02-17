@@ -111,4 +111,10 @@ public class SpawnPoint : MonoBehaviour
 		}
 		return time;
 	}
+
+
+	private void OnDrawGizmos()
+	{
+		Gizmos.DrawSphere(transform.position, 0.2f);
+	}
 }

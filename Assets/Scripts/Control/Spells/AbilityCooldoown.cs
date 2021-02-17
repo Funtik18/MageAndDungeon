@@ -1,10 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class AbilityCooldoown : MonoBehaviour
 {
+    public UnityAction onCoolDownPassed;
+
     public Image abilityImage;
     public JoyButton but;
     float cooldown;
@@ -32,6 +33,8 @@ public class AbilityCooldoown : MonoBehaviour
             {
                 abilityImage.fillAmount = 0;
                 isCooldown = false;
+
+                onCoolDownPassed?.Invoke();
             }
         }
     }

@@ -7,7 +7,6 @@ using System.Collections;
 using UnityEditor;
 #endif
 
-
 public class SpawnTimer : MonoBehaviour
 {
 	public UnityAction onTap;
@@ -47,6 +46,18 @@ public class SpawnTimer : MonoBehaviour
 		}
 	}
 
+	private AudioSpawnTimer audioTimer;
+	public AudioSpawnTimer AudioTimer
+	{
+		get
+		{
+			if(audioTimer == null)
+			{
+				audioTimer = GetComponent<AudioSpawnTimer>();
+			}
+			return audioTimer;
+		}
+	}
 
 	public float FillAmount
 	{
@@ -60,6 +71,9 @@ public class SpawnTimer : MonoBehaviour
 		}
 	}
 
+
+	private bool isTap = false;
+
 	private float secs = 1f;
 	private Coroutine timerCoroutine = null;
 	public bool IsTimerProcess => timerCoroutine != null;
@@ -69,7 +83,12 @@ public class SpawnTimer : MonoBehaviour
 		Animator.enabled = false;
 		interaction.onTap.AddListener(delegate
 		{
+			isTap = true;
+
 			onTap?.Invoke();
+
+			AudioTimer.SetAudioClipOnClose();
+			AudioTimer.PlayAudio();
 		});
 	}
 
@@ -111,6 +130,11 @@ public class SpawnTimer : MonoBehaviour
 	}
 	private IEnumerator Timer()
 	{
+		isTap = false;
+
+		AudioTimer.SetAudioClipOnOpen();
+		AudioTimer.PlayAudio();
+
 
 		Animator.enabled = true;
 		Animator.SetTrigger("Open");
@@ -142,6 +166,12 @@ public class SpawnTimer : MonoBehaviour
 	{
 		if(IsTimerProcess)
 		{
+			if(isTap == false)
+			{
+				AudioTimer.SetAudioClipOnClose();
+				AudioTimer.PlayAudio();
+			}
+
 			TimerFadeOut();
 			
 			StopCoroutine(timerCoroutine);
