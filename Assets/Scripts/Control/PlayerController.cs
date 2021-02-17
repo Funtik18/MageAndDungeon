@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
+    public UnityEvent onHit;
+
     private Transform wizard;
     private Transform Wizard
 	{
@@ -81,7 +84,7 @@ public class PlayerController : MonoBehaviour
         GameObject refCol = collision.gameObject;
         if(refCol.layer == 9)//layer enemy
 		{
-            AudioSound.PlayAudio();
+            onHit?.Invoke();
 
             refCol.transform.root.GetComponent<Entity>().TakeDamage(Stats.Damage);
         }

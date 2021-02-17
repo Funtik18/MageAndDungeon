@@ -1964,6 +1964,7 @@ GameObject:
   - component: {fileID: 335523101}
   - component: {fileID: 335523103}
   - component: {fileID: 335523102}
+  - component: {fileID: 335523104}
   m_Layer: 5
   m_Name: VibrationButton
   m_TagString: Untagged
@@ -2057,6 +2058,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 335523102}
         m_MethodName: PlayAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 335523104}
+        m_MethodName: Vibrate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2229,6 +2241,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &335523104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335523096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a2b883116ebd994db94f8ec602d03e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &397333324
 GameObject:
   m_ObjectHideFlags: 0
