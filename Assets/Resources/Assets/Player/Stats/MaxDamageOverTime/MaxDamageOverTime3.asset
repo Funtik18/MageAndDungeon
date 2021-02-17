@@ -16,6 +16,6 @@ MonoBehaviour:
   russianInfo: {fileID: 11400000, guid: 3e59662f2904c0d409d2c811f2777983, type: 2}
   level: 3
   price: 0
-  damage: 0
+  damage: 4
   arrowsCount: 2
   frequency: 3

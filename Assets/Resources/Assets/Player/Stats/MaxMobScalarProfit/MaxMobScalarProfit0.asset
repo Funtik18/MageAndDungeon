@@ -16,4 +16,4 @@ MonoBehaviour:
   russianInfo: {fileID: 11400000, guid: 202157d06be55fe4798cce31c87c589c, type: 2}
   level: 0
   price: 0
-  scalar: 0
+  scalar: 1

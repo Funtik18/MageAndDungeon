@@ -64,13 +64,15 @@ public class PageStats : MonoBehaviour
 	{
 		rect.verticalScrollbar.value = 1f;
 
-		UpdateStat(statMaxHP, data.maxHps[SaveData.Instance.statsLevels[0]], 0);
-		UpdateStat(statMaxDamage, data.maxDamages[SaveData.Instance.statsLevels[1]], 1);
-		UpdateStat(statMaxDamageOverTime, data.maxDamageOverTimes[SaveData.Instance.statsLevels[2]], 2);
-		UpdateStat(statSpeed, data.maxSpeeds[SaveData.Instance.statsLevels[3]], 3);
-		UpdateStat(statRadius, data.maxRadiuses[SaveData.Instance.statsLevels[4]], 4);
-		UpdateStat(statPassiveIncome, data.maxPassiveIncomes[SaveData.Instance.statsLevels[5]], 5);
-		UpdateStat(statMobScalarProfit, data.maxMobScalarProfits[SaveData.Instance.statsLevels[6]], 6);
+		int[] stats = SaveData.Instance.statsLevels;
+
+		UpdateStat(statMaxHP, data.maxHps[stats[0]], stats[0] + 1 <= data.maxHps.Count - 1 ? data.maxHps[stats[0] + 1] : null , 0);
+		UpdateStat(statMaxDamage, data.maxDamages[stats[1]], stats[1] + 1 <= data.maxDamages.Count-1 ? data.maxDamages[stats[1] + 1] : null, 1);
+		UpdateStat(statMaxDamageOverTime, data.maxDamageOverTimes[stats[2]], stats[2] + 1 <= data.maxDamageOverTimes.Count - 1 ? data.maxDamageOverTimes[stats[2] + 1] : null, 2);
+		UpdateStat(statSpeed, data.maxSpeeds[stats[3]], stats[3] + 1 <= data.maxSpeeds.Count - 1 ? data.maxSpeeds[stats[3] + 1] : null, 3);
+		UpdateStat(statRadius, data.maxRadiuses[stats[4]], stats[4] + 1 <= data.maxRadiuses.Count - 1 ? data.maxRadiuses[stats[4] + 1] : null, 4);
+		UpdateStat(statPassiveIncome, data.maxPassiveIncomes[stats[5]], stats[5] + 1 <= data.maxPassiveIncomes.Count - 1 ? data.maxPassiveIncomes[stats[5] + 1] : null, 5);
+		UpdateStat(statMobScalarProfit, data.maxMobScalarProfits[stats[6]], stats[6] + 1 <= data.maxMobScalarProfits.Count - 1 ? data.maxMobScalarProfits[stats[6] + 1] : null, 6);
 
 		statsUI.Clear();
 
@@ -91,10 +93,19 @@ public class PageStats : MonoBehaviour
 			}
 		}
 	}
-	private void UpdateStat(StatUI statUI, StatData data, int statIndex)
+	private void UpdateStat(StatUI statUI, StatData data, StatData nextData, int statIndex)
 	{
 		statUI.data = data;
 		statUI.statIndex = statIndex;
+
+		if(nextData == null)
+		{
+			statUI.diff = "";
+		}
+		else
+		{
+			statUI.diff = data.GetDiffrence(nextData);
+		}
 
 		statUI.onTap += Click;
 		

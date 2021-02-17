@@ -10,7 +10,8 @@ public class PageSpellInformation : MonoBehaviour
     [SerializeField] private TMPro.TextMeshProUGUI tittle;
     [SerializeField] private TMPro.TextMeshProUGUI level;
     [SerializeField] private TMPro.TextMeshProUGUI description;
-    [SerializeField] private TMPro.TextMeshProUGUI cost;
+    [SerializeField] private TMPro.TextMeshProUGUI diff;
+	[SerializeField] private TMPro.TextMeshProUGUI cost;
     [SerializeField] private TMPro.TextMeshProUGUI additionalInfo;
     [Space]
     [SerializeField] private Button acceptButton;
@@ -77,6 +78,7 @@ public class PageSpellInformation : MonoBehaviour
 		tittle.text = currentSpell.data.russianInfo.name;
 		level.text = currentSpell.data.level.ToString();
 		description.text = currentSpell.data.russianInfo.description;
+		diff.text = currentSpell.diff;
 		cost.text = currentSpell.data.price.ToString();
 		additionalInfo.text = currentSpell.data.russianInfo.additional;
 	}

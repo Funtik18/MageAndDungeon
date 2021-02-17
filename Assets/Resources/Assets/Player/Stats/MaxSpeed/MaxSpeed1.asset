@@ -16,4 +16,4 @@ MonoBehaviour:
   russianInfo: {fileID: 11400000, guid: 8a97e1bb43ec13a4c9da409f1c8c8124, type: 2}
   level: 1
   price: 0
-  speed: 0
+  speed: 11

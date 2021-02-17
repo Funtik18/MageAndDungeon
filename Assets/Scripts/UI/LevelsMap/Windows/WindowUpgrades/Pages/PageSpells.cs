@@ -55,9 +55,11 @@ public class PageSpells : MonoBehaviour
 		spellsUI.Add(spellPunishingFist);
 		spellsUI.Add(spellThunderStorm);
 
-		UpdateSpell(spellHellishFrost, data.hellishFrosts[SaveData.Instance.spellsLevels[0]], 0);
-		UpdateSpell(spellPunishingFist, data.punishingFists[SaveData.Instance.spellsLevels[1]], 1);
-		UpdateSpell(spellThunderStorm, data.thunderStorms[SaveData.Instance.spellsLevels[2]], 2);
+		int[] spl = SaveData.Instance.spellsLevels;
+
+		UpdateSpell(spellHellishFrost, data.hellishFrosts[spl[0]], spl[0] + 1 <= data.hellishFrosts.Count - 1 ? data.hellishFrosts[spl[0] + 1] : null, 0);
+		UpdateSpell(spellPunishingFist, data.punishingFists[spl[1]], spl[1] + 1 <= data.punishingFists.Count - 1 ? data.punishingFists[spl[1] + 1] : null, 1);
+		UpdateSpell(spellThunderStorm, data.thunderStorms[spl[2]], spl[2] + 1 <= data.thunderStorms.Count - 1 ? data.thunderStorms[spl[2] + 1] : null, 2);
 
 		for(int i = 0; i < spellsUI.Count; i++)
 		{
@@ -68,10 +70,19 @@ public class PageSpells : MonoBehaviour
 			}
 		}
 	}
-	private void UpdateSpell(SpellUI spellUI, SpellData data, int spellIndex)
+	private void UpdateSpell(SpellUI spellUI, SpellData data, SpellData nextData, int spellIndex)
 	{
 		spellUI.data = data;
 		spellUI.statIndex = spellIndex;
+
+		if(nextData == null)
+		{
+			spellUI.diff = "";
+		}
+		else
+		{
+			spellUI.diff = nextData.GetDiffrence(nextData);
+		}
 
 		spellUI.onTap += Click;
 

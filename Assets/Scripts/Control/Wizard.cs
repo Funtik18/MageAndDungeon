@@ -5,6 +5,8 @@ using UnityEngine.Events;
 
 public class Wizard : MonoBehaviour
 {
+    public UnityEvent onTakeDamage;
+
     private PlayerStats stats;
     private PlayerStats Stats
 	{
@@ -90,6 +92,8 @@ public class Wizard : MonoBehaviour
         Died();
 
         UIManager.Instance.UpdateStatistics();
+
+        onTakeDamage?.Invoke();
     }
 
     public void ReBorn(int countHealthPoint)
