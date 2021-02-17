@@ -18,7 +18,6 @@ public class Wizard : MonoBehaviour
 		}
 	}
 
-
     private bool isDead = false;
     [HideInInspector]public bool isReborn = false;
     public UnityAction onDeath;
