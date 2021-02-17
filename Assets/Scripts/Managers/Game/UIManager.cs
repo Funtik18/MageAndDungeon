@@ -50,7 +50,7 @@ public class UIManager : MonoBehaviour
             windowFail.StopOpenWindow();
             GameManager.Instance.WizardTarget.secondChance.SecondChanceCast();
 
-            AdMobManager.Instance.adMobInterstitial.ShowInterstitial();
+            AdMobManager.Instance.adMobRewarded.RequestRewardVideo();
 
             GameManager.Instance.WizardTarget.ReBorn(Stats.MaxHealthPoints / 2);
 

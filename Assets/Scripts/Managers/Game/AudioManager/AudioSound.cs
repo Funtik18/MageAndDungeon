@@ -23,5 +23,6 @@ public class AudioSound : Audio
 
 	public override void PauseAudio()
 	{
+        Source.Stop();
 	}
 }

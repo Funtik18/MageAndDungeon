@@ -19,7 +19,9 @@ public class JoyButton : MonoBehaviour,IPointerUpHandler,IPointerDownHandler
     public float coolDown;
     public float damage;
     public float radius;
-    
+
+    AudioSound mySound;
+
     AbilityCooldoown myCooldown;
 
     private bool isBlock = false;
@@ -73,6 +75,7 @@ public class JoyButton : MonoBehaviour,IPointerUpHandler,IPointerDownHandler
         Fader.FadeIn();
         IsBlock = isBlock;
         GetStats();
+        mySound = GetComponent<AudioSound>();
         myCooldown = GetComponentInChildren<AbilityCooldoown>();
     }
 
@@ -110,6 +113,7 @@ public class JoyButton : MonoBehaviour,IPointerUpHandler,IPointerDownHandler
         }
         yield return new WaitForSecondsRealtime(sec);
         Destroy(currentSpell);
+        mySound.PauseAudio();
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -117,6 +121,7 @@ public class JoyButton : MonoBehaviour,IPointerUpHandler,IPointerDownHandler
         if(isBlock) return;
         if (!myCooldown.isCooldown)
         {
+            mySound.PlayAudio();
             myCooldown.StartCooldown();
             Pressed = true;
             currentSpell = Instantiate(spel) as GameObject;
@@ -150,7 +155,6 @@ public class JoyButton : MonoBehaviour,IPointerUpHandler,IPointerDownHandler
     public void OnPointerUp(PointerEventData eventData)
     {
         if(isBlock) return;
-
         Pressed = false;
     }
 
