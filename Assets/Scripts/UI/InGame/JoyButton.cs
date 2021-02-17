@@ -65,6 +65,9 @@ public class JoyButton : MonoBehaviour,IPointerUpHandler,IPointerDownHandler
         }
     }
 
+    [SerializeField] private AudioJoyButton audioSound;
+
+    
     public GameObject spel;
     private GameObject currentSpell;
 
@@ -77,6 +80,8 @@ public class JoyButton : MonoBehaviour,IPointerUpHandler,IPointerDownHandler
         GetStats();
         mySound = GetComponent<AudioSound>();
         myCooldown = GetComponentInChildren<AbilityCooldoown>();
+
+        myCooldown.onCoolDownPassed = delegate { audioSound.SetAudioOnAmountReady(); audioSound.PlayAudio(); };
     }
 
     void GetStats()
@@ -121,6 +126,9 @@ public class JoyButton : MonoBehaviour,IPointerUpHandler,IPointerDownHandler
         if(isBlock) return;
         if (!myCooldown.isCooldown)
         {
+            audioSound.SetAudioOnClick();
+            audioSound.PlayAudio();
+
             mySound.PlayAudio();
             myCooldown.StartCooldown();
             Pressed = true;
