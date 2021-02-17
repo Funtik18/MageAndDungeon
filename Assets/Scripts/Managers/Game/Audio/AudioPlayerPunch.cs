@@ -14,7 +14,7 @@ public class AudioPlayerPunch : Audio
 	{
 		if(SaveLoadManager.IsSound)
 		{
-			Source.clip = clips[Random.Range(0, clips.Count - 1)];
+			Source.clip = clips[Random.Range(0, clips.Count)];
 
 			Source.Play();
 		}
