@@ -18,17 +18,12 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
-    public LevelStatistics statistics;
+    public LevelStatistics statistics = new LevelStatistics();
 
     public List<Entity> spawnedEntities = new List<Entity>();
 
     [Header("Spawns")]
     public SpawnInstruction instruction;
-
-	private void Awake()
-	{
-        statistics = new LevelStatistics();
-    }
 
     #region Spawn
     private Coroutine spawnCoroutine = null;
@@ -106,6 +101,24 @@ public class SpawnManager : MonoBehaviour
     [System.Serializable]
     public class LevelStatistics
     {
+        public UnityAction onStatisticsChange;
+        public UnityAction<float> onStatisticsLevelGoalChanged;
+
+        [Header("LevelGoal")]
+        [SerializeField] private float levelGoal;
+        public float LevelGoal
+		{
+			set
+			{
+                levelGoal = value;
+                onStatisticsLevelGoalChanged(levelGoal);
+            }
+			get
+			{
+                return levelGoal;
+			}
+		}
+
 
         [Header("Entities")]
         [SerializeField] private int totalEntities;
@@ -114,6 +127,8 @@ public class SpawnManager : MonoBehaviour
 			set
 			{
                 totalEntities = value;
+
+                LevelGoal = (float) totalDiedEntities / totalEntities;
             }
 			get
 			{
@@ -141,6 +156,8 @@ public class SpawnManager : MonoBehaviour
             {
                 totalDiedEntities = value;
                 totalLeftToKill = TotalEntities - TotalDiedEntities;
+
+                LevelGoal = (float) totalDiedEntities / totalEntities;
             }
             get
             {

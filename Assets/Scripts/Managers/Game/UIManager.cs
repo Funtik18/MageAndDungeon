@@ -30,6 +30,8 @@ public class UIManager : MonoBehaviour
 
     public StatisticsInGame statistics;
 
+    public LevelGoal levelGoal;
+
     [Header("Windows")]
     public WindowStartGame windowStart;
     public WindowFailGame windowFail;
@@ -77,6 +79,8 @@ public class UIManager : MonoBehaviour
         fireWall.StartOpenButton();
         hellishFrost.StartOpenButton();
         thunderStorm.StartOpenButton();
+
+        levelGoal.StartOpenLevelGoal();
 
         statistics.StartOpenStatistics();
 
