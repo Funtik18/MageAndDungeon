@@ -8,4 +8,9 @@ public class StatData : ScriptableObject
 
 	public int level;
 	public int price;
+
+	public virtual string GetDiffrence(StatData data)
+	{
+		return "";
+	}
 }

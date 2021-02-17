@@ -10,6 +10,7 @@ public class StatUI : MonoBehaviour, IPointerDownHandler
 
 	[HideInInspector] public StatData data;
 	[HideInInspector] public int statIndex = 0;
+	[HideInInspector] public string diff;
 
 	public bool IsChosen
 	{

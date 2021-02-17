@@ -10,6 +10,7 @@ public class PageStatInformation : MonoBehaviour
 	[SerializeField] private TMPro.TextMeshProUGUI tittle;
 	[SerializeField] private TMPro.TextMeshProUGUI level;
 	[SerializeField] private TMPro.TextMeshProUGUI description;
+	[SerializeField] private TMPro.TextMeshProUGUI changes;
 	[SerializeField] private TMPro.TextMeshProUGUI cost;
 	[SerializeField] private TMPro.TextMeshProUGUI additionalInfo;
 	[Space]
@@ -65,6 +66,7 @@ public class PageStatInformation : MonoBehaviour
 		tittle.text = currentStat.data.russianInfo.name;
 		level.text = currentStat.data.level.ToString();
 		description.text = currentStat.data.russianInfo.description;
+		changes.text = currentStat.diff;
 		cost.text = currentStat.data.price.ToString();
 		additionalInfo.text = currentStat.data.russianInfo.additional;
 	}
