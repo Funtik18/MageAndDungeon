@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class StatUI : MonoBehaviour, IPointerDownHandler
 {
+	public UnityEvent onTaps;
 	public UnityAction<StatUI> onTap;
 
 	[HideInInspector] public StatData data;
@@ -35,6 +36,7 @@ public class StatUI : MonoBehaviour, IPointerDownHandler
 
 	public void OnPointerDown(PointerEventData eventData)
 	{
+		onTaps?.Invoke();
 		onTap?.Invoke(this);
 	}
 }

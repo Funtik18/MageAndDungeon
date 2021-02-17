@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class SpellUI : MonoBehaviour, IPointerDownHandler
 {
+	public UnityEvent onTaps;
 	public UnityAction<SpellUI> onTap;
 
 	[HideInInspector] public SpellData data;
@@ -38,6 +39,7 @@ public class SpellUI : MonoBehaviour, IPointerDownHandler
 
 	public void OnPointerDown(PointerEventData eventData)
 	{
+		onTaps?.Invoke();
 		onTap?.Invoke(this);
 	}
 }
