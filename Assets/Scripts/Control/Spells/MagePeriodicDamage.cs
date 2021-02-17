@@ -13,11 +13,20 @@ public class MagePeriodicDamage : MonoBehaviour
     private void Awake()
     {
         entities = SpawnManager.Instance.spawnedEntities;
+        if (entities.Count <= 0)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
         target = entities[Random.Range(0, entities.Count)].transform;
     }
 
     private void Update()
     {
+        if (target == null)
+        {
+            Destroy(this.gameObject);
+        }
         transform.LookAt(target);
         transform.position = Vector3.MoveTowards(transform.position,target.position,speed*Time.deltaTime);
         

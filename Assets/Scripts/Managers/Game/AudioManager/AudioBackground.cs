@@ -3,14 +3,14 @@ using UnityEngine.Events;
 
 public class AudioBackground : Audio
 {
-	[SerializeField] private AudioClip clip;
+	public AudioClip clip;
 
 	public UnityEvent onAwake;
 
 
 	private bool isPlaying => Source.isPlaying;
 
-	private void Awake()
+	private void Start()
 	{
 		Source.clip = clip;
 		Source.loop = true;
