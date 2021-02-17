@@ -31,7 +31,9 @@ public class Wizard : MonoBehaviour
     public float damage;
     public float timeToCast;
     public int arrowsCount;
+    public bool haveSound;
     float time=0;
+    AudioSound mySound;
 
     [Header("Line")]
     public LineRenderer line;
@@ -59,6 +61,8 @@ public class Wizard : MonoBehaviour
 		UpdateLinePoints();
 		GetStats();
         StartLine();
+        if (haveSound)
+            mySound = GetComponent<AudioSound>();
     }
 
     void GetStats()
@@ -128,6 +132,8 @@ public class Wizard : MonoBehaviour
     IEnumerator periodicDamage()
     {
         yield return new WaitForSeconds(timeToCast);
+        if (haveSound)
+            mySound.PlayAudio();
         Instantiate(selfDefenceSpell,transform);
     }
 
