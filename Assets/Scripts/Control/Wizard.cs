@@ -76,7 +76,7 @@ public class Wizard : MonoBehaviour
     private void Update()
     {
         time += Time.deltaTime;
-        if (!SpawnManager.Instance.instruction.isPause.value && time>timeToCast)
+        if (SpawnManager.Instance.spawnedEntities.Count>0 && time>timeToCast)
         {
             time = 0;
             SelfDefence();
