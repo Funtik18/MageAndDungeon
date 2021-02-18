@@ -5,11 +5,12 @@ OcclusionCullingSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_OcclusionBakeSettings:
-    smallestOccluder: 5
+    smallestOccluder: 1
     smallestHole: 0.25
     backfaceThreshold: 100
-  m_SceneGUID: 00000000000000000000000000000000
-  m_OcclusionCullingData: {fileID: 0}
+  m_SceneGUID: 40af2d62a9ece9f499d0b6eb0a41f7e4
+  m_OcclusionCullingData: {fileID: 36300000, guid: 412ba8e15fd59954e9baa1101a197aa6,
+    type: 2}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -217,6 +218,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SF_Env_Tile_Dead_01
       objectReference: {fileID: 0}
+    - target: {fileID: 162402, guid: 850b22e6d2a41cc4d8fb9708b75e7440, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 445750, guid: 850b22e6d2a41cc4d8fb9708b75e7440, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -275,6 +280,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 850b22e6d2a41cc4d8fb9708b75e7440, type: 3}
+--- !u!1 &77693577 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 162402, guid: 850b22e6d2a41cc4d8fb9708b75e7440,
+    type: 3}
+  m_PrefabInstance: {fileID: 77693576}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &77693578
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 77693577}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 0, z: 10}
+  m_Center: {x: -5, y: 0, z: -5}
 --- !u!1 &138500412
 GameObject:
   m_ObjectHideFlags: 0
@@ -712,6 +736,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SF_Env_Stonepath_02
       objectReference: {fileID: 0}
+    - target: {fileID: 104568, guid: a0d8839d1370fc84781fa0bf8bb4544c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 475602, guid: a0d8839d1370fc84781fa0bf8bb4544c, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -775,6 +803,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SF_Env_Undead_Preset_04
       objectReference: {fileID: 0}
+    - target: {fileID: 105034, guid: 9d7f6788e63ab744493174ad4ff6da23, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 429558, guid: 9d7f6788e63ab744493174ad4ff6da23, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -831,6 +863,10 @@ PrefabInstance:
     - target: {fileID: 130432, guid: 4cf2774679e72ee428b215c0246d3ba6, type: 3}
       propertyPath: m_Name
       value: SF_Env_Undead_Preset_07
+      objectReference: {fileID: 0}
+    - target: {fileID: 130432, guid: 4cf2774679e72ee428b215c0246d3ba6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 487210, guid: 4cf2774679e72ee428b215c0246d3ba6, type: 3}
       propertyPath: m_RootOrder
@@ -894,6 +930,10 @@ PrefabInstance:
     - target: {fileID: 112912, guid: 3039b86693f9221439830f5db43b309a, type: 3}
       propertyPath: m_Name
       value: SF_Env_Stonepath_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 112912, guid: 3039b86693f9221439830f5db43b309a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 440172, guid: 3039b86693f9221439830f5db43b309a, type: 3}
       propertyPath: m_RootOrder
@@ -1260,6 +1300,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SF_Env_Undead_Rock_01
       objectReference: {fileID: 0}
+    - target: {fileID: 100364, guid: 66d80de86c4805441ac4a5653b6e0451, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 480340, guid: 66d80de86c4805441ac4a5653b6e0451, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -1366,7 +1410,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &834506424
 Transform:
@@ -1487,6 +1531,10 @@ PrefabInstance:
     - target: {fileID: 118588, guid: 0e71bc0a764635949ac64f76c8953664, type: 3}
       propertyPath: m_Name
       value: SF_Env_Undead_Preset_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 118588, guid: 0e71bc0a764635949ac64f76c8953664, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 417894, guid: 0e71bc0a764635949ac64f76c8953664, type: 3}
       propertyPath: m_RootOrder
@@ -1838,6 +1886,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SF_Env_Undead_Rock_04
       objectReference: {fileID: 0}
+    - target: {fileID: 171974, guid: f58d3f28ccda96042a3e05027839fd2a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 449578, guid: f58d3f28ccda96042a3e05027839fd2a, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -2069,6 +2121,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SF_Env_Undead_Rock_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100364, guid: 66d80de86c4805441ac4a5653b6e0451, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 480340, guid: 66d80de86c4805441ac4a5653b6e0451, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -2131,6 +2187,10 @@ PrefabInstance:
     - target: {fileID: 167720, guid: 236cb8d727eb5c24bbc8a180fea7634d, type: 3}
       propertyPath: m_Name
       value: SF_Env_BackgroundHills_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 167720, guid: 236cb8d727eb5c24bbc8a180fea7634d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 437566, guid: 236cb8d727eb5c24bbc8a180fea7634d, type: 3}
       propertyPath: m_RootOrder
@@ -2322,6 +2382,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SF_Env_Undead_Preset_02
       objectReference: {fileID: 0}
+    - target: {fileID: 156352, guid: b3fcd6c190fdf7e46bd1712e66fa1e91, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 408044, guid: b3fcd6c190fdf7e46bd1712e66fa1e91, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -2429,6 +2493,10 @@ PrefabInstance:
     - target: {fileID: 139526, guid: 7d3a1e0aef607c242980f659c5ae3f5c, type: 3}
       propertyPath: m_Name
       value: SF_Env_Undead_Rock_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 139526, guid: 7d3a1e0aef607c242980f659c5ae3f5c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 430484, guid: 7d3a1e0aef607c242980f659c5ae3f5c, type: 3}
       propertyPath: m_RootOrder
@@ -2629,6 +2697,10 @@ PrefabInstance:
     - target: {fileID: 106600, guid: 301759554cb3a504e9576a39eb2e93d1, type: 3}
       propertyPath: m_Name
       value: SF_Env_Stonepath_End_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 106600, guid: 301759554cb3a504e9576a39eb2e93d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 431614, guid: 301759554cb3a504e9576a39eb2e93d1, type: 3}
       propertyPath: m_RootOrder

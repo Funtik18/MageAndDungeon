@@ -5,11 +5,12 @@ OcclusionCullingSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_OcclusionBakeSettings:
-    smallestOccluder: 5
+    smallestOccluder: 1
     smallestHole: 0.25
     backfaceThreshold: 100
-  m_SceneGUID: 00000000000000000000000000000000
-  m_OcclusionCullingData: {fileID: 0}
+  m_SceneGUID: c24133d206ea0d546b262f2e8bef48a7
+  m_OcclusionCullingData: {fileID: 36300000, guid: ba74531e7e16b154eaf2e35a2ec57805,
+    type: 2}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -4525,6 +4526,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SF_Bld_Castle_Wall_04
       objectReference: {fileID: 0}
+    - target: {fileID: 107346, guid: 853d54aa3a1623640aff48914201758b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 488246, guid: 853d54aa3a1623640aff48914201758b, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -6415,6 +6420,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SF_Bld_Castle_Wall_04 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 107346, guid: 853d54aa3a1623640aff48914201758b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 488246, guid: 853d54aa3a1623640aff48914201758b, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -6659,7 +6668,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &360033605
 Transform:
@@ -7966,6 +7975,10 @@ PrefabInstance:
     - target: {fileID: 107346, guid: 853d54aa3a1623640aff48914201758b, type: 3}
       propertyPath: m_Name
       value: SF_Bld_Castle_Wall_04 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 107346, guid: 853d54aa3a1623640aff48914201758b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 488246, guid: 853d54aa3a1623640aff48914201758b, type: 3}
       propertyPath: m_RootOrder
@@ -10967,6 +10980,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a57b572f14eb654f87f646cd856fbe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onHit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!54 &586469884
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -18276,6 +18292,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SF_Bld_Castle_Wall_04 (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 107346, guid: 853d54aa3a1623640aff48914201758b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 488246, guid: 853d54aa3a1623640aff48914201758b, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -19323,9 +19343,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 360033605}
     m_Modifications:
+    - target: {fileID: 102496, guid: cc91da199ec63854c8d1aafc4f631d41, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 186222, guid: cc91da199ec63854c8d1aafc4f631d41, type: 3}
       propertyPath: m_Name
       value: SF_Bld_Castle_Gate_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 186222, guid: cc91da199ec63854c8d1aafc4f631d41, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 412340, guid: cc91da199ec63854c8d1aafc4f631d41, type: 3}
       propertyPath: m_RootOrder
@@ -21230,6 +21258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statistics:
+    levelGoal: 0
     totalEntities: 0
     totalSpawnedEntities: 0
     totalDiedEntities: 0
@@ -21731,6 +21760,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2536b4de74f841d4c9337a9bbe310666, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onTakeDamage:
+    m_PersistentCalls:
+      m_Calls: []
   isReborn: 0
   secondChance: {fileID: 5964262470228246398, guid: acf39d9f4addf294d93fa56fa373961b,
     type: 3}
@@ -21739,6 +21771,7 @@ MonoBehaviour:
   damage: 0
   timeToCast: 3
   arrowsCount: 0
+  haveSound: 0
   line: {fileID: 919132148726236746}
   lineUpdateTime: 0.04
   posY: 1
@@ -23318,6 +23351,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SF_Bld_Castle_Wall_04 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 107346, guid: 853d54aa3a1623640aff48914201758b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 488246, guid: 853d54aa3a1623640aff48914201758b, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -23558,6 +23595,10 @@ PrefabInstance:
     - target: {fileID: 107346, guid: 853d54aa3a1623640aff48914201758b, type: 3}
       propertyPath: m_Name
       value: SF_Bld_Castle_Wall_04 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 107346, guid: 853d54aa3a1623640aff48914201758b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 488246, guid: 853d54aa3a1623640aff48914201758b, type: 3}
       propertyPath: m_RootOrder
@@ -25349,6 +25390,10 @@ PrefabInstance:
     - target: {fileID: 107346, guid: 853d54aa3a1623640aff48914201758b, type: 3}
       propertyPath: m_Name
       value: SF_Bld_Castle_Wall_04 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 107346, guid: 853d54aa3a1623640aff48914201758b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 488246, guid: 853d54aa3a1623640aff48914201758b, type: 3}
       propertyPath: m_RootOrder
@@ -30411,6 +30456,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SF_Bld_Castle_Wall_04 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 107346, guid: 853d54aa3a1623640aff48914201758b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 488246, guid: 853d54aa3a1623640aff48914201758b, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -31663,6 +31712,10 @@ PrefabInstance:
     - target: {fileID: 184790, guid: da222915ad508be4d93a350d9d515ce4, type: 3}
       propertyPath: m_Name
       value: SF_Bld_Stall_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 184790, guid: da222915ad508be4d93a350d9d515ce4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 444728, guid: da222915ad508be4d93a350d9d515ce4, type: 3}
       propertyPath: m_RootOrder
@@ -35548,6 +35601,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SF_Bld_Castle_Wall_04 (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 107346, guid: 853d54aa3a1623640aff48914201758b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 488246, guid: 853d54aa3a1623640aff48914201758b, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -36570,6 +36627,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SF_Bld_Castle_Wall_04 (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 107346, guid: 853d54aa3a1623640aff48914201758b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 488246, guid: 853d54aa3a1623640aff48914201758b, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -36810,6 +36871,10 @@ PrefabInstance:
     - target: {fileID: 107346, guid: 853d54aa3a1623640aff48914201758b, type: 3}
       propertyPath: m_Name
       value: SF_Bld_Castle_Wall_04 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 107346, guid: 853d54aa3a1623640aff48914201758b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 488246, guid: 853d54aa3a1623640aff48914201758b, type: 3}
       propertyPath: m_RootOrder
