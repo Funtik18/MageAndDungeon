@@ -5,11 +5,12 @@ OcclusionCullingSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_OcclusionBakeSettings:
-    smallestOccluder: 5
+    smallestOccluder: 1
     smallestHole: 0.25
     backfaceThreshold: 100
-  m_SceneGUID: 00000000000000000000000000000000
-  m_OcclusionCullingData: {fileID: 0}
+  m_SceneGUID: 25657d94dc86e524fa59f7a100d3c4a7
+  m_OcclusionCullingData: {fileID: 36300000, guid: ae68db12fe3ef9e46a426a1da12080e1,
+    type: 2}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -9382,6 +9383,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_KnightArmour_01 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 150264, guid: aaef6debf59d81148ad471fa62ad9659, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 428562, guid: aaef6debf59d81148ad471fa62ad9659, type: 3}
       propertyPath: m_RootOrder
       value: 18
@@ -15058,6 +15063,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_KnightArmour_01 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 150264, guid: aaef6debf59d81148ad471fa62ad9659, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 428562, guid: aaef6debf59d81148ad471fa62ad9659, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -16529,6 +16538,10 @@ PrefabInstance:
     - target: {fileID: 150264, guid: aaef6debf59d81148ad471fa62ad9659, type: 3}
       propertyPath: m_Name
       value: SM_Prop_KnightArmour_01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 150264, guid: aaef6debf59d81148ad471fa62ad9659, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 428562, guid: aaef6debf59d81148ad471fa62ad9659, type: 3}
       propertyPath: m_RootOrder
@@ -21473,6 +21486,10 @@ PrefabInstance:
     - target: {fileID: 150264, guid: aaef6debf59d81148ad471fa62ad9659, type: 3}
       propertyPath: m_Name
       value: SM_Prop_KnightArmour_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 150264, guid: aaef6debf59d81148ad471fa62ad9659, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 428562, guid: aaef6debf59d81148ad471fa62ad9659, type: 3}
       propertyPath: m_RootOrder
@@ -30237,6 +30254,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_ThronePlatform_02
       objectReference: {fileID: 0}
+    - target: {fileID: 133364, guid: 168ddccbb881e4046864922da40b147c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 484544, guid: 168ddccbb881e4046864922da40b147c, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -30293,6 +30314,10 @@ PrefabInstance:
     - target: {fileID: 130914, guid: a225c8868cceaed4991f70eff5385790, type: 3}
       propertyPath: m_Name
       value: SM_Prop_Rug_Large_Creased_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 130914, guid: a225c8868cceaed4991f70eff5385790, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 406240, guid: a225c8868cceaed4991f70eff5385790, type: 3}
       propertyPath: m_RootOrder
@@ -31455,6 +31480,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_Chandelier_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 109378, guid: e850374cbdad7a243b97af66287df88e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 419294, guid: e850374cbdad7a243b97af66287df88e, type: 3}
       propertyPath: m_RootOrder
       value: 19
@@ -31498,6 +31527,41 @@ PrefabInstance:
     - target: {fileID: 419294, guid: e850374cbdad7a243b97af66287df88e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 629008294894006167, guid: e850374cbdad7a243b97af66287df88e,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1885658708552760952, guid: e850374cbdad7a243b97af66287df88e,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 2871577046942570301, guid: e850374cbdad7a243b97af66287df88e,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 2875972498190714023, guid: e850374cbdad7a243b97af66287df88e,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 3619591899425363133, guid: e850374cbdad7a243b97af66287df88e,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858816948133970207, guid: e850374cbdad7a243b97af66287df88e,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 8071072310907832586, guid: e850374cbdad7a243b97af66287df88e,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e850374cbdad7a243b97af66287df88e, type: 3}
