@@ -44,7 +44,6 @@ public class LevelGoal : MonoBehaviour
 
     private void ChangeAmount(float a)
 	{
-        Debug.Log(a);
         FillAmount = a;
     }
 

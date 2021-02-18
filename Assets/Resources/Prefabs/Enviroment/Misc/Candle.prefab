@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7950152260591656627}
   - component: {fileID: 8893090321721054150}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,8 +43,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.9056604, g: 0.505194, b: 0.32894266, a: 1}
-  m_Intensity: 1
-  m_Range: 32.96
+  m_Intensity: 0.5
+  m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -80,7 +80,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1847
   m_RenderingLayerMask: 1
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 7450714423649170419}
   - component: {fileID: 5821354278982515798}
   - component: {fileID: 8587640557027920028}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Candle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -239,6 +239,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CandleFlame
+      objectReference: {fileID: 0}
+    - target: {fileID: 6807783693406121562, guid: b53f123a81c5ac34f8512d775c755103,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b53f123a81c5ac34f8512d775c755103, type: 3}
