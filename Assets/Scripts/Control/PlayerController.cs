@@ -1,9 +1,16 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
+using DG.Tweening;
+
 public class PlayerController : MonoBehaviour
 {
     public UnityEvent onHit;
+
+    [SerializeField] private Transform model;
+    [SerializeField] private Rigidbody rb;
+
+    [SerializeField] private ParticleSystem deathParticle;
 
     private Transform wizard;
     private Transform Wizard
@@ -12,7 +19,11 @@ public class PlayerController : MonoBehaviour
 		{
             if(wizard == null)
 			{
-                wizard = GameManager.Instance.WizardTarget.transform;
+                Wizard w = GameManager.Instance.WizardTarget;
+                w.onDeath += Death;
+                w.onReborn += Reborn;
+                wizard = w.transform;
+
             }
             return wizard;
 		}
@@ -46,7 +57,6 @@ public class PlayerController : MonoBehaviour
 
     private Joystick joyStick;
     private JoyButton joyButton;
-    private Rigidbody rb;
 
     Vector3 mov;
     Vector3 oldPos;
@@ -55,10 +65,7 @@ public class PlayerController : MonoBehaviour
     {
         joyStick = FindObjectOfType<Joystick>();
         joyButton = FindObjectOfType<JoyButton>();
-
-        rb = GetComponent<Rigidbody>();
     }
-
 
     void Update()
     {
@@ -87,6 +94,22 @@ public class PlayerController : MonoBehaviour
             onHit?.Invoke();
 
             refCol.transform.root.GetComponent<Entity>().TakeDamage(Stats.Damage);
+
+            //Vector3 OriginalScale = model.localScale; 
+            //DOTween.Sequence().Append(model.DOScale(new Vector3(OriginalScale.x + 0.5f, OriginalScale.y + 0.5f, OriginalScale.z + 0.5f), 0.2f).SetEase(Ease.Linear)).Append(model.DOScale(OriginalScale, 0.2f).SetEase(Ease.Linear));
         }
-	}
+    }
+
+    [ContextMenu("P")]
+    private void Death()
+	{
+        deathParticle.Play();
+
+        model.DOScale(0, 1).From(1);
+    }
+    [ContextMenu("R")]
+    private void Reborn()
+	{
+        model.DOScale(1, 0.5f).From(0);
+    }
 }

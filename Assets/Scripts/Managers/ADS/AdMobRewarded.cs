@@ -1,10 +1,17 @@
 ﻿using GoogleMobileAds.Api;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class AdMobRewarded : MonoBehaviour
 {
     private RewardedAd rewarded;
     private RewardBasedVideoAd rewardedVideo;
+
+	public UnityAction onLoaded;
+	public UnityAction onOpened;
+	public UnityAction onClossed;
+	public UnityAction onRewarded;
+	public UnityAction onLeft;
 
 #if UNITY_ANDROID
 	//test ca-app-pub-3940256099942544/5224354917
@@ -30,9 +37,10 @@ public class AdMobRewarded : MonoBehaviour
 		rewardedVideo.OnAdOpening += RewardedVideoOpening;
 		rewardedVideo.OnAdRewarded += RewardedVideoRewarded;
 		rewardedVideo.OnAdClosed += RewardedVideoClosed;
+		rewardedVideo.OnAdLeavingApplication += RewardVideoLeftApplication;
 	}
 
-	private void ShowRewardVideo()
+	public void ShowRewardVideo()
 	{
 		if(rewardedVideo.IsLoaded())
 		{
@@ -42,16 +50,24 @@ public class AdMobRewarded : MonoBehaviour
 
 	private void RewardedVideoLoaded(object sender, System.EventArgs e)
 	{
-		ShowRewardVideo();
+		onLoaded?.Invoke();
 	}
 	private void RewardedVideoOpening(object sender, System.EventArgs e)
 	{
+		onOpened?.Invoke();
 	}
 	private void RewardedVideoClosed(object sender, System.EventArgs e)
 	{
+		onClossed?.Invoke();
+	}
+
+	private void RewardVideoLeftApplication(object sender, System.EventArgs e)
+	{
+		onLeft?.Invoke();
 	}
 
 	private void RewardedVideoRewarded(object sender, Reward e)
 	{
+		onRewarded?.Invoke();
 	}
 }

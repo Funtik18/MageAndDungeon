@@ -23,6 +23,7 @@ public class Wizard : MonoBehaviour
     private bool isDead = false;
     [HideInInspector]public bool isReborn = false;
     public UnityAction onDeath;
+    public UnityAction onReborn;
 
     [Header("SecondChanceSpel")]
     public SecondChance secondChance;
@@ -99,14 +100,15 @@ public class Wizard : MonoBehaviour
     public void ReBorn(int countHealthPoint)
 	{
         Stats.CurrentHealthPoints = countHealthPoint;
+        UIManager.Instance.UpdateStatistics();
 
         if(Stats.CurrentHealthPoints > 0)
         {
             isDead = false;
             isReborn = true;
+            onReborn?.Invoke();
         }
-            
-	}
+    }
     public void Died()
 	{
         if(Stats.CurrentHealthPoints < 1)
