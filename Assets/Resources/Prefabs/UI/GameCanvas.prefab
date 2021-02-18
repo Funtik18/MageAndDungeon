@@ -10152,36 +10152,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6483632585457746023}
     m_Modifications:
-    - target: {fileID: 934434471441902008, guid: 0967e94eeb1a82240a9da8b90315efaa,
-        type: 3}
-      propertyPath: m_Alpha
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 934434471441902008, guid: 0967e94eeb1a82240a9da8b90315efaa,
-        type: 3}
-      propertyPath: m_Interactable
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 934434471441902008, guid: 0967e94eeb1a82240a9da8b90315efaa,
-        type: 3}
-      propertyPath: m_BlocksRaycasts
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6565319610100749850, guid: 0967e94eeb1a82240a9da8b90315efaa,
-        type: 3}
-      propertyPath: m_Layer
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6565319610328140088, guid: 0967e94eeb1a82240a9da8b90315efaa,
-        type: 3}
-      propertyPath: m_Layer
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6565319610974944331, guid: 0967e94eeb1a82240a9da8b90315efaa,
-        type: 3}
-      propertyPath: m_Layer
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 6565319610998832683, guid: 0967e94eeb1a82240a9da8b90315efaa,
         type: 3}
       propertyPath: m_Pivot.x
@@ -10226,16 +10196,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 6565319610998832683, guid: 0967e94eeb1a82240a9da8b90315efaa,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6565319610998832683, guid: 0967e94eeb1a82240a9da8b90315efaa,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6565319610998832683, guid: 0967e94eeb1a82240a9da8b90315efaa,
         type: 3}
@@ -10301,16 +10261,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SpawnTimer12
-      objectReference: {fileID: 0}
-    - target: {fileID: 6565319610998832684, guid: 0967e94eeb1a82240a9da8b90315efaa,
-        type: 3}
-      propertyPath: m_Layer
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6565319611297578907, guid: 0967e94eeb1a82240a9da8b90315efaa,
-        type: 3}
-      propertyPath: m_Layer
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0967e94eeb1a82240a9da8b90315efaa, type: 3}
