@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 public class UIManager : MonoBehaviour
 {
+    public UnityAction onStart;
+
     private static UIManager instance;
     public static UIManager Instance
     {
@@ -42,6 +45,9 @@ public class UIManager : MonoBehaviour
     public JoyButton fireWall;
     public JoyButton hellishFrost;
     public JoyButton thunderStorm;
+
+    [HideInInspector] public bool isEducation = false;
+
 
     private void Awake()
     {
@@ -86,7 +92,10 @@ public class UIManager : MonoBehaviour
 
         statistics.StartOpenStatistics();
 
-        SpawnManager.Instance.StartWaves();
+        if(!isEducation)
+            SpawnManager.Instance.StartWaves();
+
+        onStart?.Invoke();
     }
 
     public void WizardDeath()//подготовка ui после смерти гг
@@ -121,4 +130,11 @@ public class UIManager : MonoBehaviour
 
         statistics.moneyCount.text = Stats.CurrentMoney.ToString();
     }
+
+
+
+    public void ShowEducation0()
+	{
+
+	}
 }

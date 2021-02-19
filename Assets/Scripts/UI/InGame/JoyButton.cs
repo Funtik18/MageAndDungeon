@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine.EventSystems;
 using UnityEngine;
+using UnityEngine.Events;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -15,6 +16,12 @@ public enum SpellsName
 
 public class JoyButton : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
 {
+    public JoyButtonDoor door;
+
+    [HideInInspector] public bool isAwakeOpen = true;
+
+    public UnityAction onTap;
+
     public SpellsName spellName;
     public float spelDuration;
     public float coolDown;
@@ -75,8 +82,14 @@ public class JoyButton : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
 
     private bool Pressed;
 
+
+
+
     public void StartOpenButton()
     {
+        if(isAwakeOpen)
+            door.OpenDoor();
+
         Fader.FadeIn();
         IsBlock = isBlock;
         GetStats();
@@ -142,6 +155,8 @@ public class JoyButton : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
             currentSpell = Instantiate(spel) as GameObject;
             SetStats();
             StartCoroutine(SpellCasting(spelDuration));
+
+            onTap?.Invoke();
         }
     }
 

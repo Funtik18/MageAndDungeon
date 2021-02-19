@@ -19,6 +19,6 @@ public class AudioTrackSelector : MonoBehaviour
         myAudioBackground = GetComponent<AudioBackground>();
         myAudioBackground.clip = audioClips[ind];
         myAudioSource.clip= audioClips[ind];
-        myAudioBackground.PlayAudio();
+        myAudioBackground.CheckMusic();
     }
 }

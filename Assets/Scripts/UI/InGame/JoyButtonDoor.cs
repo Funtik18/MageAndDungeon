@@ -1,17 +1,13 @@
-﻿using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.EventSystems;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
 
-public class FixedJoystick : Joystick
+public class JoyButtonDoor : MonoBehaviour
 {
-
-	public UnityAction onTap;
-
-
 	private Fader fader;
 	public Fader Fader
 	{
@@ -25,24 +21,32 @@ public class FixedJoystick : Joystick
 		}
 	}
 
-	public override void OnPointerDown(PointerEventData eventData)
+	private Animator animator;
+	public Animator Animator
 	{
-		base.OnPointerDown(eventData);
-
-		onTap?.Invoke();
+		get
+		{
+			if(animator == null)
+			{
+				animator = GetComponent<Animator>();
+			}
+			return animator;
+		}
 	}
 
 
-	public void StartOpenJoystick()
+	public void OpenDoor()
 	{
-		Fader.FadeIn();
-		Fader.CanvasGroup.interactable = true;
-		Fader.CanvasGroup.blocksRaycasts = true;
+		Animator.SetTrigger("Open");
+	}
+	public void CloseDoor()
+	{
+		Animator.SetTrigger("Close");
 	}
 
 
-	[ContextMenu("OpenJoystick")]
-	private void OpenJoystick()
+	[ContextMenu("OpenWindow")]
+	public void OpenWindow()
 	{
 		Fader.CanvasGroup.alpha = 1;
 		Fader.CanvasGroup.interactable = true;
@@ -51,8 +55,8 @@ public class FixedJoystick : Joystick
 		EditorUtility.SetDirty(gameObject);
 #endif
 	}
-	[ContextMenu("CloseJoystick")]
-	private void CloseJoystick()
+	[ContextMenu("CloseWindow")]
+	public void CloseWindow()
 	{
 		Fader.CanvasGroup.alpha = 0;
 		Fader.CanvasGroup.interactable = false;
