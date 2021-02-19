@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d387523eb731630438ddab618931eea2, type: 3}
   m_Name: Bandit
   m_EditorClassIdentifier: 
-  entity: {fileID: 9139175420319826119, guid: 3b17d2db7617dd643940c4be66ab5713, type: 3}
+  entity: {fileID: 7233094164543198219, guid: e8cbd5ed802e012489541d450e8273d9, type: 3}
   hpAmount: 1
   speed: 150
   damage: 2

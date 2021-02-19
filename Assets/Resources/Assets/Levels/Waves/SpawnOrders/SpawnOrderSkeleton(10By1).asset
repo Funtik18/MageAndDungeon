@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bae163bcf114474da025b9dc43f422b, type: 3}
   m_Name: SpawnOrderSkeleton(10By1)
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 9b9ca377b4d7c8342a0256e7b5771f48, type: 2}
+  data: {fileID: 11400000, guid: 2c58d319eab1af246b2a2f53912e0e19, type: 2}
   countTuples: 10
   countEntitiesInTuples: 1
   time:

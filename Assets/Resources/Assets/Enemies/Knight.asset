@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d387523eb731630438ddab618931eea2, type: 3}
   m_Name: Knight
   m_EditorClassIdentifier: 
-  entity: {fileID: 3971452944761235749, guid: 6d5c46999d3ddc94fa3f3cb5155f043b, type: 3}
+  entity: {fileID: 7233094164543198219, guid: e8cbd5ed802e012489541d450e8273d9, type: 3}
   hpAmount: 4
-  speed: 75
+  speed: 50
   damage: 5
   price: 10
   animationLength: 1.17
