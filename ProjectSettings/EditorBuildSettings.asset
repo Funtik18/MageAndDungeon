@@ -11,9 +11,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LevelsMap.unity
     guid: f23e5fa175e51bb479e6cd4c0def399e
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/LevelBrawl.unity
-    guid: c499315705d81254a963293a888dc75d
+    guid: 05ad13036df3b954db290a8801fe7847
   - enabled: 1
     path: Assets/Scenes/Levels/Level_0.unity
     guid: 3716226b7c40ad44d8a3ae05081452d7
