@@ -35,13 +35,28 @@ public class JoyButtonDoor : MonoBehaviour
 	}
 
 
-	public void OpenDoor()
+	public void OpenDoor(bool triger = false)
 	{
-		Animator.SetTrigger("Open");
+		if(triger)
+		{
+			StartCoroutine(Open());
+		}
+		else
+		{
+			Animator.SetTrigger("Open");
+		}
 	}
 	public void CloseDoor()
 	{
 		Animator.SetTrigger("Close");
+	}
+
+
+	private IEnumerator Open()
+	{
+		yield return new WaitForSeconds(1);
+		Animator.SetTrigger("Open");
+
 	}
 
 
