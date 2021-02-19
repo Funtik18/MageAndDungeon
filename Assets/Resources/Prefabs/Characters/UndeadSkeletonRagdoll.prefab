@@ -501,7 +501,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: efbba37bac7f281428cbb85bb5411476, type: 2}
-  isAlive: 1
+  isAlive: 0
   isFrozen: 0
   rb: {fileID: 1359816693626947013}
 --- !u!114 &7478685049399122142

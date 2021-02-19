@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bae163bcf114474da025b9dc43f422b, type: 3}
-  m_Name: SpawnOrderSkeleton(10By1)
+  m_Script: {fileID: 11500000, guid: d387523eb731630438ddab618931eea2, type: 3}
+  m_Name: Bandit
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 9b9ca377b4d7c8342a0256e7b5771f48, type: 2}
-  countTuples: 10
-  countEntitiesInTuples: 1
-  time:
-    delayInTuple: 0.5
-    frequency: 1
+  entity: {fileID: 9139175420319826119, guid: 3b17d2db7617dd643940c4be66ab5713, type: 3}
+  hpAmount: 1
+  speed: 150
+  damage: 2
+  price: 5
+  animationLength: 1.04

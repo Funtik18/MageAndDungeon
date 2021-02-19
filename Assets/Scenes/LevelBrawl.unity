@@ -12309,11 +12309,29 @@ PrefabInstance:
       propertyPath: m_textInfo.characterCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6483632585250882532, guid: 49e4d5136bb598742a74f76fd37c8154,
+        type: 3}
+      propertyPath: door
+      value: 
+      objectReference: {fileID: 701303421062230206, guid: 4e95dbac97817734c9dc319f009d15f7,
+        type: 3}
     - target: {fileID: 6483632585457746016, guid: 49e4d5136bb598742a74f76fd37c8154,
         type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6483632585591203451, guid: 49e4d5136bb598742a74f76fd37c8154,
+        type: 3}
+      propertyPath: door
+      value: 
+      objectReference: {fileID: 701303421062230206, guid: 4e95dbac97817734c9dc319f009d15f7,
+        type: 3}
+    - target: {fileID: 6483632587042935836, guid: 49e4d5136bb598742a74f76fd37c8154,
+        type: 3}
+      propertyPath: door
+      value: 
+      objectReference: {fileID: 701303421062230206, guid: 4e95dbac97817734c9dc319f009d15f7,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49e4d5136bb598742a74f76fd37c8154, type: 3}
 --- !u!114 &6565319609904749904 stripped
