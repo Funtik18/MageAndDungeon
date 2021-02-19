@@ -10983,6 +10983,9 @@ MonoBehaviour:
   onHit:
     m_PersistentCalls:
       m_Calls: []
+  model: {fileID: 0}
+  rb: {fileID: 0}
+  deathParticle: {fileID: 0}
 --- !u!54 &586469884
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12748,7 +12751,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 666474086}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1.83}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1991332318}
@@ -31723,7 +31726,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 444728, guid: da222915ad508be4d93a350d9d515ce4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.92588
+      value: 11.42
       objectReference: {fileID: 0}
     - target: {fileID: 444728, guid: da222915ad508be4d93a350d9d515ce4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -31731,7 +31734,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 444728, guid: da222915ad508be4d93a350d9d515ce4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.76
+      value: -2.35
       objectReference: {fileID: 0}
     - target: {fileID: 444728, guid: da222915ad508be4d93a350d9d515ce4, type: 3}
       propertyPath: m_LocalRotation.w
