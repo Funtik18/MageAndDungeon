@@ -51,6 +51,24 @@ public class UIManager : MonoBehaviour
 
     private void Awake()
     {
+		if(!isEducation)
+		{
+            if(GameManager.Instance.Stats.SpellPunishingFist.level == 0)
+			{
+                fireWall.isBlockedSure = true;
+            }
+            if(GameManager.Instance.Stats.SpellHellishFrost.level == 0)
+            {
+                hellishFrost.isBlockedSure = true;
+            }
+            if(GameManager.Instance.Stats.SpellThunderStorm.level == 0)
+            {
+                thunderStorm.isBlockedSure = true;
+            }
+        }
+
+
+
         windowStart.onClosed = WindowStartClossed;
 
         windowFail.onRewarded = PlayerReborn;

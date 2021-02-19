@@ -48,6 +48,9 @@ public class JoyButton : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
         }
     }
 
+    public bool isBlockedSure = false;
+
+
     private Fader fader;
     public Fader Fader
     {
@@ -87,8 +90,9 @@ public class JoyButton : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
 
     public void StartOpenButton()
     {
+        if(isBlockedSure) return;
         if(isAwakeOpen)
-            door.OpenDoor();
+            door.OpenDoor(true);
 
         Fader.FadeIn();
         IsBlock = isBlock;
@@ -140,7 +144,8 @@ public class JoyButton : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if (isBlock) return;
+        if(isBlockedSure) return;
+        if(isBlock) return;
         if (!myCooldown.isCooldown)
         {
 
@@ -184,7 +189,8 @@ public class JoyButton : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
     }
     public void OnPointerUp(PointerEventData eventData)
     {
-        if (isBlock) return;
+        if(isBlockedSure) return;
+        if(isBlock) return;
         Pressed = false;
     }
 
