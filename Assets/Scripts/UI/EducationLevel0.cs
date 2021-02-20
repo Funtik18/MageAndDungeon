@@ -54,6 +54,7 @@ public class EducationLevel0 : MonoBehaviour
 		};
 
 		dialogJoystick.Animator.SetTrigger("Show");
+		yield return null;
 
 		UIManager.Instance.joystick.isBlock = false;
 		
