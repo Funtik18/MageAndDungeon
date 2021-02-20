@@ -38,11 +38,20 @@ public class SceneLoaderManager : MonoBehaviour
 		{
             if(asyncOperation != null)
 			{
-                return asyncOperation.progress >= 0.9f ? true : false;
+                return Progress >= 0.9f ? true : false;
 			}
             return false;
 		}
 	}
+
+    public float Progress
+	{
+		get
+		{
+            return asyncOperation.progress;
+		}
+	}
+
 
     public void LoadMainMenu()
 	{

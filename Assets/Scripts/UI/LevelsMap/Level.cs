@@ -12,7 +12,10 @@ public class Level : MonoBehaviour
 	}
 	private void LoadClick()
 	{
+		WindowLoading.Instance.Open();
+
 		string levelName = data.levelName + data.levelN;
+
 		SceneLoaderManager.Instance.LoadLevelByName(levelName);
 
 		StartCoroutine(SceneWaiter());
@@ -22,8 +25,18 @@ public class Level : MonoBehaviour
 	{
 		while(!SceneLoaderManager.Instance.IsLoadComplited)
 		{
+			WindowLoading.Instance.FillAmount = SceneLoaderManager.Instance.Progress;
+
+			Debug.LogError(SceneLoaderManager.Instance.Progress);
+
 			yield return null;
 		}
+		WindowLoading.Instance.FillAmount = SceneLoaderManager.Instance.Progress;
+
+		yield return new WaitForSeconds(1);
+		WindowLoading.Instance.SetText("Completed!");
+		WindowLoading.Instance.FillAmount = 1f;
+		yield return new WaitForSeconds(2);
 
 		SceneLoaderManager.Instance.AllowLoadScene();
 	}
