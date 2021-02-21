@@ -40755,7 +40755,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2672955792264687505}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -13.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2672955792653166036}
@@ -40792,7 +40792,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: {fileID: 1908762802}
   wavesOrders:
-  - waveData: {fileID: 11400000, guid: 6592b28fa4774bf45818141f0c2793fe, type: 2}
+  - waveData: {fileID: 11400000, guid: 38cfad2b3b706f640bba94e6fa1fb9f5, type: 2}
   - waveData: {fileID: 11400000, guid: 6592b28fa4774bf45818141f0c2793fe, type: 2}
 --- !u!4 &2672955792394228416
 Transform:
@@ -40956,16 +40956,16 @@ MonoBehaviour:
       - {fileID: 2672955792264687511}
     - skipWaiter: 0.5
       spawnPoints:
-      - {fileID: 2672955792167830963}
+      - {fileID: 2672955793685494999}
     - skipWaiter: 0.5
       spawnPoints:
-      - {fileID: 2672955792167830963}
+      - {fileID: 2672955792264687511}
     - skipWaiter: 0.5
       spawnPoints:
       - {fileID: 2672955793379075416}
     - skipWaiter: 0.5
       spawnPoints:
-      - {fileID: 2672955793685494999}
+      - {fileID: 2672955792264687511}
 --- !u!1001 &2672955793280854100
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41049,7 +41049,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: {fileID: 216468744}
   wavesOrders:
-  - waveData: {fileID: 11400000, guid: 38cfad2b3b706f640bba94e6fa1fb9f5, type: 2}
+  - waveData: {fileID: 11400000, guid: 43364534acd983d4aa3c54aeb108e046, type: 2}
 --- !u!4 &2672955793379075417
 Transform:
   m_ObjectHideFlags: 0
@@ -41058,7 +41058,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2672955793379075418}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15, y: 0, z: -1}
+  m_LocalPosition: {x: 12.65, y: 0, z: -4.44}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2672955792653166036}
@@ -41134,7 +41134,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2672955793685494993}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -25, y: 0, z: -2}
+  m_LocalPosition: {x: -15.33, y: 0, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2672955792653166036}
@@ -41171,7 +41171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: {fileID: 1407189303}
   wavesOrders:
-  - waveData: {fileID: 11400000, guid: 38cfad2b3b706f640bba94e6fa1fb9f5, type: 2}
+  - waveData: {fileID: 11400000, guid: 43364534acd983d4aa3c54aeb108e046, type: 2}
 --- !u!1 &2672955793854164276
 GameObject:
   m_ObjectHideFlags: 0
