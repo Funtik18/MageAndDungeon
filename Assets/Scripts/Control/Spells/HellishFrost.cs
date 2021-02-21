@@ -6,14 +6,11 @@ public class HellishFrost : MonoBehaviour
 {
     public float radius;
     public float spelDuration;
-    private Wizard wizard;
     private List<Entity> entities = new List<Entity>();
-    List<Entity> temp = new List<Entity>();
 
     private void Awake()
     {
         entities = SpawnManager.Instance.spawnedEntities;
-        wizard = GameManager.Instance.WizardTarget;
     }
 
     void Update()
@@ -22,10 +19,9 @@ public class HellishFrost : MonoBehaviour
         {
             Entity refEntity = entities[i];
 
-            if (Vector3.Distance(transform.position, refEntity.transform.position) <= radius)
+            if (Vector3.Distance(transform.position, refEntity.CurrentTransform.position) <= radius)
             {
-                refEntity.GetComponent<EnemyController>().getFrozen(spelDuration);
-
+                refEntity.GetFrozen(spelDuration);
             }
 
         }

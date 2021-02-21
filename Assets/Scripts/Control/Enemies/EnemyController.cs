@@ -5,48 +5,7 @@ public class EnemyController : Entity
 {
     public bool isFrozen = false;
 
-    public Rigidbody rb;
 
-    #region Properties
-    private Transform currentTransform;
-    public Transform CurrentTransform
-    {
-        get
-        {
-            if (currentTransform == null)
-            {
-                currentTransform = transform;
-            }
-            return currentTransform;
-        }
-    }
-
-    private Animator animator;
-    public Animator Animator
-    {
-        get
-        {
-            if (animator == null)
-            {
-                animator = GetComponent<Animator>();
-            }
-            return animator;
-        }
-    }
-
-    private RagdollController ragdoll;
-    public RagdollController Ragdoll
-    {
-        get
-        {
-            if (ragdoll == null)
-            {
-                ragdoll = GetComponent<RagdollController>();
-            }
-            return ragdoll;
-        }
-    }
-    #endregion
 
     private Coroutine lifeCoroutine = null;
     public bool IsLifeCycle => lifeCoroutine != null;
@@ -185,7 +144,7 @@ public class EnemyController : Entity
     #endregion
     #endregion
 
-    public void getFrozen(float time)
+    public override void GetFrozen(float time)
     {
         if (!isFrozen)
             StartCoroutine(Frozen(time));

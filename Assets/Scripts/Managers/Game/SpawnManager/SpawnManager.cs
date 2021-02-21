@@ -258,7 +258,6 @@ public class SpawnInstruction
                 }
             }
 
-            Debug.Log("Circle");
             if(isLoop.value == false) break;
 
             yield return null;

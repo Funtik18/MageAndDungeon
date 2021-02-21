@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class MagePeriodicDamage : MonoBehaviour
@@ -7,8 +6,8 @@ public class MagePeriodicDamage : MonoBehaviour
     public float damage;
     public float speed;
 
-    private List<Entity> entities = new List<Entity>();
-    Transform target;
+    private List<Entity> entities;
+    Entity target;
 
     private void Awake()
     {
@@ -18,7 +17,7 @@ public class MagePeriodicDamage : MonoBehaviour
             Destroy(this.gameObject);
             return;
         }
-        target = entities[Random.Range(0, entities.Count)].transform;
+        target = entities[Random.Range(0, entities.Count)];
     }
 
     private void Update()
@@ -27,12 +26,12 @@ public class MagePeriodicDamage : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        transform.LookAt(target);
-        transform.position = Vector3.MoveTowards(transform.position,target.position,speed*Time.deltaTime);
+        transform.LookAt(target.CurrentTransform);
+        transform.position = Vector3.MoveTowards(transform.position, target.CurrentTransform.position, speed * Time.deltaTime);
         
-        if (Vector3.Distance(transform.position, target.position)<0.5f)
+        if (Vector3.Distance(transform.position, target.CurrentTransform.position) < 0.5f)
         {
-            target.GetComponent<EnemyController>().isAlive = false;
+            target.TakeDamage(1000);
             Destroy(this.gameObject);
         }
     }

@@ -26,9 +26,6 @@ public class Level : MonoBehaviour
 		while(!SceneLoaderManager.Instance.IsLoadComplited)
 		{
 			WindowLoading.Instance.FillAmount = SceneLoaderManager.Instance.Progress;
-
-			Debug.LogError(SceneLoaderManager.Instance.Progress);
-
 			yield return null;
 		}
 		WindowLoading.Instance.FillAmount = SceneLoaderManager.Instance.Progress;

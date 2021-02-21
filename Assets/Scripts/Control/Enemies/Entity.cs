@@ -8,11 +8,57 @@ public class Entity : MonoBehaviour
 
 	public UnityAction<Entity> onDied;
 
+    public Rigidbody rb;
 
-	public bool isAlive = true;
+    protected bool isAlive = true;
 
-	protected virtual void AttackTarget() { }
+    #region Properties
+    private Transform currentTransform;
+    public Transform CurrentTransform
+    {
+        get
+        {
+            if(currentTransform == null)
+            {
+                currentTransform = transform;
+            }
+            return currentTransform;
+        }
+    }
+
+    private Animator animator;
+    public Animator Animator
+    {
+        get
+        {
+            if(animator == null)
+            {
+                animator = GetComponent<Animator>();
+            }
+            return animator;
+        }
+    }
+
+    private RagdollController ragdoll;
+    public RagdollController Ragdoll
+    {
+        get
+        {
+            if(ragdoll == null)
+            {
+                ragdoll = GetComponent<RagdollController>();
+            }
+            return ragdoll;
+        }
+    }
+    #endregion
+
+
+    protected virtual void AttackTarget() { }
 	public virtual void TakeDamage(int damage) { isAlive = false; }
+
+	public virtual void GetFrozen(float time) { }
+
 	public virtual int GetPrice() { return 0; }
 
 	protected virtual float AttackAnimationLength() { return 0; }
