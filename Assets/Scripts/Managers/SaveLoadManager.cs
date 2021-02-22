@@ -32,6 +32,29 @@ public class SaveLoadManager
 	}
 
 
+	private static int isLastLevel = -1;
+	public static int IsLastLevel
+	{
+		set
+		{
+			isLastLevel = value;
+			PlayerPrefs.SetInt("OnLastLevel", isLastLevel);
+		}
+		get
+		{
+			if(isLastLevel == -1)
+			{
+				isLastLevel = PlayerPrefs.GetInt("OnLastLevel", -1);
+				if(isLastLevel == -1)
+				{
+					isLastLevel = 0;
+				}
+			}
+			return isLastLevel;
+		}
+	}
+
+
 	private static int isMusic = -1;
 	public static bool IsMusic
 	{
