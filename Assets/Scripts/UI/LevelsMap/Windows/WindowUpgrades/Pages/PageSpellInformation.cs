@@ -12,7 +12,8 @@ public class PageSpellInformation : MonoBehaviour
     [SerializeField] private TMPro.TextMeshProUGUI description;
     [SerializeField] private TMPro.TextMeshProUGUI diff;
 	[SerializeField] private TMPro.TextMeshProUGUI cost;
-    [SerializeField] private TMPro.TextMeshProUGUI additionalInfo;
+	[SerializeField] private TMPro.TextMeshProUGUI costT;
+	[SerializeField] private TMPro.TextMeshProUGUI additionalInfo;
     [Space]
     [SerializeField] private Button acceptButton;
 
@@ -39,14 +40,19 @@ public class PageSpellInformation : MonoBehaviour
 		if(currentSpell.data.level >= 4)
 		{
 			acceptButton.GetComponent<Image>().enabled = false;
+			diff.text = "";
+			cost.text = "";
+			costT.text = "<color=green>MAX</color>";
 		}
 		else
 		{
+			costT.text = "COST : ";
+
 			acceptButton.GetComponent<Image>().enabled = true;
 
 			acceptButton.onClick.RemoveAllListeners();
 
-			if(currentSpell.data.price <= SaveData.Instance.currentGold)
+			if(currentSpell.price <= SaveData.Instance.currentGold)
 			{
 				acceptButton.GetComponent<Image>().color = Color.green;
 
@@ -63,7 +69,9 @@ public class PageSpellInformation : MonoBehaviour
 
 	private void AcceptBuy()
 	{
-		SaveData.Instance.currentGold -= currentSpell.data.price;
+		SaveData.Instance.currentGold -= currentSpell.price;
+
+		Debug.LogError(currentSpell.data.name);
 
 		SaveData.Instance.spellsLevels[currentSpell.statIndex]++;
 
@@ -79,7 +87,7 @@ public class PageSpellInformation : MonoBehaviour
 		level.text = currentSpell.data.level.ToString();
 		description.text = currentSpell.data.russianInfo.description;
 		diff.text = currentSpell.diff;
-		cost.text = currentSpell.data.price.ToString();
+		cost.text = currentSpell.price.ToString();
 		additionalInfo.text = currentSpell.data.russianInfo.additional;
 	}
 

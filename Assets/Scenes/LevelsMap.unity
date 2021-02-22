@@ -12296,6 +12296,7 @@ MonoBehaviour:
   description: {fileID: 1401522356}
   diff: {fileID: 1587494485}
   cost: {fileID: 769810805}
+  costT: {fileID: 1344342127}
   additionalInfo: {fileID: 92461995}
   acceptButton: {fileID: 2118491852}
 --- !u!1 &1560658646

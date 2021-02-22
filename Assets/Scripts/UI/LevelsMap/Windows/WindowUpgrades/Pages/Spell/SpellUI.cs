@@ -8,6 +8,7 @@ public class SpellUI : MonoBehaviour, IPointerDownHandler
 	public UnityEvent onTaps;
 	public UnityAction<SpellUI> onTap;
 
+	[HideInInspector] public int price;
 	[HideInInspector] public SpellData data;
 	[HideInInspector] public int statIndex = 0;
 	[HideInInspector] public string diff;
