@@ -15,11 +15,11 @@ public class AbilityCooldoown : MonoBehaviour
     void Start()
     {
         abilityImage.fillAmount = 0;
-        cooldown = but.coolDown;
     }
 
     public void StartCooldown()
     {
+        cooldown = but.coolDown;
         isCooldown = true;
         abilityImage.fillAmount = 1;
     }
@@ -28,6 +28,7 @@ public class AbilityCooldoown : MonoBehaviour
     {
         if (isCooldown)
         {
+            Debug.Log(cooldown);
             abilityImage.fillAmount -= 1 / cooldown * Time.deltaTime;
             if (abilityImage.fillAmount <= 0)
             {
