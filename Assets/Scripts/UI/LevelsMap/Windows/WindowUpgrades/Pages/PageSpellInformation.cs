@@ -37,7 +37,7 @@ public class PageSpellInformation : MonoBehaviour
 
 		UpdatePage();
 
-		if(currentSpell.data.level >= 4)
+		if(currentSpell.data.level >= 5)
 		{
 			acceptButton.GetComponent<Image>().enabled = false;
 			diff.text = "";
@@ -70,8 +70,6 @@ public class PageSpellInformation : MonoBehaviour
 	private void AcceptBuy()
 	{
 		SaveData.Instance.currentGold -= currentSpell.price;
-
-		Debug.LogError(currentSpell.data.name);
 
 		SaveData.Instance.spellsLevels[currentSpell.statIndex]++;
 

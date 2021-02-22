@@ -42,31 +42,34 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3088688d5138afa4682e01006e02d977, type: 2}
   - {fileID: 11400000, guid: 2bda46bd7a725634fbdc5a9c3eb46a24, type: 2}
   - {fileID: 11400000, guid: c668501951dfa374b810ae75b7ff8630, type: 2}
-  maxMobScalarProfits:
-  - {fileID: 11400000, guid: bb90da15536cc734c952a35b9b770382, type: 2}
-  - {fileID: 11400000, guid: e8e9e5700a53c924bbbb71927ae98148, type: 2}
-  - {fileID: 11400000, guid: 5f2bdaef6257f654eaeab6b8970284d7, type: 2}
-  - {fileID: 11400000, guid: 6e4a89d521cef194d8c57f5b066657b0, type: 2}
-  - {fileID: 11400000, guid: e4186abb8d6cb094fb7325af696ed171, type: 2}
   maxPassiveIncomes:
   - {fileID: 11400000, guid: 4fa385af5892f2841bfe060f6ea00ff1, type: 2}
   - {fileID: 11400000, guid: ba2dae75c530b5848816ff6b9f91e951, type: 2}
   - {fileID: 11400000, guid: 600123f957a1db2449f48f2daea8fca9, type: 2}
   - {fileID: 11400000, guid: cf65fa196c50df144af499ea759a32f2, type: 2}
   - {fileID: 11400000, guid: ed12d06ed78487348a354165bcfdb5d5, type: 2}
+  maxMobScalarProfits:
+  - {fileID: 11400000, guid: bb90da15536cc734c952a35b9b770382, type: 2}
+  - {fileID: 11400000, guid: e8e9e5700a53c924bbbb71927ae98148, type: 2}
+  - {fileID: 11400000, guid: 5f2bdaef6257f654eaeab6b8970284d7, type: 2}
+  - {fileID: 11400000, guid: 6e4a89d521cef194d8c57f5b066657b0, type: 2}
+  - {fileID: 11400000, guid: e4186abb8d6cb094fb7325af696ed171, type: 2}
   hellishFrosts:
+  - {fileID: 11400000, guid: a7bf9b2fe20933d499c8f37b9c240438, type: 2}
   - {fileID: 11400000, guid: 58f14320eff89684084866aff9f09d80, type: 2}
   - {fileID: 11400000, guid: 09bb16e1526566b43a26ac9f7c8058a9, type: 2}
   - {fileID: 11400000, guid: 6dd05f8bf8752224db8ca843fa207633, type: 2}
   - {fileID: 11400000, guid: c30f3efb49f10534ab3aff985b24b139, type: 2}
   - {fileID: 11400000, guid: cfc81e7647c872e49a9e679d5671f39a, type: 2}
   punishingFists:
+  - {fileID: 11400000, guid: 9f5c2aaff322bfe4b8c38be76e56888a, type: 2}
   - {fileID: 11400000, guid: ba56e0601d7730945976111688fc25e5, type: 2}
   - {fileID: 11400000, guid: d6fe1a9904c348740b1ee974d1567373, type: 2}
   - {fileID: 11400000, guid: 137dd010d75f848478a3aa0d674fc91d, type: 2}
   - {fileID: 11400000, guid: 1c6089815662d7e409efbd3a81f613fe, type: 2}
   - {fileID: 11400000, guid: 2ce60317b9e3c2b4594cc3eb344de580, type: 2}
   thunderStorms:
+  - {fileID: 11400000, guid: 344b3a48e90979c44bbf9876d5bdcbc8, type: 2}
   - {fileID: 11400000, guid: 2bae07e0e10a5904f968e83d41665799, type: 2}
   - {fileID: 11400000, guid: cac354bf709e9cd49a3a2ad1b4537d25, type: 2}
   - {fileID: 11400000, guid: 2f8bdb43f9335e245a850874b41746ee, type: 2}

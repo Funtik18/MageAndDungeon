@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c6da152132ff6044ead04c3573ee8037, type: 3}
-  m_Name: MaxMobScalarProfit0
+  m_Name: MaxMobScalarProfit5
   m_EditorClassIdentifier: 
   englishInfo: {fileID: 11400000, guid: cdac882fd1793044bb6da87c62de7c58, type: 2}
   russianInfo: {fileID: 11400000, guid: 202157d06be55fe4798cce31c87c589c, type: 2}
-  level: 0
-  price: 100
-  scalar: 1
+  level: 5
+  price: 1600
+  scalar: 1.7

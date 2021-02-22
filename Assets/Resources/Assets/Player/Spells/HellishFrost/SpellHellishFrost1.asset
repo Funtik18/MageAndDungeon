@@ -16,6 +16,6 @@ MonoBehaviour:
   englishInfo: {fileID: 11400000, guid: 743829be714899344a0e6aed7f04e40f, type: 2}
   russianInfo: {fileID: 11400000, guid: b90802d9c9ed822468429793f8dbb948, type: 2}
   level: 1
-  price: 1000
-  durability: 2
-  cooldown: 100
+  price: 500
+  durability: 1
+  cooldown: 130
