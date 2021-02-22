@@ -19,4 +19,4 @@ MonoBehaviour:
   price: 800
   durability: 15
   damage: 3
-  cooldown: 40
+  cooldown: 60
