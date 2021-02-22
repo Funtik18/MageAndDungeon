@@ -4639,6 +4639,11 @@ PrefabInstance:
       propertyPath: m_textInfo.characterCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2672955792523552294, guid: 02326019be491ac41b934c47cb169d7d,
+        type: 3}
+      propertyPath: instruction.isLoop.value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2672955793318143584, guid: 02326019be491ac41b934c47cb169d7d,
         type: 3}
       propertyPath: radius
