@@ -27,13 +27,16 @@ public class SaveData
 	//6 mob scalar
 
 	public int[] spellsLevels = new int[3];
+
+	public bool isHaveFrost = false;
+	public bool isHaveFist = false;
+	public bool isHaveStorm = false;
 	//0 frost
 	//1 fist
 	//2 storm
 
 	public SaveData StartValues()
 	{
-        //currentGold = 1000;
         currentGold = 100000;
         currentDiamonds = 0;
 
@@ -45,6 +48,10 @@ public class SaveData
 		{
 			spellsLevels[i] = 0;
 		}
+
+		isHaveFrost = false;
+		isHaveFist = false;
+		isHaveStorm = false;
 		
 		return this;
 	}
