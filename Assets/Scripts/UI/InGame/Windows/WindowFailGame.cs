@@ -31,11 +31,15 @@ public class WindowFailGame : MonoBehaviour
     private Coroutine windowCoroutine = null;
     public bool IsWindowProcess => windowCoroutine != null;
 
+	private void Awake()
+	{
+        interaction.onTap.AddListener(delegate { SceneLoaderManager.Instance.AllowLoadScene(); });
+    }
+
     public void StartOpenWindow()
     {
         if(!IsWindowProcess)
         {
-            interaction.onTap.AddListener(delegate { SceneLoaderManager.Instance.AllowLoadScene(); });
 
 #if UNITY_EDITOR
             btnReward.onClick.AddListener(onRewarded);
