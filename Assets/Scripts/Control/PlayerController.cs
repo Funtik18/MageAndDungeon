@@ -100,14 +100,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    [ContextMenu("P")]
     private void Death()
 	{
         deathParticle.Play();
 
         model.DOScale(0, 1).From(1);
     }
-    [ContextMenu("R")]
     private void Reborn()
 	{
         model.DOScale(1, 0.5f).From(0);

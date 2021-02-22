@@ -37,6 +37,9 @@ public class WindowWinGame : MonoBehaviour
 	{
 		PlayerStats stats = GameManager.Instance.Stats;
 
+		if(SaveLoadManager.IsLastLevel < SaveLoadManager.IsCurrentLevel)
+			SaveLoadManager.IsLastLevel = SaveLoadManager.IsCurrentLevel;
+
 		SaveData.Instance.currentGold += stats.CurrentMoney;
 		SaveLoadManager.Save(SaveLoadManager.mainStatisticPath, SaveData.Instance);
 

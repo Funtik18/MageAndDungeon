@@ -8,11 +8,18 @@ public class Level : MonoBehaviour
 
 	private void Awake()
 	{
+		if(data.levelN > SaveLoadManager.IsLastLevel)
+		{
+			gameObject.SetActive(false);
+			return;
+		}
 		GetComponent<Button>().onClick.AddListener(LoadClick);
 	}
 	private void LoadClick()
 	{
 		WindowLoading.Instance.Open();
+
+		SaveLoadManager.IsCurrentLevel = data.levelN;
 
 		string levelName = data.levelName + data.levelN;
 

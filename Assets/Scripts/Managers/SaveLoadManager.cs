@@ -8,6 +8,52 @@ public class SaveLoadManager
 
 	public const string savePath = "/saves";
 
+	
+	private static int isCurrentLevel = -1;
+	public static int IsCurrentLevel
+	{
+		set
+		{
+			isCurrentLevel = value;
+			PlayerPrefs.SetInt("OnCurrentLevel", isCurrentLevel);
+		}
+		get
+		{
+			if(isCurrentLevel == -1)
+			{
+				isCurrentLevel = PlayerPrefs.GetInt("OnCurrentLevel", -1);
+				if(isCurrentLevel == -1)
+				{
+					isCurrentLevel = 0;
+				}
+			}
+			return isCurrentLevel;
+		}
+	}
+
+
+	private static int isLastLevel = -1;
+	public static int IsLastLevel
+	{
+		set
+		{
+			isLastLevel = value;
+			PlayerPrefs.SetInt("OnLastLevel", isLastLevel);
+		}
+		get
+		{
+			if(isLastLevel == -1)
+			{
+				isLastLevel = PlayerPrefs.GetInt("OnLastLevel", -1);
+				if(isLastLevel == -1)
+				{
+					isLastLevel = 0;
+				}
+			}
+			return isLastLevel;
+		}
+	}
+
 
 	private static int isMusic = -1;
 	public static bool IsMusic

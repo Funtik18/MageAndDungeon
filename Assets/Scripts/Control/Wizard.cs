@@ -120,7 +120,7 @@ public class Wizard : MonoBehaviour
 
     public void AddMoney(int money)
 	{
-        Stats.CurrentMoney += money;
+        Stats.CurrentMoney += (int)(money * Stats.MobScalarProfit);
      
         UIManager.Instance.UpdateStatistics();
     }
