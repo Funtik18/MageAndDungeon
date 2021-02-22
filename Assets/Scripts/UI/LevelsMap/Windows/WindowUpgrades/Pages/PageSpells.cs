@@ -73,7 +73,7 @@ public class PageSpells : MonoBehaviour
 	private void UpdateSpell(SpellUI spellUI, SpellData data, SpellData nextData, int spellIndex)
 	{
 		spellUI.data = data;
-		spellUI.statIndex = spellIndex;
+		spellUI.spellIndex = spellIndex;
 
 		if(nextData == null)
 		{
@@ -82,8 +82,39 @@ public class PageSpells : MonoBehaviour
 		}
 		else
 		{
-			spellUI.diff = data.GetDiffrence(nextData);
-			spellUI.price = nextData.price;
+			if(SaveData.Instance.spellsLevels[spellIndex] == 0)
+			{
+				if(spellIndex == 0 && !SaveData.Instance.isHaveFrost)
+				{
+					spellUI.diff = "";
+
+					spellUI.price = data.price;
+				}
+				else if(spellIndex == 1 && !SaveData.Instance.isHaveFist)
+				{
+					spellUI.diff = "";
+
+					spellUI.price = data.price;
+				}
+				else if(spellIndex == 2 && !SaveData.Instance.isHaveStorm)
+				{
+					spellUI.diff = "";
+
+					spellUI.price = data.price;
+				}
+				else
+				{
+					spellUI.diff = data.GetDiffrence(nextData);
+
+					spellUI.price = nextData.price;
+				}
+			}
+			else
+			{
+				spellUI.diff = data.GetDiffrence(nextData);
+
+				spellUI.price = nextData.price;
+			}
 		}
 
 

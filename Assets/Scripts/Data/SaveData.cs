@@ -70,6 +70,10 @@ public class SaveData
 			spellsLevels[i] = data.spellsLevels[i];
 		}
 
+		isHaveFrost = data.isHaveFrost;
+		isHaveFist = data.isHaveFist;
+		isHaveStorm = data.isHaveStorm;
+
 		return this;
 	}
 }

@@ -10,7 +10,7 @@ public class SpellUI : MonoBehaviour, IPointerDownHandler
 
 	[HideInInspector] public int price;
 	[HideInInspector] public SpellData data;
-	[HideInInspector] public int statIndex = 0;
+	[HideInInspector] public int spellIndex = 0;
 	[HideInInspector] public string diff;
 	[Space]
 	[SerializeField] private Image icon;
