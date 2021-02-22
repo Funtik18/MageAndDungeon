@@ -25,7 +25,12 @@ public class Levels : MonoBehaviour
 
     [SerializeField] private List<Level> levels = new List<Level>();
 
-    public void LoadBrawlScene()
+	private void Awake()
+	{
+        SaveLoadManager.IsAllLevels = levels.Count;
+	}
+
+	public void LoadBrawlScene()
 	{
         SceneLoaderManager.Instance.LoadLevelBrawl();
         StartCoroutine(SceneWaiter());

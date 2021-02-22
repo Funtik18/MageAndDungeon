@@ -24,7 +24,7 @@ public class SaveLoadManager
 				isCurrentLevel = PlayerPrefs.GetInt("OnCurrentLevel", -1);
 				if(isCurrentLevel == -1)
 				{
-					isCurrentLevel = 0;
+					IsCurrentLevel = 0;
 				}
 			}
 			return isCurrentLevel;
@@ -32,25 +32,48 @@ public class SaveLoadManager
 	}
 
 
-	private static int isLastLevel = -1;
+	private static int isLastLevels = -1;
 	public static int IsLastLevel
 	{
 		set
 		{
-			isLastLevel = value;
-			PlayerPrefs.SetInt("OnLastLevel", isLastLevel);
+			isLastLevels = value;
+			PlayerPrefs.SetInt("OnLastLevels", isLastLevels);
 		}
 		get
 		{
-			if(isLastLevel == -1)
+			if(isLastLevels == -1)
 			{
-				isLastLevel = PlayerPrefs.GetInt("OnLastLevel", -1);
-				if(isLastLevel == -1)
+				isLastLevels = PlayerPrefs.GetInt("OnLastLevels", -1);
+				if(isLastLevels == -1)
 				{
-					isLastLevel = 0;
+					IsLastLevel = 0;
 				}
 			}
-			return isLastLevel;
+			return isLastLevels;
+		}
+	}
+
+
+	private static int isAllLevels = -1;
+	public static int IsAllLevels
+	{
+		set
+		{
+			isAllLevels = value;
+			PlayerPrefs.SetInt("OnAllLevels", isAllLevels);
+		}
+		get
+		{
+			if(isAllLevels == -1)
+			{
+				isAllLevels = PlayerPrefs.GetInt("OnAllLevels", -1);
+				if(isAllLevels == -1)
+				{
+					IsAllLevels = 0;
+				}
+			}
+			return isAllLevels;
 		}
 	}
 
