@@ -15,7 +15,7 @@ MonoBehaviour:
   englishInfo: {fileID: 11400000, guid: 8bc00c2a910b0ad498f9b2f3a23782c7, type: 2}
   russianInfo: {fileID: 11400000, guid: 3e59662f2904c0d409d2c811f2777983, type: 2}
   level: 1
-  price: 0
+  price: 600
   damage: 2
   arrowsCount: 1
   frequency: 3

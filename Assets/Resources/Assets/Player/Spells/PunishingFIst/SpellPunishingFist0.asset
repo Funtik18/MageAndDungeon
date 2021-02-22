@@ -15,7 +15,8 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 44bfbe59605501245853efdfed5c9cb5, type: 3}
   englishInfo: {fileID: 11400000, guid: dff5a5cdad2ddd140baf2e4677965c4d, type: 2}
   russianInfo: {fileID: 11400000, guid: 8896111846fe5c546a691ab87772477c, type: 2}
+  level: 0
   price: 1000
   durability: 2.5
   damage: 1
-  cooldown: 100
+  cooldown: 350

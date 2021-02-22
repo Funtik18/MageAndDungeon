@@ -33,8 +33,9 @@ public class SaveData
 
 	public SaveData StartValues()
 	{
-		currentGold = 0;
-		currentDiamonds = 0;
+        //currentGold = 1000;
+        currentGold = 0;
+        currentDiamonds = 0;
 
 		for(int i = 0; i < statsLevels.Length; i++)
 		{

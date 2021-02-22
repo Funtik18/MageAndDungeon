@@ -17,5 +17,5 @@ MonoBehaviour:
   russianInfo: {fileID: 11400000, guid: b90802d9c9ed822468429793f8dbb948, type: 2}
   level: 3
   price: 2000
-  durability: 1.8
-  cooldown: 45
+  durability: 3
+  cooldown: 90
