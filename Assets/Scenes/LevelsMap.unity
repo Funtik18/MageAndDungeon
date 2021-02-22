@@ -7290,6 +7290,12 @@ PrefabInstance:
       propertyPath: m_textInfo.characterCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1978962683159633754, guid: fd0215d9d4572b348bb39db0c717901c,
+        type: 3}
+      propertyPath: disabled
+      value: 
+      objectReference: {fileID: 21300000, guid: 9898da1510972ee478bf5d1e934baddc,
+        type: 3}
     - target: {fileID: 1978962683159633757, guid: fd0215d9d4572b348bb39db0c717901c,
         type: 3}
       propertyPath: m_Pivot.x
@@ -16250,6 +16256,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1826038293}
     m_Modifications:
+    - target: {fileID: 1978962683159633754, guid: fd0215d9d4572b348bb39db0c717901c,
+        type: 3}
+      propertyPath: disabled
+      value: 
+      objectReference: {fileID: 21300000, guid: 7006c6f544d31aa4c8e6f3d746442cda,
+        type: 3}
     - target: {fileID: 1978962683159633757, guid: fd0215d9d4572b348bb39db0c717901c,
         type: 3}
       propertyPath: m_Pivot.x

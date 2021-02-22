@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: SpellHellishFrost5
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 0b868af1c47dd68449aa75fbec8deac2, type: 3}
+  disable: {fileID: 21300000, guid: 7006c6f544d31aa4c8e6f3d746442cda, type: 3}
   englishInfo: {fileID: 11400000, guid: 743829be714899344a0e6aed7f04e40f, type: 2}
   russianInfo: {fileID: 11400000, guid: b90802d9c9ed822468429793f8dbb948, type: 2}
   level: 5

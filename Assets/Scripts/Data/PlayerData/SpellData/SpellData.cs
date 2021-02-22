@@ -4,6 +4,7 @@
 public class SpellData : ScriptableObject
 {
     public Sprite icon;
+    public Sprite disable;
 
     public InfoData englishInfo;
     public InfoData russianInfo;
