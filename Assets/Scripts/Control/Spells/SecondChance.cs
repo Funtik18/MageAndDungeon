@@ -8,6 +8,11 @@ public class SecondChance : MonoBehaviour
     public float explosionForce = 10f;
     public float explosionRadius = 8f;
 
+    private void Awake()
+    {
+        GetComponent<AudioSound>().PlayAudio();
+    }
+
     GameObject exp;
     public void SecondChanceCast()
     {

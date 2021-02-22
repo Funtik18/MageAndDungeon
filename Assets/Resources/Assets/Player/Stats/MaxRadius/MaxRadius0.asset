@@ -15,5 +15,5 @@ MonoBehaviour:
   englishInfo: {fileID: 11400000, guid: 17fbdc3a478800846b8d6655740d7284, type: 2}
   russianInfo: {fileID: 11400000, guid: eb52ab2254948464e8c475b85a985f74, type: 2}
   level: 0
-  price: 0
+  price: 100
   radius: 5

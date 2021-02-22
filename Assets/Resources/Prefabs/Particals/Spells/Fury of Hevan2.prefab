@@ -14465,6 +14465,7 @@ GameObject:
   - component: {fileID: 4739430321988379046}
   - component: {fileID: -2566249178837337008}
   - component: {fileID: 4126207006845598408}
+  - component: {fileID: 5804092362689662058}
   m_Layer: 0
   m_Name: Fury of Hevan2
   m_TagString: Untagged
@@ -19244,6 +19245,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5804092362689662058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4829167432624988706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27236964699598642888a630d4bfd84f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4829167433147183712
 GameObject:
   m_ObjectHideFlags: 0

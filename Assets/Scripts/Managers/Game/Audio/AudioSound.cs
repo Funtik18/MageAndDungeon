@@ -11,7 +11,7 @@ public class AudioSound : Audio
 	private void Awake()
 	{
 		Source.clip = clip;
-	}
+    }
 
 	public override void PlayAudio()
 	{
