@@ -28,7 +28,6 @@ public class AbilityCooldoown : MonoBehaviour
     {
         if (isCooldown)
         {
-            Debug.Log(cooldown);
             abilityImage.fillAmount -= 1 / cooldown * Time.deltaTime;
             if (abilityImage.fillAmount <= 0)
             {

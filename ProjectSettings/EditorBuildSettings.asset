@@ -27,15 +27,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Level_3.unity
     guid: 40af2d62a9ece9f499d0b6eb0a41f7e4
   - enabled: 1
-    path: Assets/Scenes/Levels/Level_4.unity
+    path: Assets/Scenes/Levels/Level_GAVNO.unity
     guid: 1678fb78f21b80b45b6ea455a5013377
   - enabled: 1
-    path: Assets/Scenes/Levels/Level_5.unity
+    path: Assets/Scenes/Levels/Level_4.unity
     guid: 5d8bc04c35f77c6488c5bf78d21f31f7
   - enabled: 1
-    path: Assets/Scenes/Levels/Level_6.unity
+    path: Assets/Scenes/Levels/Level_5.unity
     guid: 668e2b50c2fa24d41818c381ffb661bb
   - enabled: 1
-    path: Assets/Scenes/Levels/Level_7.unity
+    path: Assets/Scenes/Levels/Level_6.unity
     guid: fe10b287fb50cd941a02fb79759edc1d
   m_configObjects: {}
