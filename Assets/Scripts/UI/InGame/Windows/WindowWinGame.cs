@@ -47,7 +47,8 @@ public class WindowWinGame : MonoBehaviour
 		SaveData.Instance.currentGold += stats.CurrentMoney;
 		SaveLoadManager.Save(SaveLoadManager.mainStatisticPath, SaveData.Instance);
 
-		SceneLoaderManager.Instance.LoadLevelsMap();
+        AdMobManager.Instance.adMobInterstitial.ShowInterstitial();
+        SceneLoaderManager.Instance.LoadLevelsMap();
 
 		Fader.CanvasGroup.interactable = true;
 		Fader.CanvasGroup.blocksRaycasts = true;
