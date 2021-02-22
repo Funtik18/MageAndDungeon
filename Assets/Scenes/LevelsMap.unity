@@ -911,6 +911,7 @@ MonoBehaviour:
   - {fileID: 1148981649}
   - {fileID: 1528389300}
   - {fileID: 2059367043}
+  - {fileID: 1662055532}
 --- !u!114 &58340069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13333,7 +13334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc126533dbf2f2c49912511253078349, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 35a4bed9da455b046aed152d6601b1cf, type: 2}
+  data: {fileID: 11400000, guid: 924d4523544436847b97d47468b0da88, type: 2}
 --- !u!114 &1662055533
 MonoBehaviour:
   m_ObjectHideFlags: 0
