@@ -5,8 +5,6 @@ public class EnemyController : Entity
 {
     public bool isFrozen = false;
 
-
-
     private Coroutine lifeCoroutine = null;
     public bool IsLifeCycle => lifeCoroutine != null;
 

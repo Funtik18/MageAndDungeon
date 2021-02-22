@@ -219,7 +219,7 @@ public class PlayerStats : EntityStats
 
 		mobScalarProfit = new VariableFloat(playerOpportunities.maxMobScalarProfits[data.statsLevels[6]].scalar);
 
-		currentMoney = new VariableInt(100);
+		currentMoney = new VariableInt(0);
 
 		//spells
 		spellHellishFrost = playerOpportunities.hellishFrosts[data.spellsLevels[0]];
