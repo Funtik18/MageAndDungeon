@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: SpellThunderStorm1
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 73e0a0666aefae7488292dad263f34d5, type: 3}
+  disable: {fileID: 21300000, guid: 0625fefcbfd933c46ac15315c8b1dc35, type: 3}
   englishInfo: {fileID: 11400000, guid: 76f0080593a6b6f45995f17cb4591abc, type: 2}
   russianInfo: {fileID: 11400000, guid: 0de8cf14c1b4f554c8d697fb777135d9, type: 2}
   level: 1

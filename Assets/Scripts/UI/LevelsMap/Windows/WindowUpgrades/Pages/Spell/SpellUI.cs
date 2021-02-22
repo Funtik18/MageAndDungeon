@@ -10,7 +10,7 @@ public class SpellUI : MonoBehaviour, IPointerDownHandler
 
 	[HideInInspector] public int price;
 	[HideInInspector] public SpellData data;
-	[HideInInspector] public int statIndex = 0;
+	[HideInInspector] public int spellIndex = 0;
 	[HideInInspector] public string diff;
 	[Space]
 	[SerializeField] private Image icon;
@@ -34,7 +34,22 @@ public class SpellUI : MonoBehaviour, IPointerDownHandler
 	
 	public void UpdateSpell()
 	{
-		icon.sprite = data.icon;
+		if(spellIndex == 0 && !SaveData.Instance.isHaveFrost)
+		{
+			icon.sprite = data.disable;
+		}
+		else if(spellIndex == 1 && !SaveData.Instance.isHaveFist)
+		{
+			icon.sprite = data.disable;
+		}
+		else if(spellIndex == 2 && !SaveData.Instance.isHaveStorm)
+		{
+			icon.sprite = data.disable;
+		}
+		else
+		{
+			icon.sprite = data.icon;
+		}
 
 		spellName.text = data.russianInfo.name;
 	}

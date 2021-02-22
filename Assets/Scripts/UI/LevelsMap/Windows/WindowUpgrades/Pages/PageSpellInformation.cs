@@ -71,7 +71,30 @@ public class PageSpellInformation : MonoBehaviour
 	{
 		SaveData.Instance.currentGold -= currentSpell.price;
 
-		SaveData.Instance.spellsLevels[currentSpell.statIndex]++;
+		if(SaveData.Instance.spellsLevels[currentSpell.spellIndex] == 0)
+		{
+			if(currentSpell.spellIndex == 0 && !SaveData.Instance.isHaveFrost)
+			{
+				SaveData.Instance.isHaveFrost = true;
+			}
+			else if(currentSpell.spellIndex == 1 && !SaveData.Instance.isHaveFist)
+			{
+				SaveData.Instance.isHaveFist = true;
+			}
+			else if(currentSpell.spellIndex == 2 && !SaveData.Instance.isHaveStorm)
+			{
+				SaveData.Instance.isHaveStorm = true;
+			}
+			else
+			{
+				SaveData.Instance.spellsLevels[currentSpell.spellIndex]++;
+			}
+		}
+		else
+		{
+			SaveData.Instance.spellsLevels[currentSpell.spellIndex]++;
+		}
+
 
 		SaveLoadManager.Save(SaveLoadManager.mainStatisticPath, SaveData.Instance);
 
