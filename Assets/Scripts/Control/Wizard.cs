@@ -122,6 +122,7 @@ public class Wizard : MonoBehaviour
         }
         if (RebornsCount < 0)
         {
+            AdMobManager.Instance.adMobInterstitial.ShowInterstitial();
             SceneLoaderManager.Instance.AllowLoadScene();
             SceneLoaderManager.Instance.LoadLevelsMap();
         }
