@@ -15,5 +15,5 @@ MonoBehaviour:
   englishInfo: {fileID: 11400000, guid: 9d0ff1a5202be6c44b361176d1cea931, type: 2}
   russianInfo: {fileID: 11400000, guid: 8914d5744b2ac9a43a5fbc726bc40993, type: 2}
   level: 4
-  price: 0
-  damage: 5
+  price: 300
+  damage: 4

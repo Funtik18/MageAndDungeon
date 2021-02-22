@@ -12,6 +12,7 @@ public class PageStatInformation : MonoBehaviour
 	[SerializeField] private TMPro.TextMeshProUGUI description;
 	[SerializeField] private TMPro.TextMeshProUGUI changes;
 	[SerializeField] private TMPro.TextMeshProUGUI cost;
+	[SerializeField] private TMPro.TextMeshProUGUI costT;
 	[SerializeField] private TMPro.TextMeshProUGUI additionalInfo;
 	[Space]
 	[SerializeField] private Button acceptButton;
@@ -37,12 +38,16 @@ public class PageStatInformation : MonoBehaviour
 
 		UpdatePage();
 
-		if(currentStat.data.level >= 4)
+		if(currentStat.data.level >= 5)
 		{
 			acceptButton.GetComponent<Image>().enabled = false;
+			cost.text = "";
+			costT.text = "<color=green>MAX</color>";
 		}
 		else
 		{
+			costT.text = "COST : ";
+
 			acceptButton.GetComponent<Image>().enabled = true;
 
 			acceptButton.onClick.RemoveAllListeners();
@@ -67,13 +72,13 @@ public class PageStatInformation : MonoBehaviour
 		level.text = currentStat.data.level.ToString();
 		description.text = currentStat.data.russianInfo.description;
 		changes.text = currentStat.diff;
-		cost.text = currentStat.data.price.ToString();
+		cost.text = currentStat.price.ToString();
 		additionalInfo.text = currentStat.data.russianInfo.additional;
 	}
 
 	private void AcceptBuy()
 	{
-		SaveData.Instance.currentGold -= currentStat.data.price;
+		SaveData.Instance.currentGold -= currentStat.price;
 
 		SaveData.Instance.statsLevels[currentStat.statIndex]++;
 

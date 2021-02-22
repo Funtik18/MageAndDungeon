@@ -15,5 +15,5 @@ MonoBehaviour:
   englishInfo: {fileID: 11400000, guid: 05e5bc6d22feb4149a1d2a11e2964070, type: 2}
   russianInfo: {fileID: 11400000, guid: c2e98fad93d99ef40a4f139e287a3862, type: 2}
   level: 4
-  price: 1600
-  income: 5
+  price: 800
+  income: 4

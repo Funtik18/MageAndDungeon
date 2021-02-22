@@ -101,9 +101,11 @@ public class PageStats : MonoBehaviour
 		if(nextData == null)
 		{
 			statUI.diff = "";
+			statUI.price = 0;
 		}
 		else
 		{
+			statUI.price = nextData.price;
 			statUI.diff = data.GetDiffrence(nextData);
 		}
 

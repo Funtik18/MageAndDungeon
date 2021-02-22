@@ -4507,6 +4507,7 @@ MonoBehaviour:
   description: {fileID: 1079575672}
   changes: {fileID: 2134387780}
   cost: {fileID: 1138277098}
+  costT: {fileID: 1062159696}
   additionalInfo: {fileID: 253290938}
   acceptButton: {fileID: 1070115205}
 --- !u!114 &545502901

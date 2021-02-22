@@ -15,5 +15,5 @@ MonoBehaviour:
   englishInfo: {fileID: 11400000, guid: 0daa4d536a2549a4c9051a99733135fd, type: 2}
   russianInfo: {fileID: 11400000, guid: 8a97e1bb43ec13a4c9da409f1c8c8124, type: 2}
   level: 2
-  price: 400
-  speed: 12
+  price: 200
+  speed: 11
