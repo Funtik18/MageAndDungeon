@@ -83,19 +83,19 @@ public class UIManager : MonoBehaviour
 
     private void PlayerReborn()
 	{
-        Time.timeScale = 1;
+            Time.timeScale = 1;
 
-        windowFail.CloseWindow();
+            windowFail.CloseWindow();
 
-        GameManager.Instance.WizardTarget.secondChance.SecondChanceCast();
-        GameManager.Instance.WizardTarget.ReBorn(Stats.MaxHealthPoints / 2);
+            GameManager.Instance.WizardTarget.secondChance.SecondChanceCast();
+            GameManager.Instance.WizardTarget.ReBorn(Stats.MaxHealthPoints / 2);
 
-        SpawnManager.Instance.ResumeWaves();
+            SpawnManager.Instance.ResumeWaves();
 
-        joystick.isBlock = false;
-        hellishFrost.IsBlock = false;
-        fireWall.IsBlock = false;
-        thunderStorm.IsBlock = false;
+            joystick.isBlock = false;
+            hellishFrost.IsBlock = false;
+            fireWall.IsBlock = false;
+            thunderStorm.IsBlock = false;
     }
 
 

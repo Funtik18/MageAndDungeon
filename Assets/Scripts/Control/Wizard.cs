@@ -25,6 +25,8 @@ public class Wizard : MonoBehaviour
     public UnityAction onDeath;
     public UnityAction onReborn;
 
+    int RebornsCount;
+
     [Header("SecondChanceSpel")]
     public SecondChance secondChance;
 
@@ -65,6 +67,7 @@ public class Wizard : MonoBehaviour
         StartLine();
         if (haveSound)
             mySound = GetComponent<AudioSound>();
+        RebornsCount = 2;
     }
 
     void GetStats()
@@ -113,8 +116,14 @@ public class Wizard : MonoBehaviour
 	{
         if(Stats.CurrentHealthPoints < 1)
         {
+            RebornsCount--;
             isDead = true;
             onDeath?.Invoke();
+        }
+        if (RebornsCount < 0)
+        {
+            SceneLoaderManager.Instance.AllowLoadScene();
+            SceneLoaderManager.Instance.LoadLevelsMap();
         }
     }
 
