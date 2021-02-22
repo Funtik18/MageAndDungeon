@@ -78,11 +78,14 @@ public class PageSpells : MonoBehaviour
 		if(nextData == null)
 		{
 			spellUI.diff = "";
+			spellUI.price = 0;
 		}
 		else
 		{
-			spellUI.diff = nextData.GetDiffrence(nextData);
+			spellUI.diff = data.GetDiffrence(nextData);
+			spellUI.price = nextData.price;
 		}
+
 
 		spellUI.onTap += Click;
 
