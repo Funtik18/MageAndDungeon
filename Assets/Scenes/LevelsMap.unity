@@ -7442,6 +7442,7 @@ GameObject:
   - component: {fileID: 1015327373}
   - component: {fileID: 1015327372}
   - component: {fileID: 1015327371}
+  - component: {fileID: 1015327375}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -7536,6 +7537,27 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1015327375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1015327370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4be74621e76e6840adf6935db5a4ad0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Texts:
+  - {fileID: 765018465}
+  - {fileID: 1479106454}
+  TextRus:
+  - "\u041F\u043E\u0442\u0430\u0441\u043E\u0432\u043A\u0430 "
+  - "\u0423\u043B\u0443\u0447\u0448\u0435\u043D\u0438\u044F"
+  TextEng:
+  - Brawl
+  - Upgrades
 --- !u!1001 &1029723876
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,18 +1,63 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class QualitySet : MonoBehaviour
 {
+
+    [Header("Quality")]
     public Button lowQual;
     public Button midQual;
     public Button maxQual;
+    [Header("Localization")]
+    public Button rusButton;
+    public Button engButton;
+    public TextMeshProUGUI[] Texts;
+    public MainMenuData[] dataTexts;
 
     private void Awake()
     {
         setQuality(IsQuality);
+        setLanguage(Language);
+        setTexts(dataTexts[language]);
+    }
+
+    void setTexts(MainMenuData dataTexts)
+    {
+        for (int i = 0; i < Texts.Length; i++)
+        {
+            Texts[i].text = dataTexts.mainMenuTexts[i];
+        }
+    }
+
+    public void changeLang()
+    {
+        setLanguage(Language);
+        setTexts(dataTexts[language]);
+    }
+
+    public void setCurLang(int ind)
+    {
+        Language = ind;
+    }
+
+    void setLanguage(int lang)
+    {
+        switch (lang)
+        {
+            case 0:
+                rusButton.GetComponent<Image>().color = Color.white;
+                engButton.GetComponent<Image>().color = Color.gray;
+                break;
+            case 1:
+                rusButton.GetComponent<Image>().color = Color.gray;
+                engButton.GetComponent<Image>().color = Color.white;
+                break;
+        }
+        Language = lang;
     }
 
     public void changeQuality()
@@ -59,14 +104,12 @@ public class QualitySet : MonoBehaviour
         set
         {
             isQuality = value;
-            Debug.Log(isQuality);
             PlayerPrefs.SetInt("Quality", isQuality);
         }
         get
         {
             if (isQuality == -1)
             {
-                Debug.Log(isQuality);
                 isQuality = PlayerPrefs.GetInt("Quality", -1);
                 if (isQuality == -1)
                 {
@@ -74,6 +117,28 @@ public class QualitySet : MonoBehaviour
                 }
             }
             return isQuality;
+        }
+    }
+
+    private static int language = -1;
+    private static int Language
+    {
+        set
+        {
+            language = value;
+            PlayerPrefs.SetInt("language", language);
+        }
+        get
+        {
+            if (language == -1)
+            {
+                language = PlayerPrefs.GetInt("language", -1);
+                if (language == -1)
+                {
+                    Language = 0;
+                }
+            }
+            return language;
         }
     }
 

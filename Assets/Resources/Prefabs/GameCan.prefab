@@ -645,8 +645,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: YOU DIED
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f3bbe9f450996de4399035dba56f8c1c, type: 2}
+  m_sharedMaterial: {fileID: -437128763499265392, guid: f3bbe9f450996de4399035dba56f8c1c,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7750,6 +7751,7 @@ GameObject:
   - component: {fileID: 8344517253698061275}
   - component: {fileID: 2961647962479498137}
   - component: {fileID: 9222059215732069760}
+  - component: {fileID: 6859021065503913153}
   m_Layer: 5
   m_Name: GameCan
   m_TagString: Untagged
@@ -7870,6 +7872,38 @@ MonoBehaviour:
   hellishFrost: {fileID: 8653713782587622231}
   thunderStorm: {fileID: 3464394422297629440}
   isEducation: 0
+--- !u!114 &6859021065503913153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4312042219470841585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4be74621e76e6840adf6935db5a4ad0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Texts:
+  - {fileID: 6495697484562382014}
+  - {fileID: 4123370951143684593}
+  - {fileID: 2521019818327832746}
+  - {fileID: 1504170004829456184}
+  - {fileID: 221740368503462167}
+  TextRus:
+  - "\u041D\u0430\u0436\u043C\u0438\u0442\u0435 \u0447\u0442\u043E\u0431\u044B \u043D\u0430\u0447\u0430\u0442\u044C"
+  - "\u0412\u042B \u041F\u041E\u0413\u0418\u0411\u041B\u0418"
+  - "\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u0442\u044C?"
+  - "\u041F\u043E\u0441\u043C\u043E\u0442\u0440\u0438\u0442\u0435 \u0440\u0435\u043A\u043B\u0430\u043C\u0443
+    \u0434\u043B\u044F \u043F\u0435\u0440\u0435\u0440\u043E\u0436\u0434\u0435\u043D\u0438\u044F."
+  - "\u0412\u044B \u043F\u043E\u0431\u0435\u0434\u0438\u043B\u0438...\u043F\u043E\u043A\u0430
+    \u0447\u0442\u043E."
+  TextEng:
+  - TAP TO START
+  - YOU DIED
+  - Continue?
+  - Watch ad for reborn.
+  - You won... rejoice.
 --- !u!1 &4334134910536919021
 GameObject:
   m_ObjectHideFlags: 0
@@ -11362,12 +11396,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e95dbac97817734c9dc319f009d15f7, type: 3}
---- !u!224 &6643828798036855254 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 701303421062230205, guid: 4e95dbac97817734c9dc319f009d15f7,
-    type: 3}
-  m_PrefabInstance: {fileID: 6163203207193524587}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &6643828798036855253 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 701303421062230206, guid: 4e95dbac97817734c9dc319f009d15f7,
@@ -11380,6 +11408,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87ee18cc3b2de1c4381378eb9d82949b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &6643828798036855254 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 701303421062230205, guid: 4e95dbac97817734c9dc319f009d15f7,
+    type: 3}
+  m_PrefabInstance: {fileID: 6163203207193524587}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7131381278246872759
 PrefabInstance:
   m_ObjectHideFlags: 0
