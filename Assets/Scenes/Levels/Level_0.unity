@@ -1549,8 +1549,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: USE IT!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: afc9edb71bf79ad4684b0d9f7be0838b, type: 2}
+  m_sharedMaterial: {fileID: 6177501907592430347, guid: afc9edb71bf79ad4684b0d9f7be0838b,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1581,7 +1582,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_textAlignment: 514
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -19091,8 +19092,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: These are <color=red>enemies</color>
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: afc9edb71bf79ad4684b0d9f7be0838b, type: 2}
+  m_sharedMaterial: {fileID: 6177501907592430347, guid: afc9edb71bf79ad4684b0d9f7be0838b,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -19123,7 +19125,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_textAlignment: 514
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -19345,8 +19347,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: USE SPELLS!!!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: afc9edb71bf79ad4684b0d9f7be0838b, type: 2}
+  m_sharedMaterial: {fileID: 6177501907592430347, guid: afc9edb71bf79ad4684b0d9f7be0838b,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -19377,7 +19380,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_textAlignment: 514
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -39048,8 +39051,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Protect <color="blue">YOURSELF</color>
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: afc9edb71bf79ad4684b0d9f7be0838b, type: 2}
+  m_sharedMaterial: {fileID: 6177501907592430347, guid: afc9edb71bf79ad4684b0d9f7be0838b,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -39080,7 +39084,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_textAlignment: 514
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -40585,8 +40589,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: It's <color=blue>your</color> <color=#BB00D4>creation</color>
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: afc9edb71bf79ad4684b0d9f7be0838b, type: 2}
+  m_sharedMaterial: {fileID: 6177501907592430347, guid: afc9edb71bf79ad4684b0d9f7be0838b,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -40617,7 +40622,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_textAlignment: 514
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -42373,8 +42378,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: This is <color=blue>YOU</color>
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: afc9edb71bf79ad4684b0d9f7be0838b, type: 2}
+  m_sharedMaterial: {fileID: 6177501907592430347, guid: afc9edb71bf79ad4684b0d9f7be0838b,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -42405,7 +42411,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_textAlignment: 514
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -52429,7 +52435,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.8
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -54484,6 +54490,8 @@ GameObject:
   - component: {fileID: 6334724539518135447}
   - component: {fileID: 6334724539518135444}
   - component: {fileID: 913950524}
+  - component: {fileID: 6334724539518135448}
+  - component: {fileID: 6334724539518135450}
   m_Layer: 5
   m_Name: GameCanvas
   m_TagString: Untagged
@@ -54534,6 +54542,39 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!114 &6334724539518135448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6334724539518135445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4be74621e76e6840adf6935db5a4ad0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Texts:
+  - {fileID: 56399562}
+  - {fileID: 1745157149}
+  - {fileID: 1660216880}
+  - {fileID: 940970803}
+  - {fileID: 1574371632}
+  - {fileID: 948309906}
+  TextRus:
+  - "\u0418\u0421\u041F\u041E\u041B\u042C\u0417\u0423\u0419 \u042D\u0422\u041E!"
+  - "\u042D\u0442\u043E <color=blue>\u0412\u042B</color>"
+  - "\u042D\u0442\u043E <color=blue>\u0432\u0430\u0448\u0435</color> <color=#BB00D4>\u0441\u043E\u0437\u0434\u0430\u043D\u0438\u0435</color>"
+  - "\u042D\u0442\u043E \u0432\u0430\u0448\u0438 <color=red>\u0432\u0440\u0430\u0433\u0438</color>"
+  - "\u0417\u0430\u0449\u0438\u0449\u0430\u0439 <color=\"blue\">\u0421\u0415\u0411\u042F</color>"
+  - "\u0418\u0421\u041F\u041E\u041B\u042C\u0417\u0423\u0419 \u041C\u0410\u0413\u0418\u042E!!!"
+  TextEng:
+  - USE IT!
+  - This is <color=blue>YOU</color>
+  - It's <color=blue>your</color> <color=#BB00D4>creation</color>
+  - These are <color=red>enemies</color>
+  - Protect <color="blue">YOURSELF</color>
+  - USE SPELLS!!!
 --- !u!224 &6334724539518135449
 RectTransform:
   m_ObjectHideFlags: 0
@@ -54571,6 +54612,38 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &6334724539518135450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6334724539518135445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4be74621e76e6840adf6935db5a4ad0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Texts:
+  - {fileID: 9061266420476907972}
+  - {fileID: 9006068075789705218}
+  - {fileID: 483840875679189807}
+  - {fileID: 8794850638499051391}
+  - {fileID: 6534214535828227455}
+  TextRus:
+  - "\u041D\u0430\u0436\u043C\u0438\u0442\u0435 \u0447\u0442\u043E\u0431\u044B \u043D\u0430\u0447\u0430\u0442\u044C"
+  - "\u0412\u042B \u041F\u041E\u0413\u0418\u0411\u041B\u0418"
+  - "\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u0442\u044C?"
+  - "\u041F\u043E\u0441\u043C\u043E\u0442\u0440\u0438\u0442\u0435 \u0440\u0435\u043A\u043B\u0430\u043C\u0443
+    \u0434\u043B\u044F \u043F\u0435\u0440\u0435\u0440\u043E\u0436\u0434\u0435\u043D\u0438\u044F."
+  - "\u0412\u044B \u043F\u043E\u0431\u0435\u0434\u0438\u043B\u0438...\u043F\u043E\u043A\u0430
+    \u0447\u0442\u043E."
+  TextEng:
+  - TAP TO START
+  - YOU DIED
+  - Continue?
+  - Watch ad for reborn.
+  - You won... rejoice.
 --- !u!114 &6337462582021278736
 MonoBehaviour:
   m_ObjectHideFlags: 0
