@@ -10,7 +10,14 @@ public class ButtonStartMainMenu : MonoBehaviour
 		StartCoroutine(SceneWaiter());
 	}
 
-	private IEnumerator SceneWaiter()
+    public void MainMenu()
+    {
+        SceneLoaderManager.Instance.LoadMainMenu();
+
+        StartCoroutine(SceneWaiter());
+    }
+
+    private IEnumerator SceneWaiter()
 	{
 		while(!SceneLoaderManager.Instance.IsLoadComplited)
 		{
