@@ -1711,7 +1711,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: {fileID: 2672955792063757862}
   wavesOrders:
-  - waveData: {fileID: 11400000, guid: 1043bb5a4d2e50b46a305c70f7f0449b, type: 2}
+  - waveData: {fileID: 11400000, guid: f073245a9a7f6dd4d869e4cde057ad6c, type: 2}
 --- !u!1 &1497912909
 GameObject:
   m_ObjectHideFlags: 0
@@ -1804,7 +1804,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: {fileID: 2672955792063757863}
   wavesOrders:
-  - waveData: {fileID: 11400000, guid: 6592b28fa4774bf45818141f0c2793fe, type: 2}
+  - waveData: {fileID: 11400000, guid: f073245a9a7f6dd4d869e4cde057ad6c, type: 2}
 --- !u!4 &1803563916 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 445750, guid: 850b22e6d2a41cc4d8fb9708b75e7440,
@@ -2724,7 +2724,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: {fileID: 2672955792063757868}
   wavesOrders:
-  - waveData: {fileID: 11400000, guid: 6592b28fa4774bf45818141f0c2793fe, type: 2}
+  - waveData: {fileID: 11400000, guid: 712bc3c44503e5d4b8a2b47eaa6420f7, type: 2}
 --- !u!4 &2672955792140059390
 Transform:
   m_ObjectHideFlags: 0
@@ -2875,18 +2875,14 @@ MonoBehaviour:
       spawnPoints:
       - {fileID: 2672955792309233893}
       - {fileID: 2672955792140059329}
-    - skipWaiter: 0.75
-      spawnPoints:
       - {fileID: 2672955793334526506}
       - {fileID: 2672955793574886309}
     - skipWaiter: 0.75
       spawnPoints:
       - {fileID: 511719577}
       - {fileID: 678717269}
-    - skipWaiter: 0.75
-      spawnPoints:
       - {fileID: 1794919842}
-      - {fileID: 2672955793574886309}
+      - {fileID: 1435171278}
     - skipWaiter: 0.5
       spawnPoints:
       - {fileID: 1497912911}
@@ -3062,7 +3058,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: {fileID: 2672955792063757866}
   wavesOrders:
-  - waveData: {fileID: 11400000, guid: 6592b28fa4774bf45818141f0c2793fe, type: 2}
+  - waveData: {fileID: 11400000, guid: 712bc3c44503e5d4b8a2b47eaa6420f7, type: 2}
 --- !u!1 &2672955793943800390
 GameObject:
   m_ObjectHideFlags: 0

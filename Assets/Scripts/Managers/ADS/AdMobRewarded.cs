@@ -18,9 +18,9 @@ public class AdMobRewarded : MonoBehaviour
 	//real ca-app-pub-7697745999229541/5889710607
 	private const string rewardedId = "ca-app-pub-7697745999229541/5889710607";
 #elif UNITY_IPHONE
-	private const string bannerId = "";
+	private const string rewardedId = "";
 #else
-	string adUnitId = "unexpected_platform";
+	string rewardedId = "unexpected_platform";
 #endif
 
 	private void OnEnable()

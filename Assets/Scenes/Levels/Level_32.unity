@@ -15422,7 +15422,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 2672955793296602193}
-  wavesOrders: []
+  wavesOrders:
+  - waveData: {fileID: 11400000, guid: 588f7b8d9792b0444a02b30e5ea23432, type: 2}
+  - waveData: {fileID: 11400000, guid: 588f7b8d9792b0444a02b30e5ea23432, type: 2}
 --- !u!4 &2672955793415806919
 Transform:
   m_ObjectHideFlags: 0
@@ -15552,8 +15554,8 @@ MonoBehaviour:
     spawnUnites:
     - skipWaiter: 0
       spawnPoints:
-      - {fileID: 2672955793525334672}
-      - {fileID: 2672955793088219316}
+      - {fileID: 2672955793415806918}
+      - {fileID: 2672955792721721001}
       - {fileID: 2672955792420415583}
     - skipWaiter: 0.5
       spawnPoints:
@@ -15562,6 +15564,9 @@ MonoBehaviour:
     - skipWaiter: 0.5
       spawnPoints:
       - {fileID: 2672955793239579620}
+    - skipWaiter: 0.5
+      spawnPoints:
+      - {fileID: 2672955792721721001}
     - skipWaiter: 0.5
       spawnPoints:
       - {fileID: 2672955792721721001}

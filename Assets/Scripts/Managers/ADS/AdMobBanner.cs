@@ -14,7 +14,7 @@ public class AdMobBanner : MonoBehaviour
 #elif UNITY_IPHONE
 	private const string bannerId = "";
 #else
-	string adUnitId = "unexpected_platform";
+	string bannerId = "unexpected_platform";
 #endif
 	private void OnEnable()
 	{
