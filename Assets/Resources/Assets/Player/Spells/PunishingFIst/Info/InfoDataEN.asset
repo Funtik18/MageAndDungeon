@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: The Punishing Fist
   description: Deals damage to all monsters in the radius
-  additional: "\"The wicked must be punished ( \u0361\xB0 \u035C\u0296 \u0361\xB0).\""
+  additional: "\"The wicked must be punished             ( \u0361\xB0 \u035C\u0296
+    \u0361\xB0).\""
