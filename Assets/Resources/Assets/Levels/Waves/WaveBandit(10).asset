@@ -15,4 +15,4 @@ MonoBehaviour:
   spawnOrdersData:
   - {fileID: 11400000, guid: 4d77d5fdca9fb594a892fc67ca00b67e, type: 2}
   time:
-    addTime: 3
+    addTime: 1
