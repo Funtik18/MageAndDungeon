@@ -9,12 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d387523eb731630438ddab618931eea2, type: 3}
-  m_Name: Bandit
+  m_Script: {fileID: 11500000, guid: 2cd5ee17f214a83488d2069b985a8f53, type: 3}
+  m_Name: Level_19
   m_EditorClassIdentifier: 
-  entity: {fileID: 9139175420319826119, guid: 3b17d2db7617dd643940c4be66ab5713, type: 3}
-  hpAmount: 1
-  speed: 150
-  damage: 2
-  price: 1
-  animationLength: 1.04
+  levelName: Level_
+  levelN: 19

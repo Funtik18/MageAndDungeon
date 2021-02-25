@@ -9,12 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d387523eb731630438ddab618931eea2, type: 3}
-  m_Name: Bandit
+  m_Script: {fileID: 11500000, guid: a17e19ea915333b478dd83f3e389dd7b, type: 3}
+  m_Name: WaveKnight(10)
   m_EditorClassIdentifier: 
-  entity: {fileID: 9139175420319826119, guid: 3b17d2db7617dd643940c4be66ab5713, type: 3}
-  hpAmount: 1
-  speed: 150
-  damage: 2
-  price: 1
-  animationLength: 1.04
+  spawnOrdersData:
+  - {fileID: 11400000, guid: 146df9a8c36320041bb613b3bd2a8ed8, type: 2}
+  time:
+    addTime: 3
