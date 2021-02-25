@@ -875,6 +875,7 @@ MonoBehaviour:
   timer: {fileID: 2672955792063757865}
   wavesOrders:
   - waveData: {fileID: 11400000, guid: 6592b28fa4774bf45818141f0c2793fe, type: 2}
+  - waveData: {fileID: 11400000, guid: 6592b28fa4774bf45818141f0c2793fe, type: 2}
 --- !u!1001 &574936184
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1088,6 +1089,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: {fileID: 2672955792063757864}
   wavesOrders:
+  - waveData: {fileID: 11400000, guid: 6592b28fa4774bf45818141f0c2793fe, type: 2}
   - waveData: {fileID: 11400000, guid: 6592b28fa4774bf45818141f0c2793fe, type: 2}
 --- !u!4 &784721258 stripped
 Transform:
@@ -1665,6 +1667,7 @@ MonoBehaviour:
   timer: {fileID: 2672955792063757862}
   wavesOrders:
   - waveData: {fileID: 11400000, guid: 6592b28fa4774bf45818141f0c2793fe, type: 2}
+  - waveData: {fileID: 11400000, guid: 6592b28fa4774bf45818141f0c2793fe, type: 2}
 --- !u!1 &1794919840
 GameObject:
   m_ObjectHideFlags: 0
@@ -1710,6 +1713,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: {fileID: 2672955792063757863}
   wavesOrders:
+  - waveData: {fileID: 11400000, guid: 6592b28fa4774bf45818141f0c2793fe, type: 2}
   - waveData: {fileID: 11400000, guid: 6592b28fa4774bf45818141f0c2793fe, type: 2}
 --- !u!4 &1803563916 stripped
 Transform:
@@ -2040,6 +2044,52 @@ Transform:
   m_Father: {fileID: 666474087}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2001863302
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2001863303}
+  - component: {fileID: 2001863304}
+  m_Layer: 0
+  m_Name: Step3 (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2001863303
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001863302}
+  m_LocalRotation: {x: -0.00015944698, y: -0.38120118, z: 0.000066284236, w: -0.9244921}
+  m_LocalPosition: {x: -12.07, y: 0.000014934813, z: 9.41}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2672955792759612070}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0.020000001, y: 44.816, z: 0}
+--- !u!114 &2001863304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001863302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 136dcd5a34b09824085cb004a1c1bc0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: {fileID: 2672955792063757862}
+  wavesOrders:
+  - waveData: {fileID: 11400000, guid: f073245a9a7f6dd4d869e4cde057ad6c, type: 2}
 --- !u!1001 &2672955792063757861
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2727,6 +2777,7 @@ Transform:
   - {fileID: 678717268}
   - {fileID: 1794919841}
   - {fileID: 1435171277}
+  - {fileID: 2001863303}
   m_Father: {fileID: 2672955793943800393}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2777,28 +2828,22 @@ MonoBehaviour:
     spawnUnites:
     - skipWaiter: 0
       spawnPoints:
-      - {fileID: 2672955792309233893}
-    - skipWaiter: 0.2
-      spawnPoints:
-      - {fileID: 2672955792140059329}
+      - {fileID: 1435171278}
     - skipWaiter: 0.5
       spawnPoints:
-      - {fileID: 2672955793334526506}
-    - skipWaiter: 0.5
-      spawnPoints:
-      - {fileID: 2672955793574886309}
+      - {fileID: 1794919842}
     - skipWaiter: 0.5
       spawnPoints:
       - {fileID: 511719577}
     - skipWaiter: 0.5
       spawnPoints:
       - {fileID: 678717269}
-    - skipWaiter: 0.5
+    - skipWaiter: 0.75
       spawnPoints:
-      - {fileID: 1794919842}
-    - skipWaiter: 0.5
-      spawnPoints:
-      - {fileID: 1435171278}
+      - {fileID: 2672955792309233893}
+      - {fileID: 2672955792140059329}
+      - {fileID: 2672955793334526506}
+      - {fileID: 2672955793574886309}
 --- !u!1001 &2672955793174408998
 PrefabInstance:
   m_ObjectHideFlags: 0
