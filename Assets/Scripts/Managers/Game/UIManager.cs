@@ -53,20 +53,19 @@ public class UIManager : MonoBehaviour
     {
 		if(!isEducation)
 		{
-            if(GameManager.Instance.Stats.SpellPunishingFist.level == 0)
+            if(!SaveData.Instance.isHaveFist)
 			{
                 fireWall.isBlockedSure = true;
             }
-            if(GameManager.Instance.Stats.SpellHellishFrost.level == 0)
+            if(!SaveData.Instance.isHaveFrost)
             {
                 hellishFrost.isBlockedSure = true;
             }
-            if(GameManager.Instance.Stats.SpellThunderStorm.level == 0)
+            if(!SaveData.Instance.isHaveStorm)
             {
                 thunderStorm.isBlockedSure = true;
             }
         }
-
 
 
         windowStart.onClosed = WindowStartClossed;

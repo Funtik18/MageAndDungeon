@@ -67,7 +67,7 @@ public class PageStatInformation : MonoBehaviour
 
             acceptButton.onClick.RemoveAllListeners();
 
-            if (currentStat.data.price <= SaveData.Instance.currentGold)
+            if (currentStat.price <= SaveData.Instance.currentGold)
             {
                 acceptButton.GetComponent<Image>().color = Color.green;
 
