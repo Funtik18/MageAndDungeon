@@ -65,7 +65,7 @@ public class PageStats : MonoBehaviour
 		rect.verticalScrollbar.value = 1f;
 
 		int[] stats = SaveData.Instance.statsLevels;
-
+        //Debug.Log(data.maxHps[0].englishInfo.);
 		UpdateStat(statMaxHP, data.maxHps[stats[0]], stats[0] + 1 <= data.maxHps.Count - 1 ? data.maxHps[stats[0] + 1] : null , 0);
 		UpdateStat(statMaxDamage, data.maxDamages[stats[1]], stats[1] + 1 <= data.maxDamages.Count-1 ? data.maxDamages[stats[1] + 1] : null, 1);
 		UpdateStat(statMaxDamageOverTime, data.maxDamageOverTimes[stats[2]], stats[2] + 1 <= data.maxDamageOverTimes.Count - 1 ? data.maxDamageOverTimes[stats[2] + 1] : null, 2);
@@ -89,7 +89,7 @@ public class PageStats : MonoBehaviour
 			if(statsUI[i].IsChosen)
 			{
 				pageInformation.ShowStatInformation(statsUI[i]);
-				break;
+                break;
 			}
 		}
 	}

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2251a36cace963e4eb2bad287a0ada2e, type: 3}
   m_Name: InfoDataEN
   m_EditorClassIdentifier: 
-  name: 
-  description: 
-  additional: 
+  name: Maximum speed
+  description: Speed of movement
+  additional: '"Speeding never killed anybody, stopping...that''s what kills."'

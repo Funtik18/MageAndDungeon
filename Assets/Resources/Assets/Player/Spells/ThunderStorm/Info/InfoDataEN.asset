@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2251a36cace963e4eb2bad287a0ada2e, type: 3}
   m_Name: InfoDataEN
   m_EditorClassIdentifier: 
-  name: Fury of Heaven
-  description: 
-  additional: 
+  name: The Fury of Heaven
+  description: Lightning strikes random enemies
+  additional: '"I react to meanness instantly and with fury."'

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2251a36cace963e4eb2bad287a0ada2e, type: 3}
   m_Name: InfoDataEN
   m_EditorClassIdentifier: 
-  name: 
-  description: 
-  additional: 
+  name: The Punishing Fist
+  description: Deals damage to all monsters in the radius
+  additional: "\"The wicked must be punished ( \u0361\xB0 \u035C\u0296 \u0361\xB0).\""
