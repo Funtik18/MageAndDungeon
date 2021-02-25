@@ -40359,7 +40359,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 2672955793140393533}
-  wavesOrders: []
+  wavesOrders:
+  - waveData: {fileID: 11400000, guid: 24ba9120d07913d45a36d8e40d27d6e2, type: 2}
 --- !u!1 &2672955792501941182
 GameObject:
   m_ObjectHideFlags: 0

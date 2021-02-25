@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a17e19ea915333b478dd83f3e389dd7b, type: 3}
-  m_Name: WaveBandit(20)
+  m_Name: WaveBandit(30)eyasier
   m_EditorClassIdentifier: 
   spawnOrdersData:
-  - {fileID: 11400000, guid: 4d77d5fdca9fb594a892fc67ca00b67e, type: 2}
-  - {fileID: 11400000, guid: 4d77d5fdca9fb594a892fc67ca00b67e, type: 2}
+  - {fileID: 11400000, guid: 7232d1ba73a2e7047af271a12d57c82f, type: 2}
+  - {fileID: 11400000, guid: 7232d1ba73a2e7047af271a12d57c82f, type: 2}
+  - {fileID: 11400000, guid: 7232d1ba73a2e7047af271a12d57c82f, type: 2}
   time:
-    addTime: 3
+    addTime: 2

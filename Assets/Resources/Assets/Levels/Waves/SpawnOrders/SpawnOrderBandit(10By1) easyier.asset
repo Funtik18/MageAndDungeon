@@ -9,11 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a17e19ea915333b478dd83f3e389dd7b, type: 3}
-  m_Name: WaveBandit(20)
+  m_Script: {fileID: 11500000, guid: 1bae163bcf114474da025b9dc43f422b, type: 3}
+  m_Name: SpawnOrderBandit(10By1) easyier
   m_EditorClassIdentifier: 
-  spawnOrdersData:
-  - {fileID: 11400000, guid: 4d77d5fdca9fb594a892fc67ca00b67e, type: 2}
-  - {fileID: 11400000, guid: 4d77d5fdca9fb594a892fc67ca00b67e, type: 2}
+  data: {fileID: 11400000, guid: 9b9ca377b4d7c8342a0256e7b5771f48, type: 2}
+  countTuples: 10
+  countEntitiesInTuples: 1
   time:
-    addTime: 3
+    delayInTuple: 2.5
+    frequency: 3

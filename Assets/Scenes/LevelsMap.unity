@@ -7916,7 +7916,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc126533dbf2f2c49912511253078349, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: e086966a1e56e2a45b533652339f14f2, type: 2}
+  data: {fileID: 11400000, guid: 1df557523b82ba8449a6a2104db3a6f6, type: 2}
 --- !u!114 &549656954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12838,8 +12838,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 287416655}
   m_HandleRect: {fileID: 287416654}
   m_Direction: 0
-  m_Value: 0.5
-  m_Size: 0.77142864
+  m_Value: 0.5000002
+  m_Size: 0.7714286
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
