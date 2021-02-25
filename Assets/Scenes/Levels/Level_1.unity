@@ -40742,10 +40742,10 @@ MonoBehaviour:
     - skipWaiter: 0.75
       spawnPoints:
       - {fileID: 2672955793613274030}
-      - {fileID: 2672955793685494999}
+      - {fileID: 2672955792264687511}
     - skipWaiter: 0.75
       spawnPoints:
-      - {fileID: 2672955793613274030}
+      - {fileID: 2672955793685494999}
     - skipWaiter: 0.75
       spawnPoints:
       - {fileID: 2672955792414636871}

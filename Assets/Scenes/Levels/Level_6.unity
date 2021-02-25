@@ -40883,16 +40883,10 @@ MonoBehaviour:
     - skipWaiter: 0.5
       spawnPoints:
       - {fileID: 2672955792264687511}
-      - {fileID: 2672955793613274030}
-    - skipWaiter: 0.75
-      spawnPoints:
       - {fileID: 2672955793685494999}
-      - {fileID: 2672955793613274030}
     - skipWaiter: 0.75
       spawnPoints:
       - {fileID: 2106100375}
-      - {fileID: 2672955793685494999}
-      - {fileID: 2672955793613274030}
 --- !u!1001 &2672955793280854100
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -40875,10 +40875,9 @@ MonoBehaviour:
       - {fileID: 2672955793613274030}
     - skipWaiter: 1
       spawnPoints:
-      - {fileID: 2672955792264687511}
+      - {fileID: 2672955792414636871}
     - skipWaiter: 0.35
       spawnPoints:
-      - {fileID: 2672955793685494999}
       - {fileID: 2000797715}
       - {fileID: 1616284693}
     - skipWaiter: 0.5

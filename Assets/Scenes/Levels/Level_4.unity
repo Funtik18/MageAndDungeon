@@ -40776,7 +40776,6 @@ MonoBehaviour:
     spawnUnites:
     - skipWaiter: 0
       spawnPoints:
-      - {fileID: 2672955792264687511}
       - {fileID: 2672955793685494999}
       - {fileID: 2672955792414636871}
       - {fileID: 2672955793613274030}
@@ -40795,7 +40794,7 @@ MonoBehaviour:
       - {fileID: 2672955793613274030}
     - skipWaiter: 0.75
       spawnPoints:
-      - {fileID: 2672955793613274030}
+      - {fileID: 2672955793685494999}
     - skipWaiter: 0.75
       spawnPoints:
       - {fileID: 2106100375}
