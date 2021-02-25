@@ -42,11 +42,26 @@ public class PageSpellInformation : MonoBehaviour
 			acceptButton.GetComponent<Image>().enabled = false;
 			diff.text = "";
 			cost.text = "";
-			costT.text = "<color=green>MAX</color>";
+
+			if(PlayerPrefs.GetInt("language") == 0)
+			{
+				costT.text = "<color=green>МАКСИМУМ</color>";
+			}
+			else
+			{
+				costT.text = "<color=green>MAX</color>";
+			}
 		}
 		else
 		{
-			costT.text = "COST : ";
+			if(PlayerPrefs.GetInt("language") == 0)
+			{
+				costT.text = "ЦЕНА : ";
+			}
+			else
+			{
+				costT.text = "COST : ";
+			}
 
 			acceptButton.GetComponent<Image>().enabled = true;
 
@@ -104,12 +119,22 @@ public class PageSpellInformation : MonoBehaviour
 
 	private void UpdatePage()
 	{
-		tittle.text = currentSpell.data.russianInfo.name;
+		if(PlayerPrefs.GetInt("language") == 0)
+		{
+			tittle.text = currentSpell.data.russianInfo.name;
+			description.text = currentSpell.data.russianInfo.description;
+			additionalInfo.text = currentSpell.data.russianInfo.additional;
+		}
+		else
+		{
+			tittle.text = currentSpell.data.englishInfo.name;
+			description.text = currentSpell.data.englishInfo.description;
+			additionalInfo.text = currentSpell.data.englishInfo.additional;
+		}
+
 		level.text = currentSpell.data.level.ToString();
-		description.text = currentSpell.data.russianInfo.description;
 		diff.text = currentSpell.diff;
 		cost.text = currentSpell.price.ToString();
-		additionalInfo.text = currentSpell.data.russianInfo.additional;
 	}
 
 	[ContextMenu("OpenWindow")]

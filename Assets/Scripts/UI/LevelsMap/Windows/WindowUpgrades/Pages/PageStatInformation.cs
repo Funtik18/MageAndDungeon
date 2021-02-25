@@ -42,11 +42,25 @@ public class PageStatInformation : MonoBehaviour
 		{
 			acceptButton.GetComponent<Image>().enabled = false;
 			cost.text = "";
-			costT.text = "<color=green>MAX</color>";
+			if(PlayerPrefs.GetInt("language") == 0)
+			{
+				costT.text = "<color=green>МАКСИМУМ</color>";
+			}
+			else
+			{
+				costT.text = "<color=green>MAX</color>";
+			}
 		}
 		else
 		{
-			costT.text = "COST : ";
+			if(PlayerPrefs.GetInt("language") == 0)
+			{
+				costT.text = "ЦЕНА : ";
+			}
+			else
+			{
+				costT.text = "COST : ";
+			}
 
 			acceptButton.GetComponent<Image>().enabled = true;
 
@@ -68,12 +82,22 @@ public class PageStatInformation : MonoBehaviour
 	}
 	private void UpdatePage()
 	{
-		tittle.text = currentStat.data.russianInfo.name;
+		if(PlayerPrefs.GetInt("language") == 0)
+		{
+			tittle.text = currentStat.data.russianInfo.name;
+			description.text = currentStat.data.russianInfo.description;
+			additionalInfo.text = currentStat.data.russianInfo.additional;
+		}
+		else
+		{
+			tittle.text = currentStat.data.englishInfo.name;
+			description.text = currentStat.data.englishInfo.description;
+			additionalInfo.text = currentStat.data.englishInfo.additional;
+		}
+
 		level.text = currentStat.data.level.ToString();
-		description.text = currentStat.data.russianInfo.description;
 		changes.text = currentStat.diff;
 		cost.text = currentStat.price.ToString();
-		additionalInfo.text = currentStat.data.russianInfo.additional;
 	}
 
 	private void AcceptBuy()
