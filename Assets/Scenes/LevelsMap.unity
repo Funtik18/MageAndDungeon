@@ -12838,8 +12838,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 287416655}
   m_HandleRect: {fileID: 287416654}
   m_Direction: 0
-  m_Value: 0.5000002
-  m_Size: 0.7714286
+  m_Value: 0.5
+  m_Size: 0.77142864
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -13352,14 +13352,26 @@ MonoBehaviour:
   - {fileID: 765018465}
   - {fileID: 1479106454}
   - {fileID: 1235094274}
+  - {fileID: 285760750}
+  - {fileID: 1266963625}
+  - {fileID: 1236761931}
+  - {fileID: 1560658648}
   TextRus:
   - "\u041F\u043E\u0442\u0430\u0441\u043E\u0432\u043A\u0430 "
   - "\u0423\u043B\u0443\u0447\u0448\u0435\u043D\u0438\u044F"
   - "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u0443\u0440\u043E\u0432\u0435\u043D\u044C"
+  - "\u0421\u0442\u0430\u0442\u044B"
+  - "\u0417\u0430\u043A\u043B\u0438\u043D\u0430\u043D\u0438\u044F"
+  - "\u0423\u0420\u041E\u0412\u0415\u041D\u042C : "
+  - "\u0423\u0420\u041E\u0412\u0415\u041D\u042C : "
   TextEng:
   - Brawl
   - Upgrades
   - Select level
+  - Stats
+  - Spells
+  - 'LEVEL : '
+  - 'LEVEL : '
 --- !u!1 &1022076876
 GameObject:
   m_ObjectHideFlags: 0
