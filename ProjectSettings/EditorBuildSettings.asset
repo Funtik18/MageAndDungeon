@@ -74,7 +74,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Levels/Level_GAVNO.unity
     guid: 1678fb78f21b80b45b6ea455a5013377
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Levels/Level_19.unity
     guid: 5d8bc04c35f77c6488c5bf78d21f31f7
   - enabled: 1
@@ -92,6 +92,24 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Level_24.unity
     guid: 1352b372604bf3b438c34c518a17f1d4
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level_14.unity
+    guid: 138137829e4a2ca409b99122d3cf97c2
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level_15.unity
+    guid: a9b403b8ce4d368439ea12a76c397c4b
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level_16.unity
+    guid: 92a61fc90e945cb41bd7cb9d8824ed85
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level_17.unity
+    guid: c75acf1977acfef48b19c5a1f39a3b47
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level_18.unity
+    guid: 49ef90a1caab9cc459c4f38a1b6352e6
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level_32.unity
+    guid: 06bfc2341ffe0d34fa346cbaf8b41743
   - enabled: 1
     path: Assets/Scenes/Levels/Level_25.unity
     guid: 668e2b50c2fa24d41818c381ffb661bb
