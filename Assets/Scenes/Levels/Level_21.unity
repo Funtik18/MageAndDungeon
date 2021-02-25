@@ -24568,7 +24568,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 731952341}
-  wavesOrders: []
+  wavesOrders:
+  - waveData: {fileID: 11400000, guid: c5a78a6afb920b14eb4e9f0c8bc875f5, type: 2}
 --- !u!1 &2672955792018819478
 GameObject:
   m_ObjectHideFlags: 0
@@ -24725,7 +24726,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 978114897}
-  wavesOrders: []
+  wavesOrders:
+  - waveData: {fileID: 11400000, guid: c5a78a6afb920b14eb4e9f0c8bc875f5, type: 2}
 --- !u!1 &2672955792425133098
 GameObject:
   m_ObjectHideFlags: 0
@@ -24808,12 +24810,15 @@ MonoBehaviour:
     - skipWaiter: 0.5
       spawnPoints:
       - {fileID: 2672955792169917145}
-    - skipWaiter: 0.5
-      spawnPoints:
       - {fileID: 2672955793372772914}
     - skipWaiter: 0.5
       spawnPoints:
-      - {fileID: 2672955793670857661}
+      - {fileID: 2672955792425133101}
+      - {fileID: 2672955792379596203}
+    - skipWaiter: 0.5
+      spawnPoints:
+      - {fileID: 2672955792018819465}
+      - {fileID: 2672955793607025860}
     - skipWaiter: 0.5
       spawnPoints:
       - {fileID: 2672955792425133101}
@@ -24985,7 +24990,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 562491961}
-  wavesOrders: []
+  wavesOrders:
+  - waveData: {fileID: 11400000, guid: c5a78a6afb920b14eb4e9f0c8bc875f5, type: 2}
 --- !u!1 &2672955793607025861
 GameObject:
   m_ObjectHideFlags: 0

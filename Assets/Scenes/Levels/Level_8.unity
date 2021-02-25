@@ -41117,8 +41117,6 @@ MonoBehaviour:
       spawnPoints:
       - {fileID: 2672955793529562152}
       - {fileID: 2672955793131604364}
-      - {fileID: 2672955792565511361}
-      - {fileID: 2672955793559489966}
     - skipWaiter: 0.5
       spawnPoints:
       - {fileID: 2672955793215068892}
@@ -41128,6 +41126,8 @@ MonoBehaviour:
     - skipWaiter: 0.5
       spawnPoints:
       - {fileID: 2672955792501941176}
+      - {fileID: 2672955793529562152}
+      - {fileID: 2672955793559489966}
     - skipWaiter: 0.5
       spawnPoints:
       - {fileID: 2672955793215068892}

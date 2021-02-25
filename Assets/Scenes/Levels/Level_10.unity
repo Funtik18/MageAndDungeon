@@ -40490,7 +40490,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: {fileID: 2672955793140393531}
   wavesOrders:
-  - waveData: {fileID: 11400000, guid: 44f24faeea710ff4b9768e37ac07e1a9, type: 2}
+  - waveData: {fileID: 11400000, guid: f073245a9a7f6dd4d869e4cde057ad6c, type: 2}
 --- !u!4 &2672955793131604365
 Transform:
   m_ObjectHideFlags: 0
@@ -41004,7 +41004,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: {fileID: 2672955793140393532}
   wavesOrders:
-  - waveData: {fileID: 11400000, guid: 24ba9120d07913d45a36d8e40d27d6e2, type: 2}
+  - waveData: {fileID: 11400000, guid: f073245a9a7f6dd4d869e4cde057ad6c, type: 2}
 --- !u!4 &2672955793529562153
 Transform:
   m_ObjectHideFlags: 0
@@ -41066,7 +41066,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 2672955793140393529}
-  wavesOrders: []
+  wavesOrders:
+  - waveData: {fileID: 11400000, guid: 1043bb5a4d2e50b46a305c70f7f0449b, type: 2}
 --- !u!4 &2672955793559489967
 Transform:
   m_ObjectHideFlags: 0

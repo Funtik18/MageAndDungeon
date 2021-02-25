@@ -6,14 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 7af04f14af4cb8941beccae27d403b9a
+    path: Assets/Scenes/LevelBrawl.unity
+    guid: 05ad13036df3b954db290a8801fe7847
   - enabled: 1
     path: Assets/Scenes/LevelsMap.unity
     guid: f23e5fa175e51bb479e6cd4c0def399e
   - enabled: 1
-    path: Assets/Scenes/LevelBrawl.unity
-    guid: 05ad13036df3b954db290a8801fe7847
+    path: Assets/Scenes/MainMenu.unity
+    guid: 7af04f14af4cb8941beccae27d403b9a
   - enabled: 1
     path: Assets/Scenes/Levels/Level_0.unity
     guid: 3716226b7c40ad44d8a3ae05081452d7
@@ -71,6 +71,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Level_18.unity
     guid: 49ef90a1caab9cc459c4f38a1b6352e6
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level_19.unity
+    guid: 1654b05c2818a244a9d426a40a766574
   - enabled: 1
     path: Assets/Scenes/Levels/Level_20.unity
     guid: 816659701153993428ba85d6d922d50d
