@@ -40345,7 +40345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: {fileID: 2672955793140393534}
   wavesOrders:
-  - waveData: {fileID: 11400000, guid: 44f24faeea710ff4b9768e37ac07e1a9, type: 2}
+  - waveData: {fileID: 11400000, guid: 24ba9120d07913d45a36d8e40d27d6e2, type: 2}
 --- !u!114 &2672955792501941176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40360,7 +40360,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: {fileID: 2672955793140393533}
   wavesOrders:
-  - waveData: {fileID: 11400000, guid: 44f24faeea710ff4b9768e37ac07e1a9, type: 2}
+  - waveData: {fileID: 11400000, guid: 479509edd0389e04cb16db28e810f17f, type: 2}
 --- !u!1 &2672955792501941182
 GameObject:
   m_ObjectHideFlags: 0
@@ -40422,7 +40422,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 2672955793140393530}
-  wavesOrders: []
+  wavesOrders:
+  - waveData: {fileID: 11400000, guid: f073245a9a7f6dd4d869e4cde057ad6c, type: 2}
 --- !u!4 &2672955792565511362
 Transform:
   m_ObjectHideFlags: 0
@@ -40488,7 +40489,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 2672955793140393531}
-  wavesOrders: []
+  wavesOrders:
+  - waveData: {fileID: 11400000, guid: 44f24faeea710ff4b9768e37ac07e1a9, type: 2}
 --- !u!4 &2672955793131604365
 Transform:
   m_ObjectHideFlags: 0
@@ -40910,7 +40912,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: {fileID: 2672955793140393535}
   wavesOrders:
-  - waveData: {fileID: 11400000, guid: 44f24faeea710ff4b9768e37ac07e1a9, type: 2}
+  - waveData: {fileID: 11400000, guid: 43364534acd983d4aa3c54aeb108e046, type: 2}
 --- !u!1 &2672955793215068898
 GameObject:
   m_ObjectHideFlags: 0
@@ -40956,7 +40958,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: {fileID: 2672955793140393536}
   wavesOrders:
-  - waveData: {fileID: 11400000, guid: 44f24faeea710ff4b9768e37ac07e1a9, type: 2}
+  - waveData: {fileID: 11400000, guid: 24ba9120d07913d45a36d8e40d27d6e2, type: 2}
 --- !u!1 &2672955793381716222
 GameObject:
   m_ObjectHideFlags: 0
