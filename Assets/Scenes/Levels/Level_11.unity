@@ -40422,7 +40422,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 2672955793140393530}
-  wavesOrders: []
+  wavesOrders:
+  - waveData: {fileID: 11400000, guid: 712bc3c44503e5d4b8a2b47eaa6420f7, type: 2}
 --- !u!4 &2672955792565511362
 Transform:
   m_ObjectHideFlags: 0
@@ -40488,7 +40489,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 2672955793140393531}
-  wavesOrders: []
+  wavesOrders:
+  - waveData: {fileID: 11400000, guid: 712bc3c44503e5d4b8a2b47eaa6420f7, type: 2}
 --- !u!4 &2672955793131604365
 Transform:
   m_ObjectHideFlags: 0
@@ -41001,7 +41003,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 2672955793140393532}
-  wavesOrders: []
+  wavesOrders:
+  - waveData: {fileID: 11400000, guid: 712bc3c44503e5d4b8a2b47eaa6420f7, type: 2}
 --- !u!4 &2672955793529562153
 Transform:
   m_ObjectHideFlags: 0
@@ -41063,7 +41066,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 2672955793140393529}
-  wavesOrders: []
+  wavesOrders:
+  - waveData: {fileID: 11400000, guid: 712bc3c44503e5d4b8a2b47eaa6420f7, type: 2}
 --- !u!4 &2672955793559489967
 Transform:
   m_ObjectHideFlags: 0
@@ -41072,7 +41076,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2672955793559489965}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.45, y: -0.0000002810414, z: 9.6}
+  m_LocalPosition: {x: -7.45, y: 0, z: 9.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2672955793837308603}
@@ -41129,10 +41133,16 @@ MonoBehaviour:
       - {fileID: 2672955792501941176}
     - skipWaiter: 0.5
       spawnPoints:
+      - {fileID: 2672955793381716216}
       - {fileID: 2672955793215068892}
+      - {fileID: 2672955792264149559}
+      - {fileID: 2672955792501941176}
     - skipWaiter: 0.5
       spawnPoints:
-      - {fileID: 2672955792264149559}
+      - {fileID: 2672955793529562152}
+      - {fileID: 2672955793131604364}
+      - {fileID: 2672955792565511361}
+      - {fileID: 2672955792565511361}
 --- !u!1 &2672955793837308602
 GameObject:
   m_ObjectHideFlags: 0

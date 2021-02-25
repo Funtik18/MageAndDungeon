@@ -24575,13 +24575,10 @@ MonoBehaviour:
       - {fileID: 1721362208}
     - skipWaiter: 0.5
       spawnPoints:
-      - {fileID: 1721362208}
+      - {fileID: 202858052}
     - skipWaiter: 0.5
       spawnPoints:
       - {fileID: 1045153739}
-    - skipWaiter: 0.5
-      spawnPoints:
-      - {fileID: 202858052}
 --- !u!1 &1135659600
 GameObject:
   m_ObjectHideFlags: 0
