@@ -17,6 +17,14 @@ public class ChangeLang : MonoBehaviour
             setText(TextEng);
     }
 
+    public void changeLang()
+    {
+        if (PlayerPrefs.GetInt("language") == 0)
+            setText(TextRus);
+        else
+            setText(TextEng);
+    }
+
     void setText(string[] Text)
     {
         for (int i = 0; i < Texts.Length; i++)
